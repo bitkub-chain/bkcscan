@@ -1,1 +1,1 @@
-# bkc-explorer
+# Bitkub Chain Explorer 
