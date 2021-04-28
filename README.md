@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1 align="center">Bitkub Chain Explorer (forked from blockscout)</h1>
 <h3> Test URL: [http://explorer.test.bbtserv.com](http://explorer.test.bbtserv.com) </h3>
 <p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
@@ -26,7 +25,7 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 
 ## Step to run the explorer
 1. git clone https://gitlab.com/bitkub-chain/bkc-explorer.git
-2. switch to develop branch
+2. switch to lemon-version-1 branch
 3. cd bkc-explorer/docker
 4. run `source set_env_variables.sh`
 5. run a command `make start` (will take many minutes to build & run)
@@ -38,6 +37,3 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
-=======
-# Bitkub Chain Explorer 
->>>>>>> 0ea0adf773f8d37e1599e8529b067e873b1dd7db
