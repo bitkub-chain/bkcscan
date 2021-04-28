@@ -1,0 +1,36 @@
+<section class="container">
+  <%= render BlockScoutWeb.AddressView, "overview.html", assigns %>
+
+  <section>
+    <div class="card">
+      <%= render BlockScoutWeb.AddressView, "_tabs.html", assigns %>
+      <div class="card-body" data-async-load data-async-listing="<%= @current_path %>">
+        <h2 class="card-title list-title-description"><%= gettext "Tokens" %></h2>
+
+        <div class="list-top-pagination-container-wrapper">
+          <%= render BlockScoutWeb.CommonComponentsView, "_pagination_container.html", position: "top", show_pagination_limit: true, data_next_page_button: true, data_prev_page_button: true %>
+        </div>
+
+        <button data-error-message class="alert alert-danger col-12 text-left" style="display: none;">
+          <span href="#" class="alert-link"><%= gettext("Something went wrong, click to reload.") %></span>
+        </button>
+
+        <div data-empty-response-message style="display: none;">
+          <div class="tile tile-muted text-center" data-selector="empty-token-list">
+            <%= gettext "There are no tokens for this address." %>
+          </div>
+        </div>
+
+        <div data-items>
+          <%= render BlockScoutWeb.CommonComponentsView, "_tile-loader.html" %>
+        </div>
+
+        <div class="transaction-bottom-panel">
+          <%= render BlockScoutWeb.CommonComponentsView, "_pagination_container.html", position: "bottom", cur_page_number: "1", show_pagination_limit: true, data_next_page_button: true, data_prev_page_button: true %>
+        </div>
+
+      </div>
+    </div>
+    <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/address.js") %>"></script>
+  </section>
+</section>
