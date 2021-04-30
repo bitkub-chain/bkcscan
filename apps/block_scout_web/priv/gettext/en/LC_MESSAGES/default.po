@@ -277,7 +277,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:39
 msgid "Chat"
-msgstr "Bitkub Link 1"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:137
@@ -1028,7 +1028,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:47
 msgid "Main Networks"
-msgstr "Bitkub DeFi"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:22
@@ -1356,7 +1356,7 @@ msgstr "Bitkub Blockchain Technology"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:60
 msgid "Test Networks"
-msgstr "Bitkub Test Network"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:23
