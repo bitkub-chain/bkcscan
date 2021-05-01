@@ -56,7 +56,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_default_title.html.eex:2
 msgid "%{subnetwork} Explorer - BlockScout"
-msgstr ""
+msgstr "%{subnetwork} Explorer"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
@@ -104,7 +104,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_metatags.html.eex:2
 msgid "API for the %{subnetwork} - BlockScout"
-msgstr ""
+msgstr "API for the %{subnetwork}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:124
@@ -233,7 +233,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:4
 msgid "BlockScout provides analytics data, API, and Smart Contract tools for the %{subnetwork}"
-msgstr ""
+msgstr "Bitkub Chain explorer provides analytics data, API, and Smart Contract tools for the %{subnetwork}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:180
@@ -250,7 +250,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:20
 msgid "Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks."
-msgstr ""
+msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
@@ -1028,7 +1028,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:47
 msgid "Main Networks"
-msgstr ""
+msgstr "Bitkub Chain Mainnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:22
@@ -1356,7 +1356,7 @@ msgstr "Bitkub Blockchain Technology"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:60
 msgid "Test Networks"
-msgstr ""
+msgstr "Biktub Chain Testnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:23
@@ -1427,7 +1427,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:10
 msgid "This is useful to allow sending requests to blockscout without having to change anything about the request."
-msgstr ""
+msgstr "This is useful to allow sending requests to biktub chain without having to change anything about the request."
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:19
@@ -1954,7 +1954,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:213
 msgid "Search by address, token symbol, name, transaction hash, or block number"
-msgstr ""
+msgstr "Search transaction hash, block number, token symbol or name"
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:7
@@ -2003,7 +2003,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/stakes/_metatags.html.eex:2
 msgid "%{subnetwork} Staking DApp - BlockScout"
-msgstr ""
+msgstr "%{subnetwork} Staking DApp - Biktub Chain"
 
 #, elixir-format
 #: lib/block_scout_web/templates/stakes/_rows.html.eex:26
@@ -2607,7 +2607,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract/index.html.eex:14
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:5
 msgid "Contract is not verified. However, we found a verified contract with the same bytecode in Blockscout DB"
-msgstr ""
+msgstr "Contract is not verified. However, we found a verified contract with the same bytecode in Bitkub Chain DB"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:160
