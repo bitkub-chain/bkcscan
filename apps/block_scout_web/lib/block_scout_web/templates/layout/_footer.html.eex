@@ -21,6 +21,25 @@
           </a>
         </div>
       </div>
+
+      <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
+        <h3>Related links</h3>
+        <ul>
+          <li><a href="www.bitkubchain.com" rel="noreferrer" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
+          <li><a href="www.bitkubnext.com" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
+          <li><a href="www.bitkub.com" rel="noreferrer" class="footer-link"><%= gettext("Chat") %></a></li>
+          <li><a href="www.bitkubblockchain.com" rel="noreferrer" class="footer-link"><%= gettext("Support") %></a></li>
+        </ul>
+      </div>
     </div>
+
+    <% version = version() %>
+
+    <%= unless ignore_version?(version) do %>
+      <% release_link = release_link(version) %>
+      <div>
+        <%= gettext("Version") %>: <%= release_link %>
+      </div>
+    <% end %>
   </div>
 </footer>
