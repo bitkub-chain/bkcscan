@@ -1,7 +1,7 @@
 SYSTEM = $(shell uname -s)
 HOST = host.docker.internal
-DOCKER_IMAGE = blockscout_prod
-BS_CONTAINER_NAME = blockscout
+DOCKER_IMAGE = bitkubchain-explorer
+BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
@@ -322,7 +322,7 @@ start: build postgres
 	@echo "==> Starting blockscout"
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 80:4000 \
+					-p 80:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
