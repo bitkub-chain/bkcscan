@@ -19,12 +19,6 @@
           <a href="https://github.com/bitkubchain/bkc" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <i class="fab fa-github"></i>
           </a>
-          <a href="" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
-            <i class="fab fa-telegram-plane"></i>
-          </a>
         </div>
       </div>
     </div>
