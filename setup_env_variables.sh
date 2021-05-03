@@ -1,10 +1,10 @@
 export LOGO=/images/bitkubchain-logo.png
 export ETHEREUM_JSONRPC_VARIANT=geth
-export ETHEREUM_JSONRPC_HTTP_URL=http://10.0.0.99:8545
-export ETHEREUM_JSONRPC_WS_URL=ws://10.0.0.99:8546
-export ETHEREUM_JSONRPC_TRACE_URL=http://10.0.0.99:8545
-export BLOCKSCOUT_HOST=bkcscan.net
+export ETHEREUM_JSONRPC_HTTP_URL=http://47.241.3.150:8545
+export ETHEREUM_JSONRPC_WS_URL=ws://47.241.3.150:8546
+export ETHEREUM_JSONRPC_TRACE_URL=http://47.241.3.150:8545
+export BLOCKSCOUT_HOST=bkc-explorer.bbtserv.com
 export BLOCKSCOUT_PROTOCOL=https
-export NETWORK=Bitkub
-export SUBNETWORK=BitkubChain
+export NETWORK=BitkubChain
+export SUBNETWORK=Testnet
 export BLOCK_TRANSFORMER=clique
