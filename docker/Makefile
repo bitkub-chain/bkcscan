@@ -1,5 +1,6 @@
 SYSTEM = $(shell uname -s)
-HOST = host.docker.internal
+#HOST = host.docker.internal
+HOST = 10.0.0.216
 DOCKER_IMAGE = bitkubchain-explorer
 BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
@@ -10,7 +11,7 @@ ifeq ($(SYSTEM), Linux)
 	HOST=localhost
 endif
 
-DB_URL = postgresql://postgres:@$(HOST):5432/explorer?ssl=false
+DB_URL = postgresql://root:tx2SYF5V9r7ci%25DMLFtk%5EAEy95138S%25v@10.0.0.216:5432/explorer?ssl=true
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
 															 -e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)
@@ -318,11 +319,11 @@ else
 	@$(MAKE) -f $(THIS_FILE) migrate_only
 endif
 
-start: build postgres 
+start:
 	@echo "==> Starting blockscout"
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 80:80 \
+					-p 80:80 -p 443:443 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
