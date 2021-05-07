@@ -184,7 +184,7 @@
             <a class="dropdown-item header division">Mainnets</a>  
               <a class="dropdown-item" href="https://bkcscan.com">Bitkub Chain Mainnet</a>  
             <a class="dropdown-item header division">Testnets</a> 
-              <a class="dropdown-item" href="https://bkc-explorer.bbtserv.com">Bitkub Chain Testnet</a>  
+              <a class="dropdown-item" href="https://testnet.bkcscan.com">Bitkub Chain Testnet</a>  
           </div>
         </li>
       </ul>
