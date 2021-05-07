@@ -395,7 +395,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:38
 msgid "Contribute"
-msgstr "Bitkub Next"
+msgstr "Bitkub NEXT"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
