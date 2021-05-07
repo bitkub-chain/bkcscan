@@ -2,7 +2,7 @@
   <div class="container">
     <div class="dashboard-banner">
       <!-- Graph and legend -->
-      <div class="dashboard-banner-network-graph">
+      <div class="dashboard-banner-network-graph" style="display: none;">
         <!-- Graph -->
         <div class="dashboard-banner-chart">
           <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
