@@ -34,10 +34,10 @@
       <div class="col-xs-12 col-md-6 col-lg-6 footer-list">
         <h3>Related links</h3>
         <ul>
-          <li><a href="www.bitkubchain.com" rel="noreferrer" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
-          <li><a href="www.bitkubnext.com" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
-          <li><a href="www.bitkub.com" rel="noreferrer" class="footer-link"><%= gettext("Chat") %></a></li>
-          <li><a href="www.bitkubblockchain.com" rel="noreferrer" class="footer-link"><%= gettext("Support") %></a></li>
+          <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
+          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Contribute") %></a></li>
+          <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Chat") %></a></li>
+          <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Support") %></a></li>
         </ul>
       </div>
     </div>
