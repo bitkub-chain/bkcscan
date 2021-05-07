@@ -250,7 +250,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:20
 msgid "Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks."
-msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
+msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks. For more information please contact: bitkubchain@bitkub.com"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
