@@ -19,6 +19,15 @@
           <a href="https://github.com/bitkubchain/bkc" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <i class="fab fa-github"></i>
           </a>
+           <a href="https://www.facebook.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='Facebook'>
+            <i class="fab fa-facebook"></i>
+          </a>
+           <a href="https://discord.gg/gtwGBHDqWY" rel="noreferrer" target="_blank" class="footer-social-icon" title='Discord'>
+            <i class="fab fa-discord"></i>
+          </a>
+           <a href="https://twitter.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='Twitter'>
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
 
