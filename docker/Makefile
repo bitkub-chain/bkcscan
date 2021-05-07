@@ -1,7 +1,7 @@
 SYSTEM = $(shell uname -s)
 HOST = host.docker.internal
-DOCKER_IMAGE = bitkubchain-explorer
-BS_CONTAINER_NAME = bkc-explorer
+DOCKER_IMAGE = bitkubchain-explorer-testnet
+BS_CONTAINER_NAME = bkc-explorer-testnet
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
