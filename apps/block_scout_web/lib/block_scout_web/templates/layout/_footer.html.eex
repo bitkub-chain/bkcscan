@@ -19,16 +19,25 @@
           <a href="https://github.com/bitkubchain/bkc" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <i class="fab fa-github"></i>
           </a>
+          <a href="https://www.facebook.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://discord.gg/gtwGBHDqWY" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://twitter.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
 
       <div class="col-xs-12 col-md-6 col-lg-6 footer-list">
         <h3>Related links</h3>
         <ul>
-          <li><a href="www.bitkubchain.com" rel="noreferrer" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
-          <li><a href="www.bitkubnext.com" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
-          <li><a href="www.bitkub.com" rel="noreferrer" class="footer-link"><%= gettext("Chat") %></a></li>
-          <li><a href="www.bitkubblockchain.com" rel="noreferrer" class="footer-link"><%= gettext("Support") %></a></li>
+          <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
+          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Contribute") %></a></li>
+          <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Chat") %></a></li>
+          <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Support") %></a></li>
         </ul>
       </div>
     </div>
