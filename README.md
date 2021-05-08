@@ -1,5 +1,5 @@
 <h1 align="center">Bitkub Chain Explorer (forked from blockscout)</h1>
-<h3> Test URL: [http://explorer.test.bbtserv.com](http://explorer.test.bbtserv.com) </h3>
+<h3> Test URL: [https://bkcscan.com](https://bkcscan.com) </h3>
 <p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
 <div align="center">
 
