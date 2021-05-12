@@ -324,7 +324,7 @@ start:
 	@echo "==> Starting blockscout"
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 8000:80 \
+					-p 4000:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
