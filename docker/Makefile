@@ -1,9 +1,10 @@
 SYSTEM = $(shell uname -s)
 #HOST = host.docker.internal
-HOST = 10.0.0.216
-DOCKER_IMAGE = bitkubchain-explorer
+#HOST = 10.0.0.216
+HOST = 127.0.0.1
+DOCKER_IMAGE = bitkubchian-explorer
 BS_CONTAINER_NAME = bkc-explorer
-PG_CONTAINER_NAME = postgres
+PG_CONTAINER_NAME = bs-postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
 
@@ -11,7 +12,7 @@ ifeq ($(SYSTEM), Linux)
 	HOST=localhost
 endif
 
-DB_URL = postgresql://root:tx2SYF5V9r7ci%25DMLFtk%5EAEy95138S%25v@10.0.0.216:5432/explorer?ssl=true
+DB_URL = postgresql://postgres:@$(HOST):15432/explorer?ssl=false
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
 															 -e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)
@@ -275,7 +276,7 @@ ifdef DISABLE_KNOWN_TOKENS
 endif
 
 HAS_BLOCKSCOUT_IMAGE := $(shell docker images | grep -sw ${DOCKER_IMAGE})
-build: 
+build:
 	@echo "==> Checking for blockscout image $(DOCKER_IMAGE)"
 ifdef HAS_BLOCKSCOUT_IMAGE
 	@echo "==> Image exist. Using $(DOCKER_IMAGE)"
@@ -313,7 +314,7 @@ else
 					-e POSTGRES_PASSWORD="" \
 					-e POSTGRES_USER="postgres" \
 					-e POSTGRES_HOST_AUTH_METHOD="trust" \
-					-p 5432:5432 \
+					-p 15432:5432 \
 					$(PG_CONTAINER_IMAGE)
 	@sleep 1
 	@$(MAKE) -f $(THIS_FILE) migrate_only
@@ -323,7 +324,7 @@ start:
 	@echo "==> Starting blockscout"
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 80:80 -p 443:443 \
+					-p 8000:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
@@ -332,4 +333,4 @@ run: start
 				migrate \
 				start \
 				postgres \
-				run 
+				run
