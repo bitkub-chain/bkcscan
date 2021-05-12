@@ -1,11 +1,11 @@
 export LOGO=/images/bkc-logo.png
 export ETHEREUM_JSONRPC_VARIANT=geth
-export ETHEREUM_JSONRPC_HTTP_URL=http://10.0.0.99:8545
-export ETHEREUM_JSONRPC_WS_URL=ws://10.0.0.99:8546
-export ETHEREUM_JSONRPC_TRACE_URL=http://10.0.0.99:8545
+export ETHEREUM_JSONRPC_HTTP_URL=https://rpc-testnet.bitkubchain.io
+export ETHEREUM_JSONRPC_WS_URL=wss://wss-testnet.bitkubchain.io
+export ETHEREUM_JSONRPC_TRACE_URL=https://rpc-testnet.bitkubchain.io
 export BLOCKSCOUT_HOST=bkcscan.net
 export BLOCKSCOUT_PROTOCOL=https
-export NETWORK=Mainnet
+export NETWORK=Testnet
 export SUBNETWORK=BitkubChain
 export BLOCK_TRANSFORMER=clique
 export COIN=""
