@@ -1,6 +1,7 @@
 SYSTEM = $(shell uname -s)
 HOST = host.docker.internal
 #HOST = 10.0.0.216
+#HOST = 66.42.33.14
 
 DOCKER_IMAGE = bitkubchain-explorer
 BS_CONTAINER_NAME = bkc-explorer
