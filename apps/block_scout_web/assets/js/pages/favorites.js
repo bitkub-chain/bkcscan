@@ -6,7 +6,6 @@ let favoritesNetworksUrls = []
 if (localStorage.getItem('favoritesNetworksUrls') === null) {
   localStorage.setItem('favoritesNetworksUrls', JSON.stringify(favoritesNetworksUrls))
 } else {
-  favoritesNetworksUrls = JSON.parse(localStorage.getItem('favoritesNetworksUrls'))
 }
 
 $(document).on('change', ".network-selector-item-favorite input[type='checkbox']", function () {
@@ -51,8 +50,6 @@ $(document).on('change', ".network-selector-item-favorite input[type='checkbox']
 if (favoritesNetworksUrls.length > 0) {
   $('.js-favorites-tab .network-selector-tab-content-empty').hide()
   for (let i = 0; i < favoritesNetworksUrls.length + 1; i++) {
-    $(".network-selector-item[data-url='" + favoritesNetworksUrls[i] + "'").find('input[data-url]').prop('checked', true)
-    const parent = $(".network-selector-item[data-url='" + favoritesNetworksUrls[i] + "'").clone()
     favoritesContainer.append(parent[0])
   }
 }
