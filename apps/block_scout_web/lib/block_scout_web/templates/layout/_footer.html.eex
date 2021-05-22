@@ -1,0 +1,54 @@
+<footer class="footer">
+  <div class="footer-body container">
+    <!-- Logo -->
+    <div class="row footer-logo-row">
+      <div class="col-md-12">
+        <%= link to: webapp_url(@conn), class: "footer-brand" do %>
+          <img class="footer-logo" src="<%= logo_footer() %>" alt="<%= subnetwork_title() %>" />
+          <%= if logo_text() do %>
+            <span class="logo-text footer"> <%= logo_text() %> </span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-6">
+        <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
+        <div class="footer-social-icons">
+          <a href="https://github.com/bitkubchain/bkc" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.facebook.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://discord.gg/gtwGBHDqWY" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://twitter.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-6 footer-list">
+        <h3>Related links</h3>
+        <ul>
+          <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
+          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Contribute") %></a></li>
+          <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Chat") %></a></li>
+          <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Support") %></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <% version = version() %>
+
+    <%= unless ignore_version?(version) do %>
+      <% release_link = release_link(version) %>
+      <div>
+        <%= gettext("Version") %>: <%= release_link %>
+      </div>
+    <% end %>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex-grow: 1;
+    background-color: #fbfafc;
+  }
+}
+
+.logs-hash {
+  line-height: 24px !important;
+}

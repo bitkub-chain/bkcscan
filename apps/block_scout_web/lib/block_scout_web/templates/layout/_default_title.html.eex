@@ -1,0 +1,3 @@
+<title>
+  <%= gettext("%{subnetwork} Explorer - Bitkub Chain", subnetwork: subnetwork_title()) %>
+</title>

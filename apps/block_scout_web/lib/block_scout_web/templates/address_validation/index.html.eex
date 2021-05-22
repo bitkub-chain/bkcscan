@@ -1,0 +1,35 @@
+<section class="container">
+  <%= render BlockScoutWeb.AddressView, "overview.html", assigns %>
+
+  <section data-page="blocks-validated">
+    <div class="card">
+      <%= render BlockScoutWeb.AddressView, "_tabs.html", assigns %>
+      <div data-async-listing="<%= @current_path %>" class="card-body">
+        <div data-selector="channel-disconnected-message" style="display: none;">
+          <div data-selector="reload-button" class="alert alert-danger">
+            <a href="#" class="alert-link"><%= gettext "Connection Lost, click to load newer validations" %></a>
+          </div>
+        </div>
+        <h2 class="card-title"><%=gettext("Blocks Validated")%></h2>
+
+        <%= render BlockScoutWeb.CommonComponentsView, "_pagination_container.html", position: "top", cur_page_number: "1", show_pagination_limit: true, data_next_page_button: true, data_prev_page_button: true %>
+
+        <div data-empty-response-message class="tile tile-muted text-center" style="display: none;">
+          <span><%= gettext "There are no blocks validated by this address." %></span>
+        </div>
+        <button data-error-message class="alert alert-danger col-12 text-left" style="display: none;">
+          <span class="alert-link">
+            <%= gettext "Something went wrong, click to reload." %>
+          </span>
+        </button>
+        <div data-items data-selector="validations-list">
+          <%= render BlockScoutWeb.CommonComponentsView, "_tile-loader.html" %>
+        </div>
+
+        <%= render BlockScoutWeb.CommonComponentsView, "_pagination_container.html", position: "bottom", cur_page_number: "1", show_pagination_limit: true, data_next_page_button: true, data_prev_page_button: true %>
+
+      </div> <!-- Card Body -->
+    </div> <!-- Card -->
+    <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/address-validations.js") %>"></script>
+  <section>
+</section>
