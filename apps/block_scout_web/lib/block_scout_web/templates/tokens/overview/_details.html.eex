@@ -91,7 +91,14 @@
               <% end %>
             </span>
             <div class="d-flex flex-row justify-content-start text-muted">
-              <span class="mr-4"> <%= @token.type %> </span>
+              <span class="mr-4"> 
+                <%= if @token.type == "ERC-20" do %> 
+                  <%= gettext "ERC-20 " %>
+                <% end %> 
+                <%= if @token.type == "ERC-721" do %> 
+                  <%= gettext "ERC-721 " %>
+                <% end %> 
+              </span>
               <span token-holder-count class="mr-4"></span>
               <span token-transfer-count class="mr-4"></span>
               <%= if decimals?(@token) do %>

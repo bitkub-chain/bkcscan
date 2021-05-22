@@ -33,6 +33,8 @@ RUN mix compile
 
 # Add blockscout npm deps
 RUN cd apps/block_scout_web/assets/ && \
+    npm i -g npm@6.11.0 && \
+    npm cache clean --force && \
     npm install && \
     npm run deploy && \
     cd -
