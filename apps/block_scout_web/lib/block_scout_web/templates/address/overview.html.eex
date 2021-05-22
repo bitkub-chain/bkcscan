@@ -4,6 +4,7 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
+  <% validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873","0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34","0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0", "0xe16288F1c9247baca7Dea839366C59D2D3466A38", "	0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0", "0xDb53BDeda03382d9a169a299332F8222A683282A", "0x091820483645BB414877B0Ab50594AB6E1f393c0", "0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669", "0xD61bD2a63790784A8B4aE3962608ec13e23489f8", "0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9"]; %>
   <div class="row">
     <!-- Address details -->
     <div class="card-section col-md-12 col-lg-8 pr-0-md">
@@ -80,7 +81,16 @@
               <% end %>
             </span>
           </h1>
-          <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash"><%= @address %></h3>
+          <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
+            
+            <%= @address %>      
+            <% address = to_string(@address) %>
+            <% check = Enum.member?(validators, address) %>
+            <%= if(check) do %>
+              <small class="border-dark p-1 bg-success text-white">Validator</small> 
+            <% end %>
+
+          </h3>
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>
               <strong class="mr-4 mb-2 text-dark" title="<%= address_name %>">
