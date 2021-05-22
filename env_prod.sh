@@ -6,3 +6,4 @@ export ETHEREUM_JSONRPC_TRACE_URL=https://rpc.bitkubchain.io
 export NETWORK=Testnet
 export SUBNETWORK=BitkubChain
 export BLOCK_TRANSFORMER=clique
+export DISABLE_EXCHANGE_RATES=true
