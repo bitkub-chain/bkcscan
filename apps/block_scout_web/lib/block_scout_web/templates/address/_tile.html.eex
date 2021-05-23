@@ -16,7 +16,7 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
     <% address = to_string(@address) %>
     <% check = Enum.member?(validators, address) %>
       <%= if(check) do %>
-        <small class="border-dark p-1 bg-success text-white">Validator</small> 
+        <p class="mb-0">Validator</p> 
       <% end %>
       <%= if(to_string(@address) == "0xD78A91F21B12de8793BB8616961F31BEefa97fE4") do %>
         <p class="mb-0"> KUB: Company Reserve</p> 
