@@ -1,5 +1,6 @@
 <%                                                                                                                                                                                        
 validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873","0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34","0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0", "0xe16288F1c9247baca7Dea839366C59D2D3466A38", "0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0", "0xDb53BDeda03382d9a169a299332F8222A683282A", "0x091820483645BB414877B0Ab50594AB6E1f393c0", "0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669", "0xD61bD2a63790784A8B4aE3962608ec13e23489f8", "0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9"];
+
 %>
 <tr>
   <td class="stakes-td">
@@ -10,13 +11,37 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
   </td>
   <td class="stakes-td">
     <%= @address |> BlockScoutWeb.AddressView.address_partial_selector(nil, nil) |> BlockScoutWeb.RenderHelpers.render_partial() %>
-    
+  </td>
+  <td class="stakes-td text-center">
     <% address = to_string(@address) %>
     <% check = Enum.member?(validators, address) %>
-    <%= if(check) do %>
-      <small class="border-dark p-1 bg-success text-white">Validator</small> 
-    <% end %>
-
+      <%= if(check) do %>
+        <small class="border-dark p-1 bg-success text-white">Validator</small> 
+      <% end %>
+      <%= if(to_string(@address) == "0xD78A91F21B12de8793BB8616961F31BEefa97fE4") do %>
+        <p class="mb-0"> KUB: Company Reserve</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0xFE28FfD8c528066bE3aE4B0D95db0478EfBA7413") do %>
+        <p class="mb-0"> KUB: Community / Exchange Development</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0x755FD36eC8F6E2eb69bCeC441bacA89855747d50") do %>
+        <p class="mb-0"> KUB: Ecosystem</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0xc9760469d7635916D20329e4bac99ffBBFD38DF4") do %>
+        <p class="mb-0"> KUB: Ecosystem (Hot Wallet)</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0x5019F3d3226FbfA007a786382256feA2ecB3A676") do %>
+        <p class="mb-0"> KUB: Exchange (Hot Wallet)</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0x6DfBA1364e9627b863c6188a6545000e675E5898") do %>
+        <p class="mb-0"> KUB: Partner</p> 
+      <% end %>
+       <%= if(to_string(@address) == "0xc6422b55db8b3288a1f8316bc07375948e08082f") do %>
+        <p class="mb-0"> KUB: Liquidity (Hot Wallet)</p> 
+      <% end %>
+      <%= if(to_string(@address) == "0x52cB901D945B7499f1457d36b882a59cDe9664D5") do %>
+        <p class="mb-0"> KUB: Liquidity</p> 
+      <% end %>
   </td>
   <td class="stakes-td">
     <span data-test="address_balance"><%= balance(@address) %></span>
