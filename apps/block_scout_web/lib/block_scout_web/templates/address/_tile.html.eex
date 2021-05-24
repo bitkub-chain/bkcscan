@@ -43,7 +43,7 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
         <p class="mb-0">KUB: Liquidity</p> 
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
-        <p class="mb-0">KUB: Liquidity (<i class="fas fa-lock text-success"></i> Lock)</p> 
+        <p class="mb-0">KUB: Liquidity (<i class="fas fa-lock text-success"></i> Locked)</p> 
       <% end %>
   </td>
   <td class="stakes-td">

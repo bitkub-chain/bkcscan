@@ -1,0 +1,3 @@
+/apps/block_scout_web/assets/node_modules
+/docker
+setup_env_variables.sh
