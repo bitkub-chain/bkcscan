@@ -81,7 +81,7 @@
             </span>
           </h1>
           <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
-            <%= @address %>
+            <p><%= @address %></p>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
               <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: GetLinks (Thailand) Company Limited</small> 
             <% end %>
