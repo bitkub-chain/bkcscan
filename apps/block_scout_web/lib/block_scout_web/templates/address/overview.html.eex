@@ -81,7 +81,7 @@
             </span>
           </h1>
           <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
-            
+            <%= @address %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
               <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: GetLinks (Thailand) Company Limited</small> 
             <% end %>
@@ -98,10 +98,10 @@
               <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: TPCS Public Company Limited</small> 
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9")) do %>
-              <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: Smartcontact Thailand Co., Ltd</small> 
+              <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: SmartContract Blockchain Studio</small> 
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDb53BDeda03382d9a169a299332F8222A683282A")) do %>
-              <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: Siam Raj Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: Siamrajathanee Public Company Limited</small> 
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34")) do %>
               <small class="border-dark p-1 bg-success text-white ml-1 rounded">Validator: SiS Distribution (Thailand) Public Company Limited</small> 
@@ -142,7 +142,6 @@
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
               <small class="border-dark p-1 bg-success text-white ml-1 rounded">KUB: Liquidity (<i class="fas fa-lock"></i> Locked)</small> 
             <% end %>
-
           </h3>
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>

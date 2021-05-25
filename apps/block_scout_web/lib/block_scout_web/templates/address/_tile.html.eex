@@ -34,10 +34,10 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
         <p class="mb-0">Validator: TPCS Public Company Limited</p> 
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9")) do %>
-        <p class="mb-0">Validator: Smartcontact Thailand Co., Ltd</p> 
+        <p class="mb-0">Validator: SmartContract Blockchain Studio </p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xDb53BDeda03382d9a169a299332F8222A683282A")) do %>
-        <p class="mb-0">Validator: Siam Raj Public Company Limited</p> 
+        <p class="mb-0">Validator: Siamrajathanee Public Company Limited</p> 
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34")) do %>
         <p class="mb-0">Validator: SiS Distribution (Thailand) Public Company Limited</p> 

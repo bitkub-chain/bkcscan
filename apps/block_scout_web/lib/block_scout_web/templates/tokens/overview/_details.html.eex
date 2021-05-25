@@ -31,7 +31,7 @@
                   <% address = to_string(@token.contract_address) %>
                   <% check = Enum.member?(officials, address) %>
                   <%= if(check) do %>
-                    <small class="border-dark p-1 bg-success text-white">Official</small> 
+                    <small class="border-dark p-1 bg-success text-white rounded">Official</small> 
                   <% end %> 
                 </div>
 
