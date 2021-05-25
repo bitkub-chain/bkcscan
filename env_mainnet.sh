@@ -1,8 +1,8 @@
 export LOGO=/images/bitkubchain-logo.png
 export ETHEREUM_JSONRPC_VARIANT=geth
-export ETHEREUM_JSONRPC_HTTP_URL=https://rpc.bitkubchain.io
-export ETHEREUM_JSONRPC_WS_URL=wss://wss.bitkubchain.io
-export ETHEREUM_JSONRPC_TRACE_URL=https://rpc.bitkubchain.io
+export ETHEREUM_JSONRPC_HTTP_URL=http://159.138.245.69:8545
+export ETHEREUM_JSONRPC_WS_URL=ws://159.138.245.69:8546
+export ETHEREUM_JSONRPC_TRACE_URL=http://159.138.245.69:8545
 export BLOCKSCOUT_HOST=bkcscan.com
 export BLOCKSCOUT_PROTOCOL=https
 export NETWORK="Mainnet"
