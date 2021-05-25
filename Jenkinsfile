@@ -1,9 +1,9 @@
 pipeline{  
-  #environment {
+  environment {
     #registry = ""
     #registryCredential = ''
     #dockerImage = ''
-  #}
+  }
   agent any
     stages {
         stage('Create Temp Config'){
