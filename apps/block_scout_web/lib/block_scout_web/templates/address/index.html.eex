@@ -22,12 +22,12 @@
 		  Address
 		</div>
 	      </th>
-		    <th class="stakes-table-th">
-				<div class="stakes-table-th-content">
-				Name Tag
-				</div>
-	      </th>
-	      <th class="stakes-table-th">
+		<th class="stakes-table-th">
+			<div class="stakes-table-th-content">
+			Name Tag
+			</div>
+		</th>
+		<th class="stakes-table-th">
 		<div class="stakes-table-th-content">
 		  Balance
 		</div>
