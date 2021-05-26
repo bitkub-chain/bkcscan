@@ -5,7 +5,7 @@
       <div class="dashboard-banner-network-graph" style="display: none;">
         <!-- Graph -->
         <div class="dashboard-banner-chart">
-          <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
+          <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5">
             <span><%= gettext("There was a problem loading the chart.") %></span>
           </button>
           <canvas data-chart="historyChart"
