@@ -1,9 +1,10 @@
 pipeline{  
-//  environment {
+  environment {
+    EXPLORER_IMAGE = "bkc-explorer"
     //registry = ""
     //registryCredential = ''
     //dockerImage = ''
-//  }
+  }
   agent any
     stages {
         stage('Create Temp Config'){
@@ -14,10 +15,27 @@ pipeline{
 		sh 'ls'
 		echo ">> Making temporary Dockerfile"
 		sh 'cp docker/Dockerfile Dockerfile'
-		echo ">> Removing temporary Dockerfile"
-		sh 'rm Dockerfile'
+		
               } 
            }   
+        }
+    stage('Build Docker image'){
+           steps{
+              script{
+		sh 'docker images'
+                echo "$EXPLORER_IMAGE"
+                
+              }
+           }
+        }
+    stage('Remove Temp Config'){
+           steps{
+              script{
+                sh 'ls'
+                echo ">> Removing temporary Dockerfile"
+                sh 'rm Dockerfile'
+              }
+           }
         }
     }
 }
