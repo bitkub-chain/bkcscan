@@ -11,8 +11,11 @@ pipeline{
               script{
 //		withCredentials([file(credentialsId: 'ghsecret', variable: '')]) {
 //		} 
-		sh 'echo "Hola"'
-		sh 'echo "Hola" > /tmp/test.txt'
+		sh 'ls'
+		echo ">> Making temporary Dockerfile"
+		sh 'cp docker/Dockerfile Dockerfile'
+		echo ">> Removing temporary Dockerfile"
+		sh 'rm Dockerfile'
               } 
            }   
         }
