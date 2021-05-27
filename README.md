@@ -28,7 +28,7 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 ## Step to run the explorer
 1. git clone https://gitlab.com/bitkub-chain/bkc-explorer.git
 2. cd bkc-explorer/
-3. run `docker -f docker/Dockerfile -t bkc-explorer:v2 ../` (will take many minutes to build)
+3. run `docker build -f docker/Dockerfile -t bkc-explorer:v2 ../` (will take many minutes to build)
 4. run `source env_mainnet.sh` or `source env_testnet.sh`
 5. run `source set_env_variables.sh`
 6. cd docker
