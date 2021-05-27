@@ -142,6 +142,7 @@
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
               <small class="border-dark p-1 bg-success text-white rounded">KUB: Liquidity (<i class="fas fa-lock"></i> Locked)</small> 
             <% end %>
+            
           </h3>
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>

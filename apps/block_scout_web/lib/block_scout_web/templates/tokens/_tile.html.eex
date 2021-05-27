@@ -1,5 +1,5 @@
 <%                                                                                                                                                                                        
-officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368"];
+officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368","0x12a5A2f27bc1eA474518f41A829B60b945585c97"];
 %>
 <tr>
  <td class="stakes-td">                                                                                                                                                                                    
