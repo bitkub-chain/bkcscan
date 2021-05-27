@@ -27,11 +27,14 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 
 ## Step to run the explorer
 1. git clone https://gitlab.com/bitkub-chain/bkc-explorer.git
-2. cd bkc-explorer/docker
-3. run `source set_env_variables.sh`
-4. run a command `make start` (will take many minutes to build & run)
-5. make sure explorer service is up by run `docker ps` it's will show two containers (blockscout & postgres db)
-6. try to access at url: **http://{ip-address}:4000** or **http://{domain name}**
+2. cd bkc-explorer/
+3. run `docker -f docker/Dockerfile -t bkc-explorer:v2 ../` (will take many minutes to build)
+4. run `source env_mainnet.sh` or `source env_testnet.sh`
+5. run `source set_env_variables.sh`
+6. cd docker
+7. run a command `make -f Makefile.local start` to start bkc-explorer & postgres container 
+8. make sure explorer service is up by run `docker ps` it's will show two containers (blockscout & postgres db)
+9. try to access at url: **http://{ip-address}:4000** or **http://{domain name}**
 
 ## License
 
