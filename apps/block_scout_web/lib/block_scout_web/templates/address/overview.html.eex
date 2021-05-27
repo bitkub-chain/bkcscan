@@ -4,6 +4,7 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
+  <% officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368","0x12a5A2f27bc1eA474518f41A829B60b945585c97"]; %>
   <div class="row">
     <!-- Address details -->
     <div class="card-section col-md-12 col-lg-8 pr-0-md">
@@ -82,6 +83,11 @@
           </h1>
           <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
             <p><%= @address %></p>
+            <% addressOfficial = to_string(@address) %>
+            <% check = Enum.member?(officials, addressOfficial) %>
+            <%= if(check) do %>
+              <small class="border-dark p-1 bg-success text-white rounded">Official</small> 
+            <% end %> 
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
               <small class="border-dark p-1 bg-success text-white rounded">Validator: GetLinks (Thailand) Company Limited</small> 
             <% end %>
