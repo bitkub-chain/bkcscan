@@ -11,13 +11,13 @@ pipeline {
     //registryCredential = ''
     //dockerImage = ''
   //}
-
   node {
         withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
-        remote.user = userName
-        remote.identityFile = identity
-        remote.passphrase = passPhrase
-//            stages {
+          remote.user = userName
+          remote.identityFile = identity
+          remote.passphrase = passPhrase
+	}
+            stages {
                 stage('Create Temp Config'){
                     sshCommand remote: remote, command: 'ls'
                     sshCommand remote: remote, command: 'pwd'
