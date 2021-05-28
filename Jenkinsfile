@@ -29,7 +29,6 @@ pipeline {
                 //echo ">> Making temporary Dockerfile"
                 //sh 'cp docker/Dockerfile Dockerfile'
                 }
-	      }
 	}
         stage('Build Docker image'){
 	      steps {
