@@ -20,7 +20,7 @@ node {
             sshCommand remote: remote, command: 'ls'
             sshCommand remote: remote, command: 'pwd'
             sshCommand remote: remote, command: 'echo ">> Making temporary file"'
-	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; cp docker/Dockfile ./; cp docker/stop.sh ./'
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; cp docker/Dockerfile ./; cp docker/stop.sh ./'
 	}
         stage('Build Docker image'){
             sshCommand remote: remote, command: 'echo ">> Cleaning Docker image"'
