@@ -1100,9 +1100,8 @@ defmodule Explorer.Chain do
               token.holder_count
             )
         },
-        order_by: [ fragment("CASE token.symbol WHEN 'FANS' THEN 1 WHEN 'PNFT' THEN 2 WHEN 'PPT' THEN 3 WHEN 'KKUB' THEN 4 END") , desc: token.holder_count ]
+        order_by: [fragment("CASE token.symbol WHEN 'FANS' THEN 1 WHEN 'PNFT' THEN 2 WHEN 'PPT' THEN 3 WHEN 'KKUB' THEN 4 END"),desc: token.holder_count]
       )
-      # CASE token.symbol WHEN "PPT" THEN 1 END
 
     Repo.all(query)
   end
