@@ -14,12 +14,11 @@ pipeline {
   agent any
   stages {
         stage('Create Temp Config') {
+	withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
               steps {
-	      withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
-                remote.user = userName
-                remote.identityFile = identity
-                remote.passphrase = passPhrase
-		}
+                    remote.user = userName
+                    remote.identityFile = identity
+                    remote.passphrase = passPhrase
                     sshCommand remote: remote, command: 'ls'
                     sshCommand remote: remote, command: 'pwd'
                     sshCommand remote: remote, command: 'echo ">> Making temporary file"'
@@ -30,6 +29,7 @@ pipeline {
                 //sh 'cp docker/Dockerfile Dockerfile'
                 }
 	      }
+	}
         stage('Build Docker image'){
 	      steps {
                     sshCommand remote: remote, command: 'echo ">> Building Docker image"'
@@ -37,7 +37,7 @@ pipeline {
                 //echo "$EXPLORER_IMAGE"
 
                 }
-	      }
+	}
         stage('Remove Temp Config'){
 	      steps{
                     sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
@@ -46,6 +46,6 @@ pipeline {
                 //sh 'rm Dockerfile'
 
                 }
-            }
-        }
+	}
+    }
 }
