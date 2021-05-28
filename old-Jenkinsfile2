@@ -4,7 +4,7 @@ remote.host = "47.241.216.76"
 remote.allowAnyHosts = true
 EXPLORER_IMAGE = "bkc-explorer"
 
-pipeline {
+//pipeline {
   //environment {
     //EXPLORER_IMAGE = "bkc-explorer"
     //registry = ""
@@ -43,5 +43,5 @@ pipeline {
 
                 }
             }
-        }
+//        }
 }   
