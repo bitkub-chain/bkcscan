@@ -22,7 +22,7 @@ pipeline {
   stages {
         stage('Create Temp Config') {
               steps {
-		      scripts {
+		      script {
 			      sshCommand remote: remote, command: 'ls'
 			      sshCommand remote: remote, command: 'pwd'
 			      sshCommand remote: remote, command: 'echo ">> Making temporary file"'
@@ -36,7 +36,7 @@ pipeline {
 	}
         stage('Build Docker image'){
 	      steps {
-		      scripts {
+		      script {
 			      sshCommand remote: remote, command: 'echo ">> Building Docker image"'
 		      }
                 //sh 'docker images'
@@ -46,7 +46,7 @@ pipeline {
 	}
         stage('Remove Temp Config'){
 	      steps{
-		      scripts {
+		      script {
 			      sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
                 //sh 'ls'
                 //echo ">> Removing temporary Dockerfile"
