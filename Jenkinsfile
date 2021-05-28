@@ -14,12 +14,12 @@ pipeline {
   agent any
   stages {
         stage('Create Temp Config') {
-        withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
-          remote.user = userName
-          remote.identityFile = identity
-          remote.passphrase = passPhrase
-	}
               steps {
+	      withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
+                remote.user = userName
+                remote.identityFile = identity
+                remote.passphrase = passPhrase
+		}
                     sshCommand remote: remote, command: 'ls'
                     sshCommand remote: remote, command: 'pwd'
                     sshCommand remote: remote, command: 'echo ">> Making temporary file"'
