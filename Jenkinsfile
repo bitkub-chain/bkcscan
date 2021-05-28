@@ -14,14 +14,13 @@ node {
 	stage('Clone git repository'){
 	    sshCommand remote: remote, command: 'if [ -d "jenkins" ]; then cd jenkins; else mkdir jenkins; cd jenkins; fi'
 	    sshCommand remote: remote, command: 'ls'
-	    //sshCommand remote: remote, command: 'if [ -d "bkc-explorer" ]; then cd bkc-explorer; else git clone https://github.com/bitkubchain/bkc-explorer.git -b internal_test; cd bkc-explorer; fi'
-	    sshCommand remote: remote, command: 'git status'
+	    sshCommand remote: remote, command: 'cd jenkins; if [ -d "bkc-explorer" ]; then cd bkc-explorer; else git clone https://github.com/bitkubchain/bkc-explorer.git -b internal_test; cd bkc-explorer; fi; git status'
 	}
 	stage('Create Temp Config') {
             sshCommand remote: remote, command: 'ls'
             sshCommand remote: remote, command: 'pwd'
             sshCommand remote: remote, command: 'echo ">> Making temporary file"'
-	    //sshCommand remote: remote, command: 'cp docker/Dockfile ./; cp docker/stop.sh ./'
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; cp docker/Dockfile ./; cp docker/stop.sh ./'
 	}
         stage('Build Docker image'){
             sshCommand remote: remote, command: 'echo ">> Building Docker image"'
@@ -33,9 +32,8 @@ node {
 	}
         stage('Remove Temp Config'){
             sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
-            //sshRemove remote: remote, path: "Dockerfile"
-	    //sshRemove remote: remote, path: ""
-
+            sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
+	    sshRemove remote: remote, path: "jenkins/bkc-explorer/stop.sh"
                 //sh 'ls'
                 //echo ">> Removing temporary Dockerfile"
                 //sh 'rm Dockerfile'
