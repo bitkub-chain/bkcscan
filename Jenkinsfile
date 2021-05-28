@@ -10,12 +10,17 @@ withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyF
   remote.passphrase = passPhrase
 }
 pipeline {
-  //environment {
+  environment {
+    withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
+      remote.user = userName
+      remote.identityFile = identity
+      remote.passphrase = passPhrase
+    }		
     //EXPLORER_IMAGE = "bkc-explorer"
     //registry = ""
     //registryCredential = ''
     //dockerImage = ''
-  //}
+  }
   agent any
   stages {
         stage('Create Temp Config') {
