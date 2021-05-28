@@ -14,22 +14,34 @@ node {
 	stage('Clone git repository'){
 	    sshCommand remote: remote, command: 'if [ -d "jenkins" ]; then cd jenkins; else mkdir jenkins; cd jenkins; fi'
 	    sshCommand remote: remote, command: 'ls'
-	    sshCommand remote: remote, command: 'cd jenkins; if [ -d "bkc-explorer" ]; then cd bkc-explorer; else git clone https://github.com/bitkubchain/bkc-explorer.git -b internal_test; cd bkc-explorer; fi; git status'
+	    sshCommand remote: remote, command: 'cd jenkins; if [ -d "bkc-explorer" ]; then cd bkc-explorer; git pull; else git clone https://github.com/bitkubchain/bkc-explorer.git -b internal_test; cd bkc-explorer; fi; git status'
 	}
 	stage('Create Temp Config') {
             sshCommand remote: remote, command: 'ls'
             sshCommand remote: remote, command: 'pwd'
             sshCommand remote: remote, command: 'echo ">> Making temporary file"'
-	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; cp docker/Dockfile ./; cp docker/stop.sh ./'
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; cp docker/Dockfile ./; cp docker/stop.sh ./'
 	}
         stage('Build Docker image'){
-            sshCommand remote: remote, command: 'echo ">> Building Docker image"'
+            sshCommand remote: remote, command: 'echo ">> Cleaning Docker image"'
 	    sshCommand remote: remote, command: 'docker images'
             sshCommand remote: remote, command: 'docker image prune -f'
-
+	    sshCommand remote: remote, command: 'echo ">> Building image"'
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; docker build -t bkc-explorer:v2 ./'
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
 	}
+	stage('Deploy Blockscout'){
+            sshCommand remote: remote, command: 'echo ">> Deploying Postgres"'
+            sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
+	    sshCommand remote: remote, command: 'echo ">> Deploying Blockscout"'
+	    sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
+            sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
+	    sshCommand remote: remote, command: 'docker ps'
+            sshCommand remote: remote, command: 'curl localhost:80'
+                //sh 'docker images'
+                //echo "$EXPLORER_IMAGE"
+        }
         stage('Remove Temp Config'){
             sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
             sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
