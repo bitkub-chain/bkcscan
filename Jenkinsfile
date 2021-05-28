@@ -18,6 +18,7 @@ pipeline {
           remote.user = userName
           remote.identityFile = identity
           remote.passphrase = passPhrase
+	}
               steps {
                     sshCommand remote: remote, command: 'ls'
                     sshCommand remote: remote, command: 'pwd'
@@ -47,5 +48,4 @@ pipeline {
                 }
             }
         }
-    }
 }
