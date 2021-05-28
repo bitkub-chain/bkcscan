@@ -1100,13 +1100,13 @@ defmodule Explorer.Chain do
               token.holder_count
             )
         },
-        order_by: [ fragment("(CASE ?
+        order_by: [ fragment("(case ?
         when '0x0c593479200166144c24C48F7025b9fd0CE2CE87' then 1
         when '0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7' then 2
         when '0x9C04EFD1E9aD51A605eeDcb576159242FF930368' then 3
         when '0x12a5A2f27bc1eA474518f41A829B60b945585c97' then 4
-        ELSE 5
-      END)",token.contract_address_hash), desc: token.holder_count]
+        else 5
+      end)",token.contract_address_hash), desc: token.holder_count]
       )
 
     Repo.all(query)
