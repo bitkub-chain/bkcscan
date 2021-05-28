@@ -39,14 +39,15 @@ node {
 	    //sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
             sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
 	    sshCommand remote: remote, command: 'docker ps'
-            sshCommand remote: remote, command: 'curl localhost:80'
+	    sshCommand remote: remote, command: 'for i in {1..10}; do echo \"Loop \$i \"; sleep 1; done; curl localhost:80'
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
         }
         stage('Remove Temp Config'){
             sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
-            sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
-	    sshRemove remote: remote, path: "jenkins/bkc-explorer/stop.sh"
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; rm Dockerfile stop.sh'
+            //sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
+	    //sshRemove remote: remote, path: "jenkins/bkc-explorer/stop.sh"
                 //sh 'ls'
                 //echo ">> Removing temporary Dockerfile"
                 //sh 'rm Dockerfile'
