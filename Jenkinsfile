@@ -1,4 +1,8 @@
-
+def remote = [:]
+remote.name = "bkc-explorer"
+remote.host = "47.241.216.76"
+remote.allowAnyHosts = true
+EXPLORER_IMAGE = "bkc-explorer"
 
 withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
   remote.user = userName
@@ -7,18 +11,14 @@ withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyF
 }
 
 pipeline {
-  environment {
-	  def remote = [:]
-	  remote.name = "bkc-explorer"
-	  remote.host = "47.241.216.76"
-	  remote.allowAnyHosts = true
-	  EXPLORER_IMAGE = "bkc-explorer"
+  //environment {
+	  
 		
     //EXPLORER_IMAGE = "bkc-explorer"
     //registry = ""
     //registryCredential = ''
     //dockerImage = ''
-  }
+  //}
   agent any
   stages {
         stage('Create Temp Config') {
