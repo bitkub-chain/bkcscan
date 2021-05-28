@@ -1100,7 +1100,7 @@ defmodule Explorer.Chain do
               token.holder_count
             )
         },
-        order_by: [ fragment("(CASE ? when 'KKUB' then 1 else 2 end)",token.symbol), desc: token.holder_count]
+        order_by: [desc: token.holder_count]
       )
 
     Repo.all(query)
@@ -1842,7 +1842,7 @@ defmodule Explorer.Chain do
     base_query =
       from(t in Token,
         where: t.total_supply > ^0,
-        order_by: [desc: t.holder_count, asc: t.name],
+        order_by: [fragment("(CASE ? when 'KKUB' then 1 else 2 end)",t.symbol),desc: t.holder_count, asc: t.name],
         preload: [:contract_address]
       )
 
