@@ -35,7 +35,8 @@ node {
             sshCommand remote: remote, command: 'echo ">> Deploying Postgres"'
             sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
 	    sshCommand remote: remote, command: 'echo ">> Deploying Blockscout"'
-	    sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
+	    sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer'
+	    //sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
             sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
 	    sshCommand remote: remote, command: 'docker ps'
             sshCommand remote: remote, command: 'curl localhost:80'
