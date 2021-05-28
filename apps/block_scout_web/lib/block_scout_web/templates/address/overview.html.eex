@@ -81,7 +81,7 @@
               <% end %>
             </span>
           </h1>
-          <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
+          <h3 class="address-detail-hash-title mb-0 <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
             <p><%= @address %></p>
             <% addressOfficial = to_string(@address) %>
             <% check = Enum.member?(officials, addressOfficial) %>
@@ -145,12 +145,13 @@
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
               <small class="border-dark p-1 bg-success text-white rounded">KUB: Liquidity (<i class="fas fa-lock"></i> Locked)</small> 
             <% end %>
-            
           </h3>
           <br/>
           <%= if(check) do %>
             <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Official</small> 
           <% end %> 
+          <br/>
+          <br/>
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>
               <strong class="mr-4 mb-2 text-dark" title="<%= address_name %>">
