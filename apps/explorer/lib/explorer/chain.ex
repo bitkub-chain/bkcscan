@@ -1842,9 +1842,17 @@ defmodule Explorer.Chain do
     base_query =
       from(t in Token,
         where: t.total_supply > ^0,
-        order_by: [fragment("(CASE ? when '0x0c593479200166144c24C48F7025b9fd0CE2CE87' then 1 else 2 end)", t.contract_address_hash),fragment("(CASE ? when 'KKUB' then 1 else 2 end)",t.symbol),desc: t.holder_count, asc: t.name],
+        order_by: [fragment("
+        case ?
+        when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1
+        when '10736c67BCa17aea4b2ac364Fee9A09050cFF3B7' then 2
+        when '9C04EFD1E9aD51A605eeDcb576159242FF930368' then 3
+        when '12a5A2f27bc1eA474518f41A829B60b945585c97' then 4
+        else 5
+        end",t.contract_address_hash),desc: t.holder_count, asc: t.name],
         preload: [:contract_address]
       )
+
 
     base_query_with_paging =
       base_query
