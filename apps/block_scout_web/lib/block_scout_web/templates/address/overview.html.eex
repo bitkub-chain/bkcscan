@@ -85,9 +85,6 @@
             <p><%= @address %></p>
             <% addressOfficial = to_string(@address) %>
             <% check = Enum.member?(officials, addressOfficial) %>
-            <%= if(check) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Official</small> 
-            <% end %> 
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
               <small class="border-dark p-1 bg-success text-white rounded">Validator: GetLinks (Thailand) Company Limited</small> 
             <% end %>
@@ -95,7 +92,7 @@
               <small class="border-dark p-1 bg-success text-white rounded">Validator: Ananda Development Public Company Limited</small> 
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: Saha Pattana Piboon Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded">Validator: Saha Pathanapibul Public Company Limited</small> 
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
               <small class="border-dark p-1 bg-success text-white rounded">Validator: Huawei Technologies (Thailand) Company Limited</small> 
@@ -150,6 +147,9 @@
             <% end %>
             
           </h3>
+          <%= if(check) do %>
+            <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Official</small> 
+          <% end %> 
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>
               <strong class="mr-4 mb-2 text-dark" title="<%= address_name %>">

@@ -25,7 +25,7 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
         <p class="mb-0">Validator: Ananda Development Public Company Limited</p> 
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc")) do %>
-        <p class="mb-0">Validator: Saha Pattana Piboon Public Company Limited</p> 
+        <p class="mb-0">Validator: Saha Pathanapibul Public Company Limited</p> 
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
         <p class="mb-0">Validator: Huawei Technologies (Thailand) Company Limited</p> 
