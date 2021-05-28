@@ -11,7 +11,7 @@ pipeline {
     //registryCredential = ''
     //dockerImage = ''
   //}
-  node {
+  agent any {
         withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
           remote.user = userName
           remote.identityFile = identity
