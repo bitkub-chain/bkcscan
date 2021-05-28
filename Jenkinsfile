@@ -14,8 +14,8 @@ pipeline {
   agent any
   stages {
         stage('Create Temp Config') {
-	withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
               steps {
+		withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
                     remote.user = userName
                     remote.identityFile = identity
                     remote.passphrase = passPhrase
