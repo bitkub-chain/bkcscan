@@ -22,19 +22,23 @@ pipeline {
   stages {
         stage('Create Temp Config') {
               steps {
-                    sshCommand remote: remote, command: 'ls'
-                    sshCommand remote: remote, command: 'pwd'
-                    sshCommand remote: remote, command: 'echo ">> Making temporary file"'
+		      scripts {
+			      sshCommand remote: remote, command: 'ls'
+			      sshCommand remote: remote, command: 'pwd'
+			      sshCommand remote: remote, command: 'echo ">> Making temporary file"'
                     //sshCommand remote: remote, command: 'cp docker/Dockerfile ./'
                     //sshCommand remote: remote, command: 'cp docker/stop.'
                 //sh 'ls'
                 //echo ">> Making temporary Dockerfile"
                 //sh 'cp docker/Dockerfile Dockerfile'
-                }
+		      }
+	      }
 	}
         stage('Build Docker image'){
 	      steps {
-                    sshCommand remote: remote, command: 'echo ">> Building Docker image"'
+		      scripts {
+			      sshCommand remote: remote, command: 'echo ">> Building Docker image"'
+		      }
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
 
@@ -42,10 +46,12 @@ pipeline {
 	}
         stage('Remove Temp Config'){
 	      steps{
-                    sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
+		      scripts {
+			      sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
                 //sh 'ls'
                 //echo ">> Removing temporary Dockerfile"
                 //sh 'rm Dockerfile'
+		      }
 
                 }
 	}
