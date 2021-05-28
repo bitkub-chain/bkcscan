@@ -1100,8 +1100,9 @@ defmodule Explorer.Chain do
               token.holder_count
             )
         },
-        order_by: [desc: token.holder_count]
+        order_by: [ fragment("CASE token.symbol WHEN 'FANS' THEN 1 WHEN 'PNFT' THEN 2 WHEN 'PPT' THEN 3 WHEN 'KKUB' THEN 4 END") , desc: token.holder_count ]
       )
+      # CASE token.symbol WHEN "PPT" THEN 1 END
 
     Repo.all(query)
   end
@@ -2541,7 +2542,7 @@ defmodule Explorer.Chain do
         right_join:
           missing_range in fragment(
             """
-              (SELECT distinct b1.number 
+              (SELECT distinct b1.number
               FROM generate_series((?)::integer, (?)::integer) AS b1(number)
               WHERE NOT EXISTS
                 (SELECT 1 FROM blocks b2 WHERE b2.number=b1.number AND b2.consensus))
@@ -4084,7 +4085,7 @@ defmodule Explorer.Chain do
 
   # Fetches custom metadata for bridged tokens from the node.
   # Currently, gets Balancer token composite tokens with their weights
-  # from foreign chain 
+  # from foreign chain
   defp get_bridged_token_custom_metadata(foreign_token_address_hash, json_rpc_named_arguments, foreign_json_rpc)
        when not is_nil(foreign_json_rpc) and foreign_json_rpc !== "" do
     eth_call_foreign_json_rpc_named_arguments =
