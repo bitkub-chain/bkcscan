@@ -147,6 +147,7 @@
             <% end %>
             
           </h3>
+          <br/>
           <%= if(check) do %>
             <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Official</small> 
           <% end %> 
