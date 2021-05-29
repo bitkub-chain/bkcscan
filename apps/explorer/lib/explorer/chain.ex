@@ -1842,23 +1842,20 @@ defmodule Explorer.Chain do
     base_query =
       from(t in Token,
         where: t.total_supply > ^0,
-        order_by: [fragment("case encode(t.contract_address_hash,'hex')
-        when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1
-        when '10736c67BCa17aea4b2ac364Fee9A09050cFF3B7' then 2
-        when '9C04EFD1E9aD51A605eeDcb576159242FF930368' then 3
-        when '12a5A2f27bc1eA474518f41A829B60b945585c97' then 4
-        else 5
-        end "),desc: t.holder_count, asc: t.name],
+        order_by: [fragment("case ?
+        when 'KKUB' then 1
+        else 2
+        end ",t.symbol),desc: t.holder_count, asc: t.name],
         preload: [:contract_address]
       )
 
-      # case ?
-      # when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1
-      # when '10736c67BCa17aea4b2ac364Fee9A09050cFF3B7' then 2
-      # when '9C04EFD1E9aD51A605eeDcb576159242FF930368' then 3
-      # when '12a5A2f27bc1eA474518f41A829B60b945585c97' then 4
-      # else 5
-      # end ",encode(t.contract_address_hash::bytea,'hex')),desc: t.holder_count, asc: t.name],
+      # "case encode(t.contract_address_hash,'hex')
+      #   when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1
+      #   when '10736c67BCa17aea4b2ac364Fee9A09050cFF3B7' then 2
+      #   when '9C04EFD1E9aD51A605eeDcb576159242FF930368' then 3
+      #   when '12a5A2f27bc1eA474518f41A829B60b945585c97' then 4
+      #   else 5
+      #   end ",encode(t.contract_address_hash::bytea,'hex')),desc: t.holder_count, asc: t.name],
 
     base_query_with_paging =
       base_query
