@@ -1842,7 +1842,9 @@ defmodule Explorer.Chain do
     base_query =
       from(t in Token,
         where: t.total_supply > ^0,
-        order_by: [ fragment("(case ? when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1 else 2 end)" ,"encode(t.contract_address_hash::bytea, 'hex')"),desc: t.holder_count, asc: t.name],
+        order_by: """
+        case encode(t.contract_address_hash::bytea,'hex') when '0c593479200166144c24C48F7025b9fd0CE2CE87' then 1 else 2 end
+        """,
         preload: [:contract_address]
       )
 
