@@ -57,6 +57,10 @@ defmodule BlockScoutWeb.LayoutView do
     Keyword.get(application_config(), :network) || "POA"
   end
 
+  def enable_google_analytics do
+    Keyword.get(application_config(), :enable_google_analytics)
+  end
+
   defp application_config do
     Application.get_env(:block_scout_web, BlockScoutWeb.Chain)
   end

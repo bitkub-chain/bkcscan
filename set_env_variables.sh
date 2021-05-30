@@ -9,3 +9,4 @@ export NETWORK="Testnet"
 export SUBNETWORK="Bitkub Chain"
 export BLOCK_TRANSFORMER=clique
 export DISABLE_EXCHANGE_RATES=true
+export ENABLE_GOOGLE_ANALYTICS=false
