@@ -7,6 +7,7 @@ EXPLORER_IMAGE = "bkc-explorer"
 //GIT_NAME = 
 
 node {
+    properties([pipelineTriggers([githubPush()])])
     withCredentials([sshUserPrivateKey(credentialsId: 'internal_explorer_test', keyFileVariable: 'identity', passphraseVariable: 'passPhrase', usernameVariable: 'userName')]) {
         remote.user = userName
         remote.identityFile = identity
@@ -46,6 +47,8 @@ node {
         stage('Remove Temp Config'){
             sshCommand remote: remote, command: 'echo ">> Removing temporary files"'
 	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; rm Dockerfile stop.sh'
+	    sshCommand remote: remote, command: 'docker images'
+            sshCommand remote: remote, command: 'docker image prune -f'
             //sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
 	    //sshRemove remote: remote, path: "jenkins/bkc-explorer/stop.sh"
                 //sh 'ls'
