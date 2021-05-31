@@ -227,7 +227,7 @@
       end
     %>
     <%= render_existing(@view_module, "scripts.html", assigns) %>
-    <% if assigns[enable_google_analytics()] do %>
+    <% if assigns[enable_google_analytics] do %>
       <script>
       console.log('GA enabled? : "<%= enable_google_analytics() %>"');
       </script>
