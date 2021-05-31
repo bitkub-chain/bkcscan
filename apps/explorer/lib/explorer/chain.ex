@@ -1844,15 +1844,15 @@ defmodule Explorer.Chain do
       where: t.total_supply > ^0,
       order_by: [fragment("case ?
       when decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex') then 1
-      when decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex') then 2
-      when decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex') then 3
-      when decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex') then 4
-      when decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex') then 5
-      when decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex') then 6
-      when decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex') then 7
-      when decode('0330b553823703E673787747D1930a12D7a14c94','hex') then 8
-      when decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') then 9
-      else 10
+      when decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex') then 1
+      when decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex') then 1
+      when decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex') then 1
+      when decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex') then 1
+      when decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex') then 1
+      when decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex') then 1
+      when decode('0330b553823703E673787747D1930a12D7a14c94','hex') then 1
+      when decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') then 1
+      else 2
       end ",t.contract_address_hash),desc: t.holder_count, asc: t.name],
       preload: [:contract_address]
       )
