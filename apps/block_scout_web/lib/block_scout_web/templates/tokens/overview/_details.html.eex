@@ -2,7 +2,7 @@
 <% address_hash_str = "0x" <> Base.encode16(@token.contract_address_hash.bytes, case: :lower) %>
 <% {:ok, created_from_address} = if @token.contract_address_hash, do: Chain.hash_to_address(@token.contract_address_hash), else: {:ok, nil} %>
 <% created_from_address_hash = if from_address_hash(created_from_address), do: "0x" <> Base.encode16(from_address_hash(created_from_address).bytes, case: :lower), else: nil %>
-<% officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368","0x12a5A2f27bc1eA474518f41A829B60b945585c97"]; %>
+<% officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368","0x12a5A2f27bc1eA474518f41A829B60b945585c97", "80318CAB3791E49650C8760a61196fFD2D23F6a1", "8b614b636FfDdfFaa261224d88C3Fc919a9634AE", "c6677E014D7e2F45fB44E8036C014B916C0492a1", "0330b553823703E673787747D1930a12D7a14c94", "E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"]; %>
 
 <section class="address-overview" data-page="token-details" data-page-address-hash="<%= @token.contract_address_hash %>">
   <div class="row">
@@ -25,14 +25,14 @@
             <% foreign_chain_id = if Map.has_key?(@token, :foreign_chain_id), do: @token.foreign_chain_id, else: nil %>
             <% tag = Chain.chain_id_display_name(foreign_chain_id) %>
             <%= if token_name?(@token) do %>
-            
+
                 <div class="title-with-label">
                   <%= @token.name %>
                   <% address = to_string(@token.contract_address) %>
                   <% check = Enum.member?(officials, address) %>
                   <%= if(check) do %>
-                    <small class="border-dark p-1 bg-success text-white rounded">Official</small> 
-                  <% end %> 
+                    <small class="border-dark p-1 bg-success text-white rounded">Official</small>
+                  <% end %>
                 </div>
 
                 <%= if tag !== "" do %>
@@ -102,13 +102,13 @@
               <% end %>
             </span>
             <div class="d-flex flex-row justify-content-start text-muted">
-              <span class="mr-4"> 
-                <%= if @token.type == "ERC-20" do %> 
+              <span class="mr-4">
+                <%= if @token.type == "ERC-20" do %>
                   <%= gettext "ERC-20 " %>
-                <% end %> 
-                <%= if @token.type == "ERC-721" do %> 
+                <% end %>
+                <%= if @token.type == "ERC-721" do %>
                   <%= gettext "ERC-721 " %>
-                <% end %> 
+                <% end %>
               </span>
               <span token-holder-count class="mr-4"></span>
               <span token-transfer-count class="mr-4"></span>
