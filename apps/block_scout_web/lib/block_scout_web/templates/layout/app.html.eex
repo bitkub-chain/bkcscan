@@ -227,26 +227,28 @@
       end
     %>
     <%= render_existing(@view_module, "scripts.html", assigns) %>
-    <script>
-     console.log('GA enabled? : "<%= enable_google_analytics() %>"');
-    </script>
-    <%= if enable_google_analytics do %>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src=""></script>
+    <% if assigns[enable_google_analytics()] do %>
       <script>
-        console.log("Initialize GA 1");
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());  gtag('config', 'G-ZV344QWF9E');
+      console.log('GA enabled? : "<%= enable_google_analytics() %>"');
       </script>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164129660-4"></script>
-      <script>  
-        console.log("Initialize GA 2");
-        window.dataLayer = window.dataLayer || [];  
-        function gtag(){dataLayer.push(arguments);}  
-        gtag('js', new Date());  gtag('config', 'UA-164129660-4');
-      </script>
+      <%= if enable_google_analytics do %>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=""></script>
+        <script>
+          console.log("Initialize GA 1");
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());  gtag('config', 'G-ZV344QWF9E');
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164129660-4"></script>
+        <script>  
+          console.log("Initialize GA 2");
+          window.dataLayer = window.dataLayer || [];  
+          function gtag(){dataLayer.push(arguments);}  
+          gtag('js', new Date());  gtag('config', 'UA-164129660-4');
+        </script>
+      <% end %>
     <% end %>
   </body>
 </html>
