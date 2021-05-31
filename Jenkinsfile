@@ -49,7 +49,6 @@ node {
 	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; rm Dockerfile stop.sh'
 	    sshCommand remote: remote, command: 'docker images'
             sshCommand remote: remote, command: 'docker image prune -f'
-            //test
 	    //sshRemove remote: remote, path: "jenkins/bkc-explorer/Dockerfile"
 	    //sshRemove remote: remote, path: "jenkins/bkc-explorer/stop.sh"
                 //sh 'ls'
