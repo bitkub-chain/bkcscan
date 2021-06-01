@@ -5,7 +5,10 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
 
   alias Explorer.Chain
 
-  alias Explorer.Chain.Transaction
+  alias Explorer.Chain.{
+    Address,
+    Transaction
+  }
 
 
   defp get_circulation() do
