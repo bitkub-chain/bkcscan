@@ -542,6 +542,12 @@ defmodule BlockScoutWeb.Etherscan do
     "result" => nil
   }
 
+  @circulation_getstatus_example_value_error %{
+    "status" => "0",
+    "message" => "Something went wrong",
+    "result" => nil
+  }
+
   @status_type %{
     type: "status",
     enum: ~s(["0", "1"]),
@@ -2501,6 +2507,58 @@ defmodule BlockScoutWeb.Etherscan do
     ]
   }
 
+  @circulation_status_model %{
+    name: "Circulation",
+    fields: %{
+      isError: %{
+        type: "isError",
+        enum: ~s(["0", "1"]),
+        enum_interpretation: %{"0" => "pass", "1" => "error"}
+      },
+      errDescription: %{
+        type: "string",
+        example: ~s("Somethig went wrong")
+      }
+    }
+  }
+
+  @get_circulation_action %{
+    name: "getcirculation",
+    description: "Get error status and error message. Also available through a GraphQL 'circulation' query.",
+    required_params: [
+      %{
+        key: "circulation",
+        placeholder: "circulation",
+        type: "string",
+        description: "circulation."
+      }
+    ],
+    optional_params: [],
+    responses: [
+      %{
+        code: "200",
+        description: "successful operation",
+        example_value: Jason.encode!(@circulation_getstatus_example_value_error),
+        model: %{
+          name: "Result",
+          fields: %{
+            status: @status_type,
+            message: @message_type,
+            result: %{
+              type: "model",
+              model: @circulation_status_model
+            }
+          }
+        }
+      },
+      %{
+        code: "200",
+        description: "error",
+        example_value: Jason.encode!(@circulation_getstatus_example_value_error)
+      }
+    ]
+  }
+
   @account_module %{
     name: "account",
     actions: [
@@ -2566,6 +2624,13 @@ defmodule BlockScoutWeb.Etherscan do
     ]
   }
 
+  @getcirculation_module %{
+    name: "circulation",
+    actions: [
+      @get_circulation_action,
+    ]
+  }
+
   @documentation [
     @account_module,
     @logs_module,
@@ -2573,7 +2638,8 @@ defmodule BlockScoutWeb.Etherscan do
     @stats_module,
     @block_module,
     @contract_module,
-    @transaction_module
+    @transaction_module,
+    @getcirculation_module
   ]
 
   def get_documentation do
