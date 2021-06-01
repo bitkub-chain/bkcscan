@@ -15,8 +15,8 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
   defp get_circulation() do
     query =
       from( addr in Address,
-      select: fragment("1000000000 - SUM(addr.fetched_coin_balance)"),
-      where: [fragment("t.contract_address_hash IN (
+      select: fragment("1000000000 - SUM(addr.fetched_coin_balance_block_number)"),
+      where: [ fragment("addr.hash IN (
         decode('D78A91F21B12de8793BB8616961F31BEefa97fE4','hex'),
         decode('FE28FfD8c528066bE3aE4B0D95db0478EfBA7413','hex'),
         decode('755FD36eC8F6E2eb69bCeC441bacA89855747d50','hex'),
