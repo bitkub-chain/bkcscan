@@ -3,6 +3,7 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
 
   import BlockScoutWeb.Chain, only: [paging_options: 1, next_page_params: 3, split_list_by_page: 1]
 
+  import Ecto.Query
   alias Explorer.Chain
 
   alias Explorer.Chain.{
@@ -12,11 +13,9 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
 
 
   defp get_circulation() do
-
-
     query =
-      from( a0 in Address,
-      select: fragment("1000000000 - SUM(a0.fetched_coin_balance)"),
+      from( addr in Address,
+      select: fragment("1000000000 - SUM(addr.fetched_coin_balance)"),
       where: [fragment("t.contract_address_hash IN (
         decode('D78A91F21B12de8793BB8616961F31BEefa97fE4','hex'),
         decode('FE28FfD8c528066bE3aE4B0D95db0478EfBA7413','hex'),
