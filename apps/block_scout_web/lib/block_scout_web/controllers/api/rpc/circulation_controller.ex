@@ -28,3 +28,4 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
 
     render(conn, Repo.one!(query, timeout: :infinity) || 0, %{status: true})
   end
+end
