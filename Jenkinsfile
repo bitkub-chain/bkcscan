@@ -34,13 +34,15 @@ node {
 	}
 	stage('Deploy Blockscout'){
             sshCommand remote: remote, command: 'echo ">> Deploying Postgres"'
-            sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
+	    sshCommand remote: remote, command: 'if [ "$( docker container inspect -f '{{.State.Running}}' postgres)" == "true" ]; then docker ps -a; else cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres; fi'
+            //sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
 	    sshCommand remote: remote, command: 'echo ">> Deploying Blockscout"'
-	    sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer'
+	    sshCommand remote: remote, command: 'if [ "$( docker container inspect -f '{{.State.Running}}' bkc-explorer)" == "true" ]; then docker stop bkc-explorer; docker rm bkc-explorer; else docker ps -a; fi'
+	    //sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer'
 	    //sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
             sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
 	    sshCommand remote: remote, command: 'docker ps'
-	    sshCommand remote: remote, command: 'for i in {1..10}; do echo \"Loop \$i \"; sleep 1; done; curl localhost:80'
+	    //sshCommand remote: remote, command: 'for i in {1..10}; do echo \"Loop \$i \"; sleep 1; done; curl localhost:80'
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
         }
