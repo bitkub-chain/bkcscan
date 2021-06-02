@@ -542,6 +542,12 @@ defmodule BlockScoutWeb.Etherscan do
     "result" => nil
   }
 
+  @circulation_getstatus_example_value %{
+    "status" => "1",
+    "message" => "OK",
+    "result" => 1000000000
+  }
+
   @circulation_getstatus_example_value_error %{
     "status" => "0",
     "message" => "Something went wrong",
@@ -2523,22 +2529,15 @@ defmodule BlockScoutWeb.Etherscan do
   }
 
   @get_circulation_action %{
-    name: "getcirculation",
-    description: "Get error status and error message. Also available through a GraphQL 'circulation' query.",
-    required_params: [
-      %{
-        key: "circulation",
-        placeholder: "circulation",
-        type: "string",
-        description: "circulation."
-      }
-    ],
+    name: "get_circulation",
+    description: "Get circulation.",
+    required_params: [],
     optional_params: [],
     responses: [
       %{
         code: "200",
         description: "successful operation",
-        example_value: Jason.encode!(@circulation_getstatus_example_value_error),
+        example_value: Jason.encode!(@circulation_getstatus_example_value),
         model: %{
           name: "Result",
           fields: %{
