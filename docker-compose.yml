@@ -1,0 +1,43 @@
+version: '3.6'
+services:
+  db:
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: explorer
+      POSTGRES_HOST_AUTH_METHOD: trust
+    image: 'postgres:12.5-alpine'
+    restart: always
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      MIX_ENV: dev
+      LOGO: ${LOGO}
+      ETHEREUM_JSONRPC_VARIANT: ${ETHEREUM_JSONRPC_VARIANT}
+      ETHEREUM_JSONRPC_HTTP_URL: ${ETHEREUM_JSONRPC_HTTP_URL}
+      ETHEREUM_JSONRPC_WS_URL: ${ETHEREUM_JSONRPC_WS_URL}
+      ETHEREUM_JSONRPC_TRACE_URL: ${ETHEREUM_JSONRPC_TRACE_URL}
+      BLOCKSCOUT_HOST: ${BLOCKSCOUT_HOST}
+      BLOCKSCOUT_PROTOCOL: ${BLOCKSCOUT_PROTOCOL}
+      NETWORK: ${NETWORK}
+      SUBNETWORK: ${SUBNETWORK}
+      BLOCK_TRANSFORMER: ${BLOCK_TRANSFORMER}
+      DISABLE_EXCHANGE_RATES: ${DISABLE_EXCHANGE_RATES}
+      ENABLE_GOOGLE_ANALYTICS: ${ENABLE_GOOGLE_ANALYTICS}
+      SHOW_ADDRESS_MARKETCAP_PERCENTAGE: 'false'
+    env_file:
+      - .env
+    ports:
+      - '80:80'
+    volumes:
+      - .:/opt/app
+    tty: true
+volumes:
+  pgdata:

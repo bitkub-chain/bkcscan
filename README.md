@@ -24,13 +24,18 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 - Install docker
 
 ## Step to run the explorer
-1. git clone https://gitlab.com/bitkub-chain/bkc-explorer.git
-2. switch to lemon-version-1 branch
-3. cd bkc-explorer/docker
-4. run `source set_env_variables.sh`
-5. run a command `make start` (will take many minutes to build & run)
-6. make sure explorer service is up by run `docker ps` it's will show two containers (blockscout & postgres db)
-7. try to access at url: **http://{ip-address}:4000** or **http://{domain name}**
+1. `git clone https://gitlab.com/bitkub-chain/bkc-explorer.git`
+2. `cd bkc-explorer`
+3. run `source env_mainnet.sh`
+3. run `docker-compose up -d`
+4. run `docker ps` to get ID of explorer_web container (make sure there are 2 containers, one for web and another one for database)
+5. run `docker exec -it {container-ID} bash`
+6. run `echo $$MIX_ENV && mix do ecto.create, ecto.migrate` to create tables in database
+7. `cd apps/block_scout_web`
+8. run `mix phx.gen.cert` to generate app's certification
+9. `exit`
+10. run `docker exec {container-ID} mix phx.server` this might take long
+7. try to access at url: **http://{ip-address}** or **http://{domain name}**
 
 ## License
 

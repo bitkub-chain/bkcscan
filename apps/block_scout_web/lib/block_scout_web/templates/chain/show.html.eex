@@ -131,7 +131,7 @@
           <% end %>
           <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
             <span class="dashboard-banner-network-stats-label">
-              <%= gettext "Total transactions" %>
+              <%= gettext "Hello Krit" %>
             </span>
             <div style="display: flex;">
               <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">

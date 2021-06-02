@@ -1,0 +1,90 @@
+2021-06-02T09:10:14.095 application=explorer [debug] Updating cached known tokens
+2021-06-02T09:11:14.381 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.423 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.424 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.428 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.454 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.455 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.475 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.475 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.484 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:11:14.487 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:27:32.769 application=explorer [debug] Updating cached known tokens
+2021-06-02T09:28:33.168 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.214 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.316 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.327 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.382 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.398 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.412 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.426 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.439 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T09:28:33.497 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:14:14.386 application=explorer [debug] Updating cached known tokens
+2021-06-02T10:15:14.652 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.671 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.672 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.679 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.691 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.711 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.712 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:14.997 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:15.008 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:15:15.027 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:16:14.386 application=explorer [debug] Importing genesis data
+2021-06-02T10:16:14.387 application=explorer [warn] Failed to fetch genesis data. Chain spec path is not set.
+2021-06-02T10:27:44.399 application=explorer [debug] Updating cached known tokens
+2021-06-02T10:28:45.437 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.451 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.463 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.482 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.495 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.511 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.528 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.543 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.557 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:28:45.572 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:29:44.401 application=explorer [debug] Importing genesis data
+2021-06-02T10:29:44.401 application=explorer [warn] Failed to fetch genesis data. Chain spec path is not set.
+2021-06-02T10:38:46.013 application=explorer [debug] Updating cached known tokens
+2021-06-02T10:39:46.305 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.311 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.327 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.337 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.347 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.361 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.380 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.395 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.405 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:39:46.419 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:40:46.010 application=explorer [debug] Importing genesis data
+2021-06-02T10:40:46.010 application=explorer [warn] Failed to fetch genesis data. Chain spec path is not set.
+2021-06-02T10:41:46.685 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:41:46.698 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:41:46.713 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:41:46.726 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:41:46.737 application=explorer fetcher=token_instances [debug] Unknown metadata format %{"c87b56dd" => {:error, "timeout"}}.
+2021-06-02T10:44:46.561 application=explorer count=51 import_id=3331 transaction_id=3363 [debug] transaction_time=0.1ms
+2021-06-02T10:44:46.561 application=explorer count=51 import_id=3331 transaction_id=3395 [debug] transaction_time=0.0ms
+2021-06-02T10:44:46.562 application=explorer count=51 import_id=3331 transaction_id=3427 [debug] transaction_time=0.0ms
+2021-06-02T10:44:46.562 application=explorer count=51 import_id=3331 transaction_id=3459 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=2658 transaction_id=2690 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=3555 transaction_id=3587 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=3555 transaction_id=3619 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=2658 transaction_id=2722 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=2658 transaction_id=2754 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=3555 transaction_id=3651 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=2658 transaction_id=2786 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.641 application=explorer count=100 import_id=3555 transaction_id=3683 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.645 application=explorer count=100 import_id=3715 transaction_id=3747 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.645 application=explorer count=100 import_id=3715 transaction_id=3779 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.645 application=explorer count=100 import_id=3715 transaction_id=3811 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.645 application=explorer count=100 import_id=3715 transaction_id=3843 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.660 application=explorer count=100 import_id=3875 transaction_id=3907 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.660 application=explorer count=100 import_id=3875 transaction_id=3939 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.660 application=explorer count=100 import_id=3875 transaction_id=3971 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.661 application=explorer count=100 import_id=3875 transaction_id=4003 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.674 application=explorer count=100 import_id=4035 transaction_id=4067 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.675 application=explorer count=100 import_id=4035 transaction_id=4099 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.675 application=explorer count=100 import_id=4035 transaction_id=4131 [debug] transaction_time=0.0ms
+2021-06-02T10:45:46.675 application=explorer count=100 import_id=4035 transaction_id=4163 [debug] transaction_time=0.0ms

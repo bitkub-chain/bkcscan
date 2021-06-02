@@ -1,1 +1,5 @@
 /apps/block_scout_web/assets/node_modules
+/deps
+/_build
+/.cache
+.env
