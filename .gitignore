@@ -1,5 +1,7 @@
 /apps/block_scout_web/assets/node_modules
-/deps
+/apps/block_scout_web/priv/cert
 /_build
 /.cache
+/deps
+/logs
 .env
