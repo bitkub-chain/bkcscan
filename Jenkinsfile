@@ -40,7 +40,7 @@ node {
 	    //sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
             //sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
 	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker/scripts; ./mainnet.sh'
-	    sshCommand remote: remote, command: 'docker ps'
+	    sshCommand remote: remote, command: 'docker ps -a'
 	    //sshCommand remote: remote, command: 'for i in {1..10}; do echo \"Loop \$i \"; sleep 1; done; curl localhost:80'
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
