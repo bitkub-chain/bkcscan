@@ -120,10 +120,10 @@ defmodule BlockScoutWeb.Chain do
     end
   end
 
-  def paging_options(%{"holder_count" => holder_count, "name" => token_name}) do
+  def paging_options(%{"holder_count" => holder_count, "name" => token_name, "addr" => contract_address}) do
     case Integer.parse(holder_count) do
       {holder_count, ""} ->
-        [paging_options: %{@default_paging_options | key: {holder_count, token_name}}]
+        [paging_options: %{@default_paging_options | key: {holder_count, token_name, contract_address}}]
 
       _ ->
         [paging_options: @default_paging_options]
@@ -228,12 +228,12 @@ defmodule BlockScoutWeb.Chain do
     %{"hash" => hash, "fetched_coin_balance" => Decimal.to_string(fetched_coin_balance.value)}
   end
 
-  defp paging_params(%Token{holder_count: holder_count, name: token_name}) do
-    %{"holder_count" => holder_count, "name" => token_name}
+  defp paging_params(%Token{holder_count: holder_count, name: token_name, contract_address: contract_address}) do
+    %{"holder_count" => holder_count, "name" => token_name, "addr" => contract_address}
   end
 
-  defp paging_params([%Token{holder_count: holder_count, name: token_name}, _]) do
-    %{"holder_count" => holder_count, "name" => token_name}
+  defp paging_params([%Token{holder_count: holder_count, name: token_name, contract_address: contract_address}, _]) do
+    %{"holder_count" => holder_count, "name" => token_name, "addr" => contract_address}
   end
 
   defp paging_params({%Reward{block: %{number: number}}, _}) do
