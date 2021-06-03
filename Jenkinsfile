@@ -33,12 +33,10 @@ node {
                 //echo "$EXPLORER_IMAGE"
 	}
 	stage('Deploy Blockscout'){
-            //sshCommand remote: remote, command: 'echo ">> Deploying Postgres"'
-            //sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
-	    sshCommand remote: remote, command: 'echo ">> Removing old running containers except postgres DB ..."'
-	    sshCommand remote: remote, command: 'docker stop $(docker ps -a | grep -v "postgres" | awk 'NR>1 {print $1}')'
+            sshCommand remote: remote, command: 'echo ">> Deploying Postgres"'
+            sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local postgres'
 	    sshCommand remote: remote, command: 'echo ">> Deploying Blockscout"'
-	    //sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer'
+	    sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer'
 	    //sshScript remote: remote, script: "jenkins/bkc-explorer/stop.sh"
             sshCommand remote: remote, command: 'cd jenkins/bkc-explorer/docker; make -f Makefile.local start'
 	    sshCommand remote: remote, command: 'docker ps'
