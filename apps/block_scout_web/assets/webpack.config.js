@@ -96,7 +96,8 @@ const appJs =
       'try-eth-api': './js/lib/try_eth_api.js',
       'async-listing-load': './js/lib/async_listing_load',
       'non-critical': './css/non-critical.scss',
-      'tokens': './js/pages/token/search.js'
+      'tokens': './js/pages/token/search.js',
+      'page-not-found': './js/pages/page_not_found.js'
     },
     output: {
       filename: '[name].js',
