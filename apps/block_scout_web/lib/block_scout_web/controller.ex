@@ -13,7 +13,7 @@ defmodule BlockScoutWeb.Controller do
     conn
     |> put_status(:not_found)
     |> put_view(BlockScoutWeb.PageNotFoundView)
-    |> render(:index, token: nil, is_not_found:true)
+    |> render(:index, token: nil, is_not_found: true)
     |> halt()
   end
 
