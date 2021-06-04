@@ -1,7 +1,11 @@
 /apps/block_scout_web/assets/node_modules
 /apps/block_scout_web/priv/cert
+/apps/block_scout_web/priv/static
+/apps/explorer/node_modules
 /_build
 /.cache
 /deps
 /logs
 .env
+.ash_history
+.tool-versions
