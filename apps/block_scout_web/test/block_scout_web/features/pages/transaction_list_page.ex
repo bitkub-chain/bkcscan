@@ -12,7 +12,7 @@ defmodule BlockScoutWeb.TransactionListPage do
   end
 
   def contract_creation(%Transaction{hash: hash}) do
-    css("[data-identifier-hash='#{hash}'] [data-test='transaction_type']", text: gettext("Contract Creation"))
+    css("[data-identifier-hash='#{hash}'] [data-test='transaction_type']", text: "Contract Creation")
   end
 
   def transaction(%Transaction{hash: transaction_hash}) do

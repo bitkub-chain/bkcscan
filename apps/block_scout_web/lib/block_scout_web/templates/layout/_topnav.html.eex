@@ -14,7 +14,7 @@
       <%= if logo_text() do %>
         <span class="logo-text"> <%= logo_text() %> </span>
       <% end %>
-    <% end %>
+    <% end %>   
     <script>
       if (localStorage.getItem("current-color-mode") === "dark") {
         document.getElementById("navbar-logo").style.filter = "brightness(0) invert(1)";
@@ -86,7 +86,7 @@
                 </span>
                 <%= gettext("Tokens") %>
               </a>
-              <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+              <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown"> 
                 <%= link(
                       gettext("All"),
                       class: "dropdown-item #{tab_status("tokens", @conn.request_path)}",
@@ -123,7 +123,7 @@
               </span>
               <%= gettext("APIs") %>
             </a>
-            <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+            <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown"> 
               <%= link(
                     gettext("GraphQL"),
                     class: "dropdown-item #{tab_status("graphiql", @conn.request_path)}",
@@ -162,7 +162,7 @@
                 </a>
               <% end %>
               <%= if Application.get_env(:block_scout_web, :apps_menu) == true do %>
-                <%= for %{url: url, title: title} <- external_apps_list() do %>
+                <%= for %{url: url, title: title} <- external_apps_list() do %> 
                     <a href="<%= url%>" class="dropdown-item" target="_blank"><%= title %>
                       <span class="external-link-icon">
                         <%= render BlockScoutWeb.IconsView, "_external_link.html" %>
@@ -180,11 +180,11 @@
             </span>
             <%= subnetwork_title() %>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item header division"><%= gettext "Mainnets" %></a>
-              <a class="dropdown-item" href="https://bkcscan.com">Bitkub Chain Mainnet</a>
-            <a class="dropdown-item header division"><%= gettext "Testnets" %></a>
-              <a class="dropdown-item" href="https://testnet.bkcscan.com">Bitkub Chain Testnet</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">  
+            <a class="dropdown-item header division">Mainnets</a>  
+              <a class="dropdown-item" href="https://bkcscan.com">Bitkub Chain Mainnet</a>  
+            <a class="dropdown-item header division">Testnets</a> 
+              <a class="dropdown-item" href="https://testnet.bkcscan.com">Bitkub Chain Testnet</a>  
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -192,8 +192,8 @@
               <p class="text-capitalize mb-0"><%= Gettext.get_locale(BlockScoutWeb.Gettext) %></p>
           </a>
           <div class="dropdown-menu" aria-labeledby="navbarLanguageDropdown">
-              <a class="dropdown-item" href="?locale=en">En </a>
-              <a class="dropdown-item" href="?locale=th">Th </a>
+              <%= switch_locale_path :en, "En" %>
+              <%= switch_locale_path :th, "Th" %>
           </div>
         </li>
       </ul>
@@ -211,7 +211,7 @@
                 <%= awesomplete(f, :q,
                     [
                     class: "form-control me auto",
-                    placeholder: gettext("Search transaction hash, block number, token symbol or name"),
+                    placeholder: gettext("Search by address, token symbol, name, transaction hash, or block number"),
                     "aria-describedby": "search-icon",
                     "aria-label": gettext("Search"),
                     "data-test": "search_input"
@@ -275,4 +275,4 @@
     let modeChanger = document.getElementById("dark-mode-changer");
     modeChanger.className += " " + "dark-mode-changer--dark";
   }
-</script>
+</script> 
