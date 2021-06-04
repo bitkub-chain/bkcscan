@@ -52,7 +52,7 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
       balance("52cB901D945B7499f1457d36b882a59cDe9664D5")
     ]
 
-    total_circulation = Enum.sum(all_addr)
+    total_circulation = 1000000000 - Enum.sum(all_addr)
 
 
     render(conn, "get_circulation.json", result: total_circulation)
