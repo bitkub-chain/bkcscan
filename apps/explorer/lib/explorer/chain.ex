@@ -1839,13 +1839,10 @@ defmodule Explorer.Chain do
   end
 
   defp fetch_top_tokens(filter, paging_options) do
+
     base_query =
       from(t in Token,
       where: t.total_supply > ^0,
-      order_by: [fragment("case when ? in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )
-      then 1
-      else 2
-      end ",t.contract_address_hash),desc: t.holder_count, asc: t.name, asc: t.contract_address_hash],
       preload: [:contract_address]
       )
 
@@ -3561,28 +3558,44 @@ defmodule Explorer.Chain do
     )
   end
 
-  defp page_tokens(query, %PagingOptions{key: nil}), do: query
+  defp page_tokens(query, %PagingOptions{key: nil}) do
+    from(token in query,
+    order_by: [fragment("case when ? in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )
+    then 1
+    else 2
+    end ",token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+    )
+  end
 
   defp page_tokens(query, %PagingOptions{key: {holder_count, token_name, contract_address}}) do
-
-    new_query =
-      from(token in query,
-      where:
-      ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex') ", token.contract_address_hash, ^contract_address ) or
+    if Enum.member?(Enum.map( ["10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","9C04EFD1E9aD51A605eeDcb576159242FF930368","0c593479200166144c24C48F7025b9fd0CE2CE87","12a5A2f27bc1eA474518f41A829B60b945585c97","80318CAB3791E49650C8760a61196fFD2D23F6a1","8b614b636FfDdfFaa261224d88C3Fc919a9634AE","c6677E014D7e2F45fB44E8036C014B916C0492a1","0330b553823703E673787747D1930a12D7a14c94","E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"], fn addr -> String.downcase(addr) end), String.downcase(String.slice(contract_address,2..-1)) ) do
+      ordered =
+        from(token in query,
+        order_by: [fragment("case when ? in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )
+        then 1
+        else 2
+        end ",token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+        )
+      from(token in ordered,
+      where: ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex')",token.contract_address_hash,^contract_address) ) or
         (token.holder_count == ^holder_count and token.name > ^token_name) or
           token.holder_count < ^holder_count
       )
-    )
-
-    if Enum.member?(Enum.map( ["10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","9C04EFD1E9aD51A605eeDcb576159242FF930368","0c593479200166144c24C48F7025b9fd0CE2CE87","12a5A2f27bc1eA474518f41A829B60b945585c97","80318CAB3791E49650C8760a61196fFD2D23F6a1","8b614b636FfDdfFaa261224d88C3Fc919a9634AE","c6677E014D7e2F45fB44E8036C014B916C0492a1","0330b553823703E673787747D1930a12D7a14c94","E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"], fn addr -> String.downcase(addr) end), String.downcase(String.slice(contract_address,2..-1)) ) do
-      new_query
     else
-      from(token in new_query,
+      filtered =
+        from(token in query,
         where: fragment("? not in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )", token.contract_address_hash)
-
+        )
+      ordered =
+        from(token in filtered,
+        order_by: [desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+      )
+      from(token in ordered,
+      where: ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex')",token.contract_address_hash,^contract_address) ) or
+        (token.holder_count == ^holder_count and token.name > ^token_name) or
+          token.holder_count < ^holder_count
       )
     end
-
   end
 
   defp page_blocks(query, %PagingOptions{key: nil}), do: query
