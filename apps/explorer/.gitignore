@@ -1,2 +1,3 @@
 priv/.recovery
 priv/solc_compilers/
+node_modules
