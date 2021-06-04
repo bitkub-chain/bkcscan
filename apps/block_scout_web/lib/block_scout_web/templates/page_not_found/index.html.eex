@@ -1,6 +1,6 @@
 <section class="container">
-  <div class="page-not-found">
-    <div class="balloon-container">
+  <div class="page-not-found mb-5">
+    <div class="balloon-container mt-0">
       <div class="span">
         <div class="inner">
           <div class="balloon-svg">

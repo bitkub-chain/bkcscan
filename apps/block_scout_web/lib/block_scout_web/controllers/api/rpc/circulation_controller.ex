@@ -43,17 +43,18 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
     # result_circulation = Repo.one!(query, timeout: :infinity) || 0
 
     all_addr = [
-      balance("D78A91F21B12de8793BB8616961F31BEefa97fE4"),
-      balance("FE28FfD8c528066bE3aE4B0D95db0478EfBA7413"),
-      balance("755FD36eC8F6E2eb69bCeC441bacA89855747d50"),
-      balance("c9760469d7635916D20329e4bac99ffBBFD38DF4"),
-      balance("6DfBA1364e9627b863c6188a6545000e675E5898"),
-      balance("c6422b55db8b3288a1f8316bc07375948e08082f"),
-      balance("52cB901D945B7499f1457d36b882a59cDe9664D5")
+      balance("0xD78A91F21B12de8793BB8616961F31BEefa97fE4"),
+      balance("0xFE28FfD8c528066bE3aE4B0D95db0478EfBA7413"),
+      balance("0x755FD36eC8F6E2eb69bCeC441bacA89855747d50"),
+      balance("0xc9760469d7635916D20329e4bac99ffBBFD38DF4"),
+      balance("0x6DfBA1364e9627b863c6188a6545000e675E5898"),
+      balance("0xc6422b55db8b3288a1f8316bc07375948e08082f"),
+      balance("0x52cB901D945B7499f1457d36b882a59cDe9664D5")
     ]
 
-    total_circulation = Enum.sum(all_addr)
+    maximumcap = 1000000000
 
+    total_circulation = maximumcap - Enum.sum(all_addr)
 
     render(conn, "get_circulation.json", result: total_circulation)
 
