@@ -1,4 +1,6 @@
 $error-tablet-breakpoint: 768px;
+$min-tablet: 769px;
+$min-mobile: 376px;
 
 // Block Not Found
 
@@ -134,4 +136,61 @@ $error-tablet-breakpoint: 768px;
 	font-size: 14px;
 	text-align: center;
 	line-height: 32px;
+}
+
+.page-not-found {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	.balloon-container {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin: 3rem 0rem;
+		.span {
+			grid-column: 2 / span 10;
+			@media (min-width: $min-mobile) {
+				grid-column: 3 / span 8;
+			}
+			@media (min-width: $min-tablet) {
+				grid-column: 4 / span 6;
+			}
+			.inner {
+				display: grid;
+				grid-template-columns: repeat(12, 1fr);
+				.balloon-svg {
+					grid-column: 2 / span 10;
+					margin-top: 1rem;
+					@media (min-width: $min-mobile) {
+						grid-column: 1 / span 12;
+						margin-top : 3rem;
+					}
+					@media (min-width: $min-tablet) {
+						margin-top : 0rem;
+					}
+				}
+			}
+		}
+	}
+	.title {
+		font-weight: bold;
+	}
+	.back-home {
+		display: flex;
+		flex-direction: row;
+		margin-top: 1rem;
+		width: fit-content;
+		align-items: center;
+		align-self: center;
+		#hidden_arrow {
+			transform: rotate(270deg);
+		}
+		#back_home_txt {
+			color: #00E967;
+			font-size: 1.2rem;
+		}
+		#not_found_arrow {
+			filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+      		transform:rotate(90deg);
+		}
+	}
 }
