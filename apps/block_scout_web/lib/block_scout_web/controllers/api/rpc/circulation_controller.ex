@@ -56,7 +56,6 @@ defmodule BlockScoutWeb.API.RPC.Circulation do
 
     total_circulation = maximumcap - Enum.sum(all_addr)
 
-
     render(conn, "get_circulation.json", result: total_circulation)
 
   end
