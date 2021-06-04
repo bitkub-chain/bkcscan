@@ -4,8 +4,6 @@ defmodule BlockScoutWeb.API.RPC.CirculationView do
   alias BlockScoutWeb.API.RPC.RPCView
 
   def render("get_circulation.json", %{result: result}) do
-
-
     RPCView.render("show.json", data: result)
   end
 
