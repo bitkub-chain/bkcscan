@@ -28,7 +28,7 @@ node {
 	    sshCommand remote: remote, command: 'docker images'
             sshCommand remote: remote, command: 'docker image prune -f'
 	    sshCommand remote: remote, command: 'echo ">> Building image"'
-	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; docker build -t bkc-explorer:v2 ./'
+	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; docker build -t bkc-explorer ./'
                 //sh 'docker images'
                 //echo "$EXPLORER_IMAGE"
 	}
