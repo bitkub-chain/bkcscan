@@ -95,6 +95,13 @@ defmodule Explorer.Chain do
   # keccak256("Error(string)")
   @revert_error_method_id "08c379a0"
 
+  #official token addresses to be used in filterings
+  @officials_raw ["10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","9C04EFD1E9aD51A605eeDcb576159242FF930368","0c593479200166144c24C48F7025b9fd0CE2CE87","12a5A2f27bc1eA474518f41A829B60b945585c97","80318CAB3791E49650C8760a61196fFD2D23F6a1","8b614b636FfDdfFaa261224d88C3Fc919a9634AE","c6677E014D7e2F45fB44E8036C014B916C0492a1","0330b553823703E673787747D1930a12D7a14c94","E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"]
+  @officials Enum.map( @officials_raw, fn addr -> String.downcase(addr) end)
+  @officials_pgsql_decoded "( "<>Enum.join( Enum.map(@officials, fn addr -> "decode('"<>addr<>"','hex')" end), ", " )<>" )"
+  @officials_order "case when ? in #{@officials_pgsql_decoded} then 1 else 2 end"
+  @officials_excluded "? not in #{@officials_pgsql_decoded}"
+
   @typedoc """
   The name of an association on the `t:Ecto.Schema.t/0`
   """
@@ -1854,8 +1861,12 @@ defmodule Explorer.Chain do
       #   else 5
       #   end ",encode(t.contract_address_hash::bytea,'hex')),desc: t.holder_count, asc: t.name],
 
-    base_query_with_paging =
+    base_query_officials =
       base_query
+      |> officials_filter(paging_options)
+
+    base_query_with_paging =
+      base_query_officials
       |> page_tokens(paging_options)
       |> limit(^paging_options.page_size)
 
@@ -1869,6 +1880,28 @@ defmodule Explorer.Chain do
 
     query
     |> Repo.all()
+  end
+
+  defp officials_filter(query,%PagingOptions{key: nil}) do
+    from(token in query,
+    order_by: [fragment(@officials_order,token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+    )
+  end
+
+  defp officials_filter(query,%PagingOptions{key: {_holder_count, _token_name, contract_address}}) do
+    if Enum.member?(@officials, String.downcase(String.slice(contract_address,2..-1)) ) do
+      from(token in query,
+        order_by: [fragment(@officials_order,token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+        )
+    else
+      filtered =
+        from(token in query,
+        where: fragment(@officials_excluded, token.contract_address_hash)
+        )
+      from(token in filtered,
+        order_by: [desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
+      )
+    end
   end
 
   defp fetch_top_bridged_tokens(destination, paging_options, filter) do
@@ -3558,44 +3591,14 @@ defmodule Explorer.Chain do
     )
   end
 
-  defp page_tokens(query, %PagingOptions{key: nil}) do
-    from(token in query,
-    order_by: [fragment("case when ? in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )
-    then 1
-    else 2
-    end ",token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
-    )
-  end
+  defp page_tokens(query, %PagingOptions{key: nil}), do: query
 
   defp page_tokens(query, %PagingOptions{key: {holder_count, token_name, contract_address}}) do
-    if Enum.member?(Enum.map( ["10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","9C04EFD1E9aD51A605eeDcb576159242FF930368","0c593479200166144c24C48F7025b9fd0CE2CE87","12a5A2f27bc1eA474518f41A829B60b945585c97","80318CAB3791E49650C8760a61196fFD2D23F6a1","8b614b636FfDdfFaa261224d88C3Fc919a9634AE","c6677E014D7e2F45fB44E8036C014B916C0492a1","0330b553823703E673787747D1930a12D7a14c94","E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"], fn addr -> String.downcase(addr) end), String.downcase(String.slice(contract_address,2..-1)) ) do
-      ordered =
-        from(token in query,
-        order_by: [fragment("case when ? in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )
-        then 1
-        else 2
-        end ",token.contract_address_hash),desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
-        )
-      from(token in ordered,
-      where: ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex')",token.contract_address_hash,^contract_address) ) or
-        (token.holder_count == ^holder_count and token.name > ^token_name) or
-          token.holder_count < ^holder_count
-      )
-    else
-      filtered =
-        from(token in query,
-        where: fragment("? not in ( decode('10736c67BCa17aea4b2ac364Fee9A09050cFF3B7','hex'), decode('9C04EFD1E9aD51A605eeDcb576159242FF930368','hex'), decode('0c593479200166144c24C48F7025b9fd0CE2CE87','hex'), decode('12a5A2f27bc1eA474518f41A829B60b945585c97','hex'), decode('80318CAB3791E49650C8760a61196fFD2D23F6a1','hex'), decode('8b614b636FfDdfFaa261224d88C3Fc919a9634AE','hex'), decode('c6677E014D7e2F45fB44E8036C014B916C0492a1','hex'), decode('0330b553823703E673787747D1930a12D7a14c94','hex'), decode('E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2','hex') )", token.contract_address_hash)
-        )
-      ordered =
-        from(token in filtered,
-        order_by: [desc: token.holder_count, asc: token.name, asc: token.contract_address_hash]
-      )
-      from(token in ordered,
-      where: ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex')",token.contract_address_hash,^contract_address) ) or
-        (token.holder_count == ^holder_count and token.name > ^token_name) or
-          token.holder_count < ^holder_count
-      )
-    end
+    from(token in query,
+    where: ( token.holder_count == ^holder_count and token.name == ^token_name and fragment(" ? > decode(substring(?,3),'hex')",token.contract_address_hash,^contract_address) ) or
+      (token.holder_count == ^holder_count and token.name > ^token_name) or
+        token.holder_count < ^holder_count
+    )
   end
 
   defp page_blocks(query, %PagingOptions{key: nil}), do: query
