@@ -96,11 +96,17 @@ defmodule Explorer.Chain do
   @revert_error_method_id "08c379a0"
 
   #official token addresses to be used in filterings
+
   @officials_raw ["10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","9C04EFD1E9aD51A605eeDcb576159242FF930368","0c593479200166144c24C48F7025b9fd0CE2CE87","12a5A2f27bc1eA474518f41A829B60b945585c97","80318CAB3791E49650C8760a61196fFD2D23F6a1","8b614b636FfDdfFaa261224d88C3Fc919a9634AE","c6677E014D7e2F45fB44E8036C014B916C0492a1","0330b553823703E673787747D1930a12D7a14c94","E06B321eF826eaB4D242b1e40d4a51b8dCDF61B2"]
+  # eg ["Ab1","CD2","dF3"]
   @officials Enum.map( @officials_raw, fn addr -> String.downcase(addr) end)
+  # eg ["ab1","cd2","ef3"]
   @officials_pgsql_decoded "( "<>Enum.join( Enum.map(@officials, fn addr -> "decode('"<>addr<>"','hex')" end), ", " )<>" )"
+  # eg "( decode('ab1,'hex'), decode('cd2,'hex'), decode('ef3,'hex') )"
   @officials_order "case when ? in #{@officials_pgsql_decoded} then 1 else 2 end"
+  # eg "case when ? in ( decode('ab1,'hex'), decode('cd2,'hex'), decode('ef3,'hex') ) then 1 else 2 end"
   @officials_excluded "? not in #{@officials_pgsql_decoded}"
+  # eg "? not in ( decode('ab1,'hex'), decode('cd2,'hex'), decode('ef3,'hex') )"
 
   @typedoc """
   The name of an association on the `t:Ecto.Schema.t/0`

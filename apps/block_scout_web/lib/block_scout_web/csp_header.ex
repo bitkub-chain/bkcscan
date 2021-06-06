@@ -11,9 +11,9 @@ defmodule BlockScoutWeb.CSPHeader do
   def call(conn, _opts) do
     Controller.put_secure_browser_headers(conn, %{
       "content-security-policy" => "\
-        connect-src 'self' #{websocket_endpoints(conn)}; \
-        default-src 'self';\
-        script-src 'self' 'unsafe-inline' 'unsafe-eval';\
+        connect-src 'self' #{websocket_endpoints(conn)} *.googletagmanager.com *.google-analytics.com; \
+        default-src 'self' ;\
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com https://www.googletagmanager.com/gtag/js https://www.google-analytics.com/analytics.js ;\
         style-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com;\
         img-src 'self' * data:;\
         media-src 'self' * data:;\

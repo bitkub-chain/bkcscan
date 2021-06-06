@@ -234,7 +234,7 @@
     </script>
     <%= if enable_google_analytics() do %>
       <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src=""></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV344QWF9E"></script>
       <script>
         console.log("Initialize GA 1");
         window.dataLayer = window.dataLayer || [];
