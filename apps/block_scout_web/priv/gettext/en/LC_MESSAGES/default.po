@@ -45,8 +45,10 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/block/overview.html.eex:20
 #: lib/block_scout_web/templates/chain/_block.html.eex:11
-msgid "%{count} Transactions"
-msgstr ""
+msgid "%{count} Transaction"
+msgid_plural "%{count} Transactions"
+msgstr[0] ""
+msgstr[1] ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:2
@@ -601,7 +603,7 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:124
 #: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Miner"
-msgstr "Validator"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:35
@@ -1033,7 +1035,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:22
 msgid "Mainnet"
-msgstr "Bitkub"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:63
@@ -1954,7 +1956,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:213
 msgid "Search by address, token symbol, name, transaction hash, or block number"
-msgstr "Search transaction hash, block number, token symbol or name"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex
+msgid "Search transaction hash, block number, token symbol or name"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:7
@@ -2595,7 +2602,8 @@ msgstr ""
 #, elixir-format
 #:
 #: lib/block_scout_web/templates/stakes/_stakes_modal_delegators_list.html.eex:15
-msgid "validator"
+#: lib/block_scout_web/templates/chain/_block.html.eex:15
+msgid "Validator"
 msgstr ""
 
 #, elixir-format
@@ -2701,3 +2709,77 @@ msgstr ""
 #: lib/block_scout_web/templates/stakes/_stakes_top.html.eex:33
 msgid "Swap STAKE"
 msgstr ""
+
+msgid "seconds"
+msgstr ""
+
+msgid "Total gas used"
+msgstr ""
+
+msgid "in %{count} second"
+msgid_plural "in %{count} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "in a few seconds"
+msgstr ""
+
+msgid "a few seconds ago"
+msgstr ""
+
+msgid "%{count} second ago"
+msgid_plural "%{count} seconds ago"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "View all Blocks"
+msgstr ""
+
+msgid "Transfer"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Approve"
+msgstr ""
+
+msgid "Bid"
+msgstr ""
+
+msgid "KYCBitkubChain (%{address})"
+msgstr ""
+
+msgid "%{count} KUB"
+msgstr ""
+
+msgid "%{count} TX Fee"
+msgstr ""
+
+msgid "Block %{blocknum}"
+msgstr ""
+
+msgid "minute ago"
+msgid_plural "minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "View all Transactions"
+msgstr ""
+
+msgid "Mainnets"
+msgstr ""
+
+msgid "Bitkub chain Mainnet"
+msgstr ""
+
+msgid "Testnets"
+msgstr ""
+
+msgid "Bitkub chain Testnet"
+msgstr ""
+
+msgid "%{count} second"
+msgid_plural "%{count} seconds"
+msgstr[0] ""
+msgstr[1] ""

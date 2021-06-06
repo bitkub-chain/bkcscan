@@ -66,7 +66,7 @@ config :block_scout_web, BlockScoutWeb.Tracer,
   trace_key: :blockscout
 
 # Configures gettext
-config :block_scout_web, BlockScoutWeb.Gettext, locales: ~w(en), default_locale: "en"
+config :block_scout_web, locales: ~w(en th), default_locale: "th"
 
 config :block_scout_web, BlockScoutWeb.SocialMedia,
   twitter: "BitkubChain",
@@ -101,7 +101,7 @@ config :block_scout_web, BlockScoutWeb.Chain.Address.CoinBalance,
   coin_balance_history_days: System.get_env("COIN_BALANCE_HISTORY_DAYS", "10")
 
 config :ex_cldr,
-  default_locale: "en",
+  default_locale: "th",
   default_backend: BlockScoutWeb.Cldr
 
 config :logger, :block_scout_web,
