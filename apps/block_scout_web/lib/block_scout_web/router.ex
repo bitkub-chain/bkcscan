@@ -16,7 +16,7 @@ defmodule BlockScoutWeb.Router do
     plug(:fetch_flash)
     plug(:protect_from_forgery)
     plug(BlockScoutWeb.CSPHeader)
-    plug(BlockScoutWeb.Plugs.Locale, "en")
+    plug(BlockScoutWeb.Plugs.Locale, "th")
 
   end
 

@@ -121,7 +121,6 @@
               <%= nil %>
             <% average_block_time -> %>
               <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
-                <%Gettext.put_locale("th")%>
                 <span class="dashboard-banner-network-stats-label">
                   <%= gettext "Average block time" %>
                 </span>
