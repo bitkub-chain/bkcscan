@@ -9,8 +9,8 @@ msgstr[1] ""
 #: lib/block_scout_web/templates/block/_tile.html.eex:27
 msgid "%{count} transaction"
 msgid_plural "%{count} transactions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} การทำธุรกรรม"
+msgstr[1] "%{count} การทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:220
@@ -47,8 +47,8 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:11
 msgid "%{count} Transaction"
 msgid_plural "%{count} Transactions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} การทำธุรกรรม"
+msgstr[1] "%{count} การทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:2
@@ -58,7 +58,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_default_title.html.eex:2
 msgid "%{subnetwork} Explorer - BlockScout"
-msgstr ""
+msgstr "%{subnetwork} Explorer"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
@@ -106,7 +106,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_metatags.html.eex:2
 msgid "API for the %{subnetwork} - BlockScout"
-msgstr ""
+msgstr "API for the %{subnetwork}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:124
@@ -116,7 +116,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:78
 msgid "Accounts"
-msgstr ""
+msgstr "บัญชี"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:69
@@ -155,7 +155,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:125
 msgid "Average block time"
-msgstr ""
+msgstr "เวลาสร้างบล็อกเฉลี่ย"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:30
@@ -235,14 +235,14 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:4
 msgid "BlockScout provides analytics data, API, and Smart Contract tools for the %{subnetwork}"
-msgstr ""
+msgstr "Bitkub Chain explorer provides analytics data, API, and Smart Contract tools for the %{subnetwork} Contact: bitkubchain@bitkub.com"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:180
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:34
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:38
 msgid "Blocks"
-msgstr ""
+msgstr "บล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/app.html.eex:27
@@ -252,7 +252,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:20
 msgid "Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks."
-msgstr ""
+msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
@@ -279,7 +279,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:39
 msgid "Chat"
-msgstr ""
+msgstr "Bitkub Exchange"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:137
@@ -357,7 +357,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:351
 msgid "Contract Call"
-msgstr ""
+msgstr "การเรียกใช้"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:348
@@ -397,7 +397,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:38
 msgid "Contribute"
-msgstr ""
+msgstr "Bitkub NEXT"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
@@ -549,23 +549,23 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:148
 msgid "ERC-20 "
-msgstr ""
+msgstr "KAP-20"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:149
 msgid "ERC-721 "
-msgstr ""
+msgstr "KAP-721"
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:85
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:120
 msgid "ETH"
-msgstr ""
+msgstr "KUB"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:4
 msgid "ETH RPC API Documentation"
-msgstr ""
+msgstr "Bitkub Chain RPC API Documentation"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:43
@@ -640,7 +640,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/overview.html.eex:258
 #: lib/block_scout_web/views/wei_helpers.ex:78
 msgid "Ether"
-msgstr ""
+msgstr "KUB"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:211
@@ -694,7 +694,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:44
 msgid "Forked Blocks (Reorgs)"
-msgstr ""
+msgstr "บล็อก Forked"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:40
@@ -736,7 +736,7 @@ msgstr ""
 #: lib/block_scout_web/views/block_view.ex:20
 #: lib/block_scout_web/views/wei_helpers.ex:77
 msgid "Gwei"
-msgstr ""
+msgstr "GBit"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/overview.html.eex:36
@@ -769,7 +769,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_emission_reward_tile.html.eex:8
 #: lib/block_scout_web/views/transaction_view.ex:263
 msgid "Success"
-msgstr ""
+msgstr "สำเร็จ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:94
@@ -781,8 +781,8 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_pending_tile.html.eex:21
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:32
 #: lib/block_scout_web/templates/transaction/overview.html.eex:108
-msgid "TX Fee"
-msgstr ""
+msgid "Tx Fee"
+msgstr "Transaction Fee"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:28
@@ -916,7 +916,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:18
 #: lib/block_scout_web/views/transaction_view.ex:354
 msgid "Transaction"
-msgstr ""
+msgstr "การทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:12
@@ -1058,7 +1058,7 @@ msgstr ""
 #: lib/block_scout_web/views/block_view.ex:60
 #: lib/block_scout_web/views/block_view.ex:65
 msgid "Miner Reward"
-msgstr ""
+msgstr "Validator Reward"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:223
@@ -1160,7 +1160,7 @@ msgstr ""
 #: lib/block_scout_web/views/transaction_view.ex:261
 #: lib/block_scout_web/views/transaction_view.ex:295
 msgid "Pending"
-msgstr ""
+msgstr "รอดำเนินการ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:4
@@ -1243,7 +1243,7 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:24
 #: lib/block_scout_web/views/internal_transaction_view.ex:28
 msgid "Reward"
-msgstr ""
+msgstr "Reward"
 
 #, elixir-format
 #: lib/block_scout_web/templates/admin/dashboard/index.html.eex:21
@@ -1255,7 +1255,7 @@ msgstr ""
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:215
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:259
 msgid "Search"
-msgstr ""
+msgstr "ค้นหา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:209
@@ -1305,7 +1305,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/block/overview.html.eex:150
 msgid "Block Rewards"
-msgstr ""
+msgstr "Block Rewards"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:36
@@ -1348,22 +1348,22 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:37
 msgid "Submit an Issue"
-msgstr ""
+msgstr "Bitkub Chain"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:40
 msgid "Support"
-msgstr ""
+msgstr "Bitkub Blockchain Technology"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:60
 msgid "Test Networks"
-msgstr ""
+msgstr "Biktub Chain Testnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:23
 msgid "Testnet"
-msgstr ""
+msgstr "เทสเน็ต/Testnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_validation/index.html.eex:18
@@ -1429,7 +1429,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:10
 msgid "This is useful to allow sending requests to blockscout without having to change anything about the request."
-msgstr ""
+msgstr "This is useful to allow sending requests to biktub chain without having to change anything about the request."
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:19
@@ -1462,7 +1462,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:155
 msgid "Total blocks"
-msgstr ""
+msgstr "บล็อกทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_metatags.html.eex:3
@@ -1526,7 +1526,7 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:80
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:41
 msgid "Uncles"
-msgstr ""
+msgstr "บล็อก Uncle"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/inventory/_token.html.eex:6
@@ -1546,7 +1546,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:57
 msgid "Validated"
-msgstr ""
+msgstr "ตรวจสอบแล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/index.html.eex:11
@@ -1597,17 +1597,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:86
 msgid "Version"
-msgstr ""
+msgstr "Version: 0.1"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:179
 msgid "View All Blocks"
-msgstr ""
+msgstr "ดูบล็อกทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:237
 msgid "View All Transactions"
-msgstr ""
+msgstr "ดูธุรกรรมทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:16
@@ -1644,17 +1644,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:119
 msgid "WEI"
-msgstr ""
+msgstr "Bit"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:163
 msgid "Wallet addresses"
-msgstr ""
+msgstr "ที่อยู่กระเป๋าสตางค์"
 
 #, elixir-format
 #: lib/block_scout_web/views/wei_helpers.ex:76
 msgid "Wei"
-msgstr ""
+msgstr "Bit"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:60
@@ -1789,7 +1789,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:134
 msgid "Total transactions"
-msgstr ""
+msgstr "ธุรกรรมทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:74
@@ -1867,7 +1867,7 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/index.html.eex:4
 #: lib/block_scout_web/views/address_view.ex:343
 msgid "Tokens"
-msgstr ""
+msgstr "โทเค็น"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
@@ -1878,7 +1878,7 @@ msgstr ""
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:53
 #: lib/block_scout_web/views/address_view.ex:345
 msgid "Transactions"
-msgstr ""
+msgstr "ข้อมูลธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:242
@@ -1961,7 +1961,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex
 msgid "Search transaction hash, block number, token symbol or name"
-msgstr ""
+msgstr "ค้นหาหมายเลขธุรกรรม หมายเลขบล็อก สัญลักษณ์โทเค็น หรือชื่อ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:7
@@ -2010,7 +2010,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/stakes/_metatags.html.eex:2
 msgid "%{subnetwork} Staking DApp - BlockScout"
-msgstr ""
+msgstr "%{subnetwork} Staking DApp - Biktub Chain"
 
 #, elixir-format
 #: lib/block_scout_web/templates/stakes/_rows.html.eex:26
@@ -2604,7 +2604,7 @@ msgstr ""
 #: lib/block_scout_web/templates/stakes/_stakes_modal_delegators_list.html.eex:15
 #: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Validator"
-msgstr ""
+msgstr "ผู้ยืนยัน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:154
@@ -2615,7 +2615,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract/index.html.eex:14
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:5
 msgid "Contract is not verified. However, we found a verified contract with the same bytecode in Blockscout DB"
-msgstr ""
+msgstr "Contract is not verified. However, we found a verified contract with the same bytecode in Bitkub Chain DB"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:160
@@ -2700,7 +2700,7 @@ msgstr ""
 msgid "Bridged from BSC"
 msgstr ""
 
-#, elixir-format
+#, elixir-format, fuzzy
 #: lib/block_scout_web/templates/stakes/_stakes_top.html.eex:34
 msgid "Bridge to Ethereum"
 msgstr ""
@@ -2710,81 +2710,76 @@ msgstr ""
 msgid "Swap STAKE"
 msgstr ""
 
-
-
-
-
-
 msgid "seconds"
-msgstr ""
+msgstr "วินาที"
 
 msgid "Total gas used"
-msgstr ""
+msgstr "ขนาดข้อมูลของ Smart Contract ทั้งหมด"
 
 msgid "in %{count} second"
 msgid_plural "in %{count} seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ใน %{count} วินาที"
+msgstr[1] "ใน %{count} วินาที"
 
 msgid "in a few seconds"
-msgstr ""
+msgstr "ในไม่กี่วินาที"
 
 msgid "a few seconds ago"
-msgstr ""
+msgstr "ไม่กี่วินาทีที่ผ่านมา"
 
 msgid "%{count} second ago"
 msgid_plural "%{count} seconds ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} วินาทีที่แล้ว"
+msgstr[1] "%{count} วินาทีที่แล้ว"
 
 msgid "View all Blocks"
-msgstr ""
+msgstr "ดูบล็อกทั้งหมด"
 
 msgid "Transfer"
-msgstr ""
+msgstr "ถ่ายโอน"
 
 msgid "Update"
-msgstr ""
+msgstr "อัพเดท"
 
 msgid "Approve"
-msgstr ""
+msgstr "อนุมัติ"
 
 msgid "Bid"
-msgstr ""
+msgstr "การเสนอราคา"
 
 msgid "KYCBitkubChain (%{address})"
-msgstr ""
+msgstr "KYCBitkubChain (%{address})"
 
 msgid "%{count} KUB"
-msgstr ""
+msgstr "%{count} KUB"
 
 msgid "%{count} TX Fee"
-msgstr ""
+msgstr "%{count} TX Fee"
 
-msgid "Block %{blocknum}"
-msgstr ""
+msgid "Block %{count}"
+msgstr "Block %{count}"
 
 msgid "minute ago"
 msgid_plural "minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "นาทีที่แล้ว"
+msgstr[1] "นาทีที่แล้ว"
 
 msgid "View all Transactions"
-msgstr ""
+msgstr "ดูธุรกรรมทั้งหมด"
 
 msgid "Mainnets"
-msgstr ""
+msgstr "เมนเน็ต/Mainnet"
 
 msgid "Bitkub chain Mainnet"
 msgstr ""
 
 msgid "Testnets"
-msgstr ""
+msgstr "เทสเน็ต/Testnet"
 
 msgid "Bitkub chain Testnet"
 msgstr ""
 
 msgid "%{count} second"
 msgid_plural "%{count} seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} วินาที"
+msgstr[1] "%{count} วินาที"

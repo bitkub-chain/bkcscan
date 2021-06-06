@@ -1,17 +1,17 @@
 SYSTEM = $(shell uname -s)
-#HOST = host.docker.internal
+HOST = host.docker.internal
 # HOST = 10.0.0.137
-DOCKER_IMAGE = bitkubchain-explorer
+DOCKER_IMAGE = bkc-explorer
 BS_CONTAINER_NAME = bkc-explorer
-# PG_CONTAINER_NAME = postgres
-PG_CONTAINER_IMAGE = postgres:12.5
+PG_CONTAINER_NAME = postgres
+PG_CONTAINER_IMAGE = postgres
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
 
 ifeq ($(SYSTEM), Linux)
-	HOST=localhost
+    HOST=localhost
 endif
 
-DB_URL = postgresql://postgres:{pass}@localhost:5432/explorer?ssl=true
+DB_URL =  postgresql://postgres:@$(HOST):5432/explorer?ssl=false
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
 															 -e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)
