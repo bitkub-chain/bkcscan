@@ -7,7 +7,7 @@ msgstr[1] ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:27
-msgid "%{count} transactions"
+msgid "%{count} transaction"
 msgid_plural "%{count} transactions"
 msgstr[0] ""
 msgstr[1] ""
@@ -2602,6 +2602,7 @@ msgstr ""
 #, elixir-format
 #:
 #: lib/block_scout_web/templates/stakes/_stakes_modal_delegators_list.html.eex:15
+#: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Validator"
 msgstr ""
 
@@ -2782,3 +2783,8 @@ msgstr ""
 
 msgid "Bitkub chain Testnet"
 msgstr ""
+
+msgid "%{count} second"
+msgid_plural "%{count} seconds"
+msgstr[0] ""
+msgstr[1] ""

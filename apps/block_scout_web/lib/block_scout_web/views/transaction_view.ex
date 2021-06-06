@@ -156,6 +156,7 @@ defmodule BlockScoutWeb.TransactionView do
   end
 
   def processing_time_duration(%Transaction{earliest_processing_start: nil}) do
+    Gettext.put_locale("th")
     avg_time = AverageBlockTime.average_block_time()
 
     if avg_time == {:error, :disabled} do
@@ -165,7 +166,7 @@ defmodule BlockScoutWeb.TransactionView do
         avg_time
         |> Duration.to_seconds()
 
-      {:ok, "<= #{avg_time_in_secs} seconds"}
+      {:ok, "<= #{avg_time_in_secs} " <> gettext("seconds")}
     end
   end
 
@@ -257,6 +258,7 @@ defmodule BlockScoutWeb.TransactionView do
   end
 
   def formatted_status(status) do
+    Gettext.put_locale("th")
     case status do
       :pending -> gettext("Pending")
       :awaiting_internal_transactions -> gettext("(Awaiting internal transactions for status)")
@@ -334,6 +336,7 @@ defmodule BlockScoutWeb.TransactionView do
   def to_address_hash(%Transaction{to_address_hash: address_hash}), do: address_hash
 
   def transaction_display_type(%Transaction{} = transaction) do
+    Gettext.put_locale("th")
     cond do
       involves_token_transfers?(transaction) ->
         token_transfer_type = get_token_transfer_type(transaction.token_transfers)
