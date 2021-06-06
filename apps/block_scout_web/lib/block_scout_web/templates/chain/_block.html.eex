@@ -1,4 +1,3 @@
-<%Gettext.put_locale("th")%>
 <div class="col-lg-3 fade-up-blocks-chain" data-selector="chain-block" data-block-number="<%= @block.number %>">
   <div class="tile tile-type-block n-p d-flex flex-column">
     <%= link(
