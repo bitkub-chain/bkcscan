@@ -7,7 +7,7 @@ msgstr[1] ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:27
-msgid "%{count} transactions"
+msgid "%{count} transaction"
 msgid_plural "%{count} transactions"
 msgstr[0] "%{count} การทำธุรกรรม"
 msgstr[1] "%{count} การทำธุรกรรม"
@@ -916,7 +916,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:18
 #: lib/block_scout_web/views/transaction_view.ex:354
 msgid "Transaction"
-msgstr ""
+msgstr "การทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:12
@@ -2602,6 +2602,7 @@ msgstr ""
 #, elixir-format
 #:
 #: lib/block_scout_web/templates/stakes/_stakes_modal_delegators_list.html.eex:15
+#: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Validator"
 msgstr "ผู้ยืนยัน"
 
@@ -2777,3 +2778,8 @@ msgstr "เทสเน็ต/Testnet"
 
 msgid "Bitkub chain Testnet"
 msgstr ""
+
+msgid "%{count} second"
+msgid_plural "%{count} seconds"
+msgstr[0] "%{count} วินาที"
+msgstr[1] "%{count} วินาที"

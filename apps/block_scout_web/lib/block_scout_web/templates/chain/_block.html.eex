@@ -1,3 +1,4 @@
+<%Gettext.put_locale("th")%>
 <div class="col-lg-3 fade-up-blocks-chain" data-selector="chain-block" data-block-number="<%= @block.number %>">
   <div class="tile tile-type-block n-p d-flex flex-column">
     <%= link(
@@ -8,11 +9,11 @@
         ) %>
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
-        <span class="mr-2"><%= gettext("%{count} Transactions", count: Enum.count(@block.transactions)) %></span>
+        <span class="mr-2"><%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %></span>
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
       </div>
       <div class="text-truncate">
-        <%= gettext "Miner" %>
+        <%= gettext "Validator" %>
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,
