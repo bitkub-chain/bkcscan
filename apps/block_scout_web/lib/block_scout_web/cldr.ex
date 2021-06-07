@@ -4,7 +4,7 @@ defmodule BlockScoutWeb.Cldr do
   """
 
   use Cldr,
-    default_locale: "th",
+    default_locale: "en",
     locales: ["en","th"],
     gettext: BlockScoutWeb.Gettext,
     generate_docs: false,

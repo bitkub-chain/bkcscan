@@ -187,15 +187,6 @@
               <a class="dropdown-item" href="https://testnet.bkcscan.com">Bitkub Chain Testnet</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a href="#" role="button" id="navbarLanguageDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="text-capitalize mb-0"><%= Gettext.get_locale(BlockScoutWeb.Gettext) %> </p>
-          </a>
-          <div class="dropdown-menu" aria-labeledby="navbarLanguageDropdown">
-              <%= switch_locale_path :en, "En" %>
-              <%= switch_locale_path :th, "Th" %>
-          </div>
-        </li>
       </ul>
       <!-- Dark mode changer -->
       <button class="dark-mode-changer" id="dark-mode-changer">
