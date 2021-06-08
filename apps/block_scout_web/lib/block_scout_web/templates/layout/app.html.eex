@@ -33,6 +33,8 @@
         'Ether': '<%= gettext("Ether") %>',
         'Tx/day': '<%= gettext("Tx/day") %>'
       }
+
+      var getText = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
     </script>
   </head>
 

@@ -780,8 +780,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_pending_tile.html.eex:21
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:32
+msgid "TX Fee unit"
+msgstr "TX Fee"
+
+#, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:108
-msgid "Tx Fee"
+msgid "TX Fee"
 msgstr "Transaction Fee"
 
 #, elixir-format
@@ -2710,8 +2714,10 @@ msgstr ""
 msgid "Swap STAKE"
 msgstr ""
 
-msgid "seconds"
-msgstr ""
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Total gas used"
 msgstr ""
@@ -2783,3 +2789,21 @@ msgid "%{count} second"
 msgid_plural "%{count} seconds"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "The block number in which transactions were recorded."
+msgstr ""
+
+msgid "The SHA256 hash of the block."
+msgstr ""
+
+msgid "Block difficulty for miner, used to calibrate block generation time. (Note: constant in POA based networks)"
+msgstr ""
+
+msgid "Integer of the total difficulty of the chain until this block."
+msgstr ""
+
+msgid "64-bit hash of value verifying proof-of-work (note: null for POA chains)."
+msgstr ""
+
+msgid "The SHA256 hash of the parent block."
+msgstr ""
