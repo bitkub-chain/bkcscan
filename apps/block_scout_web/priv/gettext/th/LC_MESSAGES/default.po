@@ -15,7 +15,7 @@ msgstr[1] "%{count} การทำธุรกรรม"
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:220
 msgid " Token Transfer"
-msgstr ""
+msgstr "การโอนเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:14
@@ -185,12 +185,15 @@ msgstr ""
 msgid "Block"
 msgstr "บล็อก"
 
+msgid "block"
+msgstr "บล็อก"
+
 #, elixir-format
 #: lib/block_scout_web/templates/block/_link.html.eex:2
 #: lib/block_scout_web/templates/internal_transaction/_tile.html.eex:28
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:50
 msgid "Block #%{number}"
-msgstr ""
+msgstr "บล็อก #%{number}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_metatags.html.eex:3
@@ -306,7 +309,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:12
 #: lib/block_scout_web/templates/block/index.html.eex:6
 msgid "Connection Lost, click to load newer blocks"
-msgstr ""
+msgstr "การเชื่อมต่อขาดหาย คลิกเพื่อโหลดบล็อกใหม่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:15
@@ -357,12 +360,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:351
 msgid "Contract Call"
-msgstr "การเรียกใช้"
+msgstr "การเรียกใช้สัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:348
 msgid "Contract Creation"
-msgstr ""
+msgstr "การสร้างสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:89
@@ -507,7 +510,10 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:108
 #: lib/block_scout_web/templates/block/overview.html.eex:165
 msgid "Gas Limit"
-msgstr "Gas ลิมิต"
+msgstr "ค่าธรรมเนียมสูงสุด"
+
+msgid "%{count} Gas Limit"
+msgstr "ค่าธรรมเนียมสูงสุด %{count}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:62
@@ -515,6 +521,9 @@ msgstr "Gas ลิมิต"
 #: lib/block_scout_web/templates/block/overview.html.eex:157
 msgid "Gas Used"
 msgstr "ค่าธรรมเนียมที่ใช้จริง"
+
+msgid "%{count} Gas Used"
+msgstr "ค่าธรรมเนียมที่ใช้จริง %{count}"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:23
@@ -613,12 +622,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:266
 msgid "Error: %{reason}"
-msgstr ""
+msgstr "ข้อผิดพลาด : %{reason}"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr ""
+msgstr "ข้อผิดพลาด : รอการทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
@@ -888,7 +897,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:10
 #: lib/block_scout_web/views/transaction_view.ex:344
 msgid "Token Transfer"
-msgstr ""
+msgstr "การโอนเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:13
@@ -904,7 +913,7 @@ msgstr ""
 #: lib/block_scout_web/views/tokens/overview_view.ex:40
 #: lib/block_scout_web/views/transaction_view.ex:405
 msgid "Token Transfers"
-msgstr ""
+msgstr "การโอนเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_metatags.html.eex:13
@@ -1010,7 +1019,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:286
 msgid "Limit"
-msgstr "ลิมิต"
+msgstr "สูงสุด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_read_contract/index.html.eex:14
@@ -1545,7 +1554,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:280
 msgid "Used"
-msgstr ""
+msgstr "ใช้จริง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:57
@@ -1577,6 +1586,9 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/overview.html.eex:258
 msgid "Value"
 msgstr ""
+
+msgid "%{value} Value"
+msgstr "มูลค่า %{value}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:16
@@ -1756,7 +1768,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:276
 msgid "Gas"
-msgstr ""
+msgstr "ค่าธรรมเนียม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:26
@@ -1887,26 +1899,26 @@ msgstr "ข้อมูลธุรกรรม"
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:242
 msgid " Token Burning"
-msgstr ""
+msgstr "การเผาเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:8
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:6
 #: lib/block_scout_web/views/transaction_view.ex:343
 msgid "Token Burning"
-msgstr ""
+msgstr "การเผาเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:231
 msgid " Token Minting"
-msgstr ""
+msgstr "การขุดเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:10
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:8
 #: lib/block_scout_web/views/transaction_view.ex:342
 msgid "Token Minting"
-msgstr ""
+msgstr "การขุดเหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/views/block_view.ex:62
@@ -2629,7 +2641,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:252
 msgid "Press / and focus will be moved to the search field"
-msgstr ""
+msgstr "กดปุ่ม '/' เพื่อเลื่อนหน้าจอไปที่การค้นหา"
 
 #, elixir-format
 #:
@@ -2744,13 +2756,25 @@ msgstr "ดูบล็อกทั้งหมด"
 msgid "Transfer"
 msgstr "ถ่ายโอน"
 
+msgid "transfer"
+msgstr "ถ่ายโอน"
+
 msgid "Update"
+msgstr "อัพเดท"
+
+msgid "update"
 msgstr "อัพเดท"
 
 msgid "Approve"
 msgstr "อนุมัติ"
 
+msgid "approve"
+msgstr "อนุมัติ"
+
 msgid "Bid"
+msgstr "การเสนอราคา"
+
+msgid "bid"
 msgstr "การเสนอราคา"
 
 msgid "KYCBitkubChain (%{address})"
@@ -2802,8 +2826,8 @@ msgstr "ค่าความยากสำหรับการตรวจส
 msgid "Integer of the total difficulty of the chain until this block."
 msgstr "จำนวนของระดับความยากทั้งหมดของห่วงโซ่ตลอดจนบล็อกนี้"
 
-msgid "64-bit hash of value verifying proof-of-work (note: null for POA chains)."
-msgstr ""
+msgid "64-bit hash of value verifying proof-of-work. (note: null for POA chains)"
+msgstr "64-bit กำลังตรวจสอบค่า hash โดย proof-of-work (คำอธิบาย : ไม่พบ POA chain)"
 
 msgid "The SHA256 hash of the parent block."
 msgstr "บล็อกก่อนหน้านี้ใช้ SHA256 ในการ Hash ข้อมูล"

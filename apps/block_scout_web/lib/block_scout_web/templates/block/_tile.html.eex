@@ -56,12 +56,10 @@
     </div>
     <div class="col-md-4 col-lg-3 text-md-right d-flex flex-column align-items-md-end justify-content-md-end mt-3 mt-md-0">
       <!-- Gas Limit -->
-      <span> <%= formatted_gas(@block.gas_limit) %> <%= gettext "Gas Limit" %> </span>
+      <span> <%= gettext("%{count} Gas Limit", count: formatted_gas(@block.gas_limit)) %> </span>
       <!-- Gas Used -->
       <div class="mr-3 mr-md-0">
-        <%= formatted_gas(@block.gas_used) %>
-        (<%= formatted_gas(Decimal.to_integer(@block.gas_used) / Decimal.to_integer(@block.gas_limit), format: "#.#%") %>)
-        <%= gettext "Gas Used" %>
+        <%= gettext("%{count} Gas Used", count: (formatted_gas(@block.gas_used) <> " (" <> formatted_gas(Decimal.to_integer(@block.gas_used) / Decimal.to_integer(@block.gas_limit), format: "#.#%") <> ")")) %>
       </div>
       <!-- Progress bar -->
       <div class="progress">
