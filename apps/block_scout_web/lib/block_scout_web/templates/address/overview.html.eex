@@ -153,7 +153,7 @@
             <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Official</small>
           <% end %>
           <%= if(check_deprecated) do %>
-            <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Deprecated</small>
+            <small class="border-dark p-1 text-white rounded" style="width: fit-content; background-color: #F3442E;">Deprecated</small>
           <% end %>
           
           <br/>
