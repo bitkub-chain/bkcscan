@@ -35,7 +35,7 @@
                     <small class="border-dark p-1 bg-success text-white rounded">Official</small>
                   <% end %>
                   <%= if(check_deprecated) do %>
-                    <small class="border-dark p-1 bg-success text-white rounded">Deprecated</small>
+                    <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;">Deprecated</small>
                   <% end %>
                 </div>
 

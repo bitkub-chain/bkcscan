@@ -25,7 +25,7 @@ officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2
       <small class="border-dark p-1 bg-success text-white rounded">Official</small>
     <% end %>
     <%= if(check_deprecated) do %>
-      <small class="border-dark p-1 bg-success text-white rounded">Deprecated</small>
+      <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;">Deprecated</small>
     <% end %>
 
   </td>
