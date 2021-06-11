@@ -63,7 +63,7 @@ msgstr "%{subnetwork} Explorer"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
 msgid "(Awaiting internal transactions for status)"
-msgstr ""
+msgstr "(รอการทำธุรกรรม)"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:59
@@ -218,7 +218,7 @@ msgstr "หมายเลขบล็อก : %{height}"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/app.html.eex:28
 msgid "Block Mined, awaiting import..."
-msgstr "กำลังรอการนำเข้า ..."
+msgstr "กำลังรอการนำเข้า..."
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:82
@@ -321,7 +321,7 @@ msgstr ""
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:17
 #: lib/block_scout_web/templates/transaction/index.html.eex:23
 msgid "Connection Lost, click to load newer transactions"
-msgstr ""
+msgstr "การเชื่อมต่อขาดหาย คลิกเพื่อโหลดการทำธุรกรรมใหม่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_validation/index.html.eex:10
@@ -523,7 +523,7 @@ msgid "Gas Used"
 msgstr "ค่าธรรมเนียมที่ใช้จริง"
 
 msgid "%{count} Gas Used"
-msgstr "ค่าธรรมเนียมที่ใช้จริง %{count}"
+msgstr "%{count} ค่าธรรมเนียมที่ใช้จริง"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:23
@@ -677,7 +677,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr ""
+msgstr "ถอดรหัสข้อมูลไม่สำเร็จ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -1019,7 +1019,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:286
 msgid "Limit"
-msgstr "สูงสุด"
+msgstr "จำกัด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_read_contract/index.html.eex:14
@@ -1256,7 +1256,7 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:24
 #: lib/block_scout_web/views/internal_transaction_view.ex:28
 msgid "Reward"
-msgstr "Reward"
+msgstr "รางวัล"
 
 #, elixir-format
 #: lib/block_scout_web/templates/admin/dashboard/index.html.eex:21
@@ -1554,7 +1554,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:280
 msgid "Used"
-msgstr "ใช้จริง"
+msgstr "ใช้แล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:57
@@ -1588,7 +1588,7 @@ msgid "Value"
 msgstr ""
 
 msgid "%{value} Value"
-msgstr "มูลค่า %{value}"
+msgstr "%{value} Value"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:16
@@ -1854,7 +1854,7 @@ msgstr ""
 #: lib/block_scout_web/views/address_view.ex:344
 #: lib/block_scout_web/views/transaction_view.ex:406
 msgid "Internal Transactions"
-msgstr ""
+msgstr "ธุรกรรมภายใน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:41
@@ -1894,7 +1894,7 @@ msgstr "โทเค็น"
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:53
 #: lib/block_scout_web/views/address_view.ex:345
 msgid "Transactions"
-msgstr "ข้อมูลธุรกรรม"
+msgstr "การทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:242
@@ -2787,7 +2787,7 @@ msgid "%{count} TX Fee"
 msgstr "%{count} TX Fee"
 
 msgid "Block %{count}"
-msgstr "Block %{count}"
+msgstr "บล็อก %{count}"
 
 msgid "minute ago"
 msgid_plural "minutes ago"

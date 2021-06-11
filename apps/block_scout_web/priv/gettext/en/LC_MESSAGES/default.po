@@ -1256,7 +1256,7 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:24
 #: lib/block_scout_web/views/internal_transaction_view.ex:28
 msgid "Reward"
-msgstr "Reward"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/admin/dashboard/index.html.eex:21
