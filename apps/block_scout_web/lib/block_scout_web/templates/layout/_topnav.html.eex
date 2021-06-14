@@ -190,11 +190,11 @@
         </li>
         <li class="nav-item dropdown">
           <a href="#" role="button" id="navbarLanguageDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="text-capitalize mb-0"><%= Gettext.get_locale(BlockScoutWeb.Gettext) %> </p>
+              <p class="text-uppercase mb-0"><%= Gettext.get_locale(BlockScoutWeb.Gettext) %> </p>
           </a>
           <div class="dropdown-menu" aria-labeledby="navbarLanguageDropdown">
-              <%= switch_locale_path :en, "En" %>
-              <%= switch_locale_path :th, "Th" %>
+              <%= switch_locale_path :en, "EN" %>
+              <%= switch_locale_path :th, "TH" %>
           </div>
         </li>
       </ul>
