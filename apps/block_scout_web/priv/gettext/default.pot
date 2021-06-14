@@ -2831,3 +2831,12 @@ msgstr ""
 
 msgid "The SHA256 hash of the parent block."
 msgstr ""
+
+msgid "Total gas used by all transactions in this block (limit)."
+msgstr ""
+
+msgid "Total gas used by all transactions in this block (% used)."
+msgstr ""
+
+msgid "The maximum gas allowed in this block."
+msgstr ""

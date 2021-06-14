@@ -63,7 +63,7 @@ msgstr "%{subnetwork} Explorer"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
 msgid "(Awaiting internal transactions for status)"
-msgstr "(รอการทำธุรกรรม)"
+msgstr "(กำลังรอการทำธุรกรรม)"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:59
@@ -160,7 +160,7 @@ msgstr "เวลาสร้างบล็อกเฉลี่ย"
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:30
 msgid "Back Home"
-msgstr ""
+msgstr "กลับหน้าหลัก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:4
@@ -233,7 +233,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/block_transaction_view.ex:15
 msgid "Block not found, please try again later."
-msgstr ""
+msgstr "ไม่เจอบล็อกดังกล่าว กรุณาลองใหม่อีกครั้งในภายหลัง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:4
@@ -585,7 +585,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/block_transaction_view.ex:7
 msgid "Easy Cowboy! This block does not exist yet!"
-msgstr ""
+msgstr "ใจเย็นก่อน! บล็อกนี้ยังไม่ได้ถูกสร้างขึ้น"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_emission_reward_tile.html.eex:5
@@ -627,7 +627,7 @@ msgstr "ข้อผิดพลาด : %{reason}"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr "ข้อผิดพลาด : รอการทำธุรกรรม"
+msgstr "ข้อผิดพลาด : กำลังรอการทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
@@ -677,7 +677,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr "ถอดรหัสข้อมูลไม่สำเร็จ"
+msgstr "ถอดรหัสข้อมูลไม่สำเร็จ / การถอดรหัสข้อมูลล้มเหลว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -816,7 +816,7 @@ msgstr ""
 #:
 #: lib/block_scout_web/templates/transaction_internal_transaction/index.html.eex:17
 msgid "There are no internal transactions for this transaction."
-msgstr ""
+msgstr "ไม่มีธุรกรรมที่กำลังดำเนินการอยู่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_log/index.html.eex:20
@@ -846,7 +846,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/block_transaction/index.html.eex:28
 msgid "There are no transactions for this block."
-msgstr ""
+msgstr "ไม่มีรายการธุรกรรมบนบล็อกนี้"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/transfer/index.html.eex:28
@@ -1341,12 +1341,12 @@ msgstr "Block Rewards"
 #: lib/block_scout_web/templates/transaction_log/index.html.eex:15
 #: lib/block_scout_web/templates/transaction_token_transfer/index.html.eex:14
 msgid "Something went wrong, click to reload."
-msgstr ""
+msgstr "มีบางอย่างผิดปกติ คลิกเพื่อโหลดใหม่อีกครั้ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:247
 msgid "Something went wrong, click to retry."
-msgstr ""
+msgstr "มีบางอย่างผิดปกติ คลิกเพื่อลองอีกครั้ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:7
@@ -1608,7 +1608,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:11
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:9
 msgid "Verify the contract "
-msgstr ""
+msgstr "ทำการตรวจสอบสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:86
@@ -1700,7 +1700,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:11
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:9
 msgid "here"
-msgstr ""
+msgstr "ที่นี่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:9
@@ -2831,3 +2831,15 @@ msgstr "64-bit กำลังตรวจสอบค่า hash โดย proo
 
 msgid "The SHA256 hash of the parent block."
 msgstr "บล็อกก่อนหน้านี้ใช้ SHA256 ในการ Hash ข้อมูล"
+
+msgid "Total gas used by all transactions in this block (limit)."
+msgstr "ค่าธรรมเนียมทั้้งหมดที่ใช้จริงบนบล็อกนี้ (ปริมาณที่จำกัด)"
+
+msgid "Total gas used by all transactions in this block (% used)."
+msgstr "ค่าธรรมเนียมทั้งหมดที่ใช้จริงบนบล็อกนี้ (% ที่ใช้ไป)"
+
+msgid "The maximum gas allowed in this block."
+msgstr "ค่าธรรมเนียมสูงสุดที่ใช้ได้บนบล็อกนี้"
+
+
+
