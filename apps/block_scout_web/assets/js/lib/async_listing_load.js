@@ -242,10 +242,20 @@ export const elements = {
 
       $el.show()
       if (state.pagesStack.length === 0) {
-        return $el.text('Page 1')
+        if(getText === "th") {
+          return $el.text('หน้า 1')
+        }
+        else {
+          return $el.text('Page 1')
+        }
       }
 
-      $el.text('Page ' + state.pagesStack.length)
+      if(getText === "th") {
+        $el.text('หน้า ' + state.pagesStack.length)
+      }
+      else {
+        $el.text('Page ' + state.pagesStack.length)
+      }
     }
   },
   '[data-async-listing] [data-loading-button]': {

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="dashboard-banner">
       <!-- Graph and legend -->
-      <div class="dashboard-banner-network-graph" style="display:none;">
+      <div class="dashboard-banner-network-graph">
         <!-- Graph -->
         <div class="dashboard-banner-chart">
           <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
@@ -125,7 +125,9 @@
                   <%= gettext "Average block time" %>
                 </span>
                 <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+
                   <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+
                 </span>
               </div>
           <% end %>
