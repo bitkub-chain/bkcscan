@@ -185,6 +185,9 @@ msgstr ""
 msgid "Block"
 msgstr ""
 
+msgid "block"
+msgstr ""
+
 #, elixir-format
 #: lib/block_scout_web/templates/block/_link.html.eex:2
 #: lib/block_scout_web/templates/internal_transaction/_tile.html.eex:28
@@ -509,11 +512,17 @@ msgstr ""
 msgid "Gas Limit"
 msgstr ""
 
+msgid "%{count} Gas Limit"
+msgstr ""
+
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:62
 #: lib/block_scout_web/templates/block/overview.html.eex:101
 #: lib/block_scout_web/templates/block/overview.html.eex:157
 msgid "Gas Used"
+msgstr ""
+
+msgid "%{count} Gas Used"
 msgstr ""
 
 #, elixir-format
@@ -780,8 +789,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_pending_tile.html.eex:21
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:32
+msgid "TX Fee unit"
+msgstr "TX Fee"
+
+#, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:108
-msgid "Tx Fee"
+msgid "TX Fee"
 msgstr "Transaction Fee"
 
 #, elixir-format
@@ -1243,7 +1256,7 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:24
 #: lib/block_scout_web/views/internal_transaction_view.ex:28
 msgid "Reward"
-msgstr "Reward"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/admin/dashboard/index.html.eex:21
@@ -1572,6 +1585,9 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/overview.html.eex:205
 #: lib/block_scout_web/templates/transaction/overview.html.eex:258
 msgid "Value"
+msgstr ""
+
+msgid "%{value} Value"
 msgstr ""
 
 #, elixir-format
@@ -2710,8 +2726,10 @@ msgstr ""
 msgid "Swap STAKE"
 msgstr ""
 
-msgid "seconds"
-msgstr ""
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Total gas used"
 msgstr ""
@@ -2738,13 +2756,25 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
+msgid "transfer"
+msgstr ""
+
 msgid "Update"
+msgstr ""
+
+msgid "update"
 msgstr ""
 
 msgid "Approve"
 msgstr ""
 
+msgid "approve"
+msgstr ""
+
 msgid "Bid"
+msgstr ""
+
+msgid "bid"
 msgstr ""
 
 msgid "KYCBitkubChain (%{address})"
@@ -2783,3 +2813,21 @@ msgid "%{count} second"
 msgid_plural "%{count} seconds"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "The block number in which transactions were recorded."
+msgstr ""
+
+msgid "The SHA256 hash of the block."
+msgstr ""
+
+msgid "Block difficulty for miner, used to calibrate block generation time. (Note: constant in POA based networks)"
+msgstr ""
+
+msgid "Integer of the total difficulty of the chain until this block."
+msgstr ""
+
+msgid "64-bit hash of value verifying proof-of-work. (note: null for POA chains)"
+msgstr ""
+
+msgid "The SHA256 hash of the parent block."
+msgstr ""
