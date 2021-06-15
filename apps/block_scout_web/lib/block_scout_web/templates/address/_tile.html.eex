@@ -77,6 +77,9 @@
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
         <p class="mb-0">KUB: Liquidity (Burnt)</p> 
       <% end %>
+      <%= if(String.downcase(to_string(@address)) == String.downcase("0x0000000000000000000000000000000000000000")) do %>
+        <p class="mb-0">Burnt</p> 
+      <% end %>
   </td>
   <td class="stakes-td">
     <span data-test="address_balance"><%= balance(@address) %></span>
