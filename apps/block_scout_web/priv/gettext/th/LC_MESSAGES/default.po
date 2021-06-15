@@ -127,6 +127,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_validator_metadata_modal.html.eex:16
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:19
 #: lib/block_scout_web/views/address_view.ex:104
+#: lib/block_scout_web/templates/address/index.html.eex:22
 msgid "Address"
 msgstr ""
 
@@ -134,6 +135,21 @@ msgstr ""
 #: lib/block_scout_web/templates/address/index.html.eex:4
 msgid "Addresses"
 msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:27
+msgid "Name Tag"
+msgstr "แท็ก"
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:38
+msgid "Percentage"
+msgstr "เปอร์เซ็นต์"
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:44
+msgid "Txn Count"
+msgstr "จำนวนธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:28
@@ -166,8 +182,9 @@ msgstr "กลับหน้าหลัก"
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:4
 #: lib/block_scout_web/templates/stakes/_stakes_stats_item_account.html.eex:42
 #: lib/block_scout_web/templates/stakes/_stakes_stats_item_account.html.eex:43
+#: lib/block_scout_web/templates/address/index.html.eex:32
 msgid "Balance"
-msgstr ""
+msgstr "ยอดรวม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:16
@@ -254,8 +271,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:20
-msgid "Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks."
-msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
+msgid "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
+msgstr "Bitkub Chain explorer เป็นเครื่องมือสำหรับตรวจสอบและวิเคราะห์บล็อคเชนที่ใช้ EVM Blockchain explorer สำหรับ Bitkub Chain Networks"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
@@ -281,8 +298,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:39
-msgid "Chat"
-msgstr "Bitkub Exchange"
+msgid "Bitkub Exchange"
+msgstr "บริษัท บิทคับ ออนไลน์ จำกัด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:137
@@ -399,8 +416,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:38
-msgid "Contribute"
-msgstr "Bitkub NEXT"
+msgid "Bitkub NEXT"
+msgstr "บริษัท บิทคับ เน็ก จำกัด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
@@ -413,7 +430,7 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:38
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:42
 msgid "Copy Address"
-msgstr ""
+msgstr "คัดลอก Address"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:91
@@ -544,6 +561,11 @@ msgstr ""
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:127
 msgid "Details"
 msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/overview.html.eex:31
+msgid "Address Details"
+msgstr "รายละเอียด Address"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:96
@@ -693,7 +715,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:32
 msgid "Fetching tokens..."
-msgstr ""
+msgstr "กำลังเรียกดูโทเคน..."
 
 #, elixir-format
 #: lib/block_scout_web/templates/admin/dashboard/index.html.eex:16
@@ -784,7 +806,7 @@ msgstr "สำเร็จ"
 #: lib/block_scout_web/templates/chain/show.html.eex:94
 #: lib/block_scout_web/templates/layout/app.html.eex:34
 msgid "Tx/day"
-msgstr ""
+msgstr "จำนวนธุรกรรมต่อวัน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_pending_tile.html.eex:21
@@ -934,7 +956,7 @@ msgstr "การทำธุรกรรม"
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:12
 msgid "If you have just submitted this transaction please wait for at least 30 seconds before refreshing this page."
-msgstr ""
+msgstr "หากคุณได้ทำการส่งหมายเลขธุรกรรมแล้ว กรุณารออย่างน้อย 30 วินาทีก่อนทำการดาวน์โหลดหน้านี้ใหม่อีกครั้ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/log/_data_decoded_view.html.eex:6
@@ -954,7 +976,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/invalid.html.eex:6
 msgid "Invalid Transaction Hash"
-msgstr ""
+msgstr "หมายเลขธุรกรรมไม่ถูกต้อง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/inventory/index.html.eex:15
@@ -966,17 +988,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:16
 msgid "It could still be in the TX Pool of a different node, waiting to be broadcasted."
-msgstr ""
+msgstr "ธุรกรรมของคุณยังอยู่บน Pool อยู่ กำลังรอที่จะถูกส่งออกไป"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:106
 msgid "Last Balance Update: Block #"
-msgstr ""
+msgstr "ยอดรวมล่าสุด: บล็อก #"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/app.html.eex:30
 msgid "Less than"
-msgstr ""
+msgstr "น้อยกว่า"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:185
@@ -1055,7 +1077,7 @@ msgstr ""
 #: lib/block_scout_web/templates/layout/app.html.eex:31
 #: lib/block_scout_web/views/address_view.ex:142
 msgid "Market Cap"
-msgstr ""
+msgstr "มูลค่าหลักทรัพย์ตามราคาตลาด"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:243
@@ -1088,7 +1110,7 @@ msgstr ""
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:12
 #: lib/block_scout_web/templates/transaction/index.html.eex:18
 msgid "More transactions have come in"
-msgstr ""
+msgstr "รายการใหม่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:63
@@ -1157,6 +1179,12 @@ msgid "Page"
 msgstr "หน้า"
 
 #, elixir-format
+#:
+#: lib/block_scout_web/templates/common_components/_pagination_container.html.eex:21
+msgid "First"
+msgstr "หน้าแรก"
+
+#, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:33
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:40
 msgid "Parameters"
@@ -1178,7 +1206,7 @@ msgstr "รอดำเนินการ"
 #, elixir-format
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:4
 msgid "Pending Transactions"
-msgstr ""
+msgstr "ธุรกรรมที่รอดำเนินการ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:17
@@ -1189,7 +1217,7 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/show.html.eex:43
 #: lib/block_scout_web/templates/layout/app.html.eex:32
 msgid "Price"
-msgstr ""
+msgstr "ราคา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:54
@@ -1351,7 +1379,7 @@ msgstr "มีบางอย่างผิดปกติ คลิกเพ�
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:7
 msgid "Sorry, We are unable to locate this transaction Hash"
-msgstr ""
+msgstr "ขออภัย ไม่สามารถระบุที่อยู่ของหมายเลขธุรกรรมนี้ได้"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:24
@@ -1360,13 +1388,13 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:37
-msgid "Submit an Issue"
-msgstr "Bitkub Chain"
+msgid "Bitkub Chain"
+msgstr "บริษัท บิทคับ เชน จำกัด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:40
-msgid "Support"
-msgstr "Bitkub Blockchain Technology"
+msgid "Bitkub Blockchain Technology"
+msgstr "บริษัท บิทคับ บล็อคเชน เทคโนโลยี จำกัด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:60
@@ -1386,7 +1414,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/block/index.html.eex:20
 msgid "There are no blocks."
-msgstr ""
+msgstr "ไม่พบบล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/index.html.eex:26
@@ -1396,7 +1424,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:25
 msgid "There are no pending transactions."
-msgstr ""
+msgstr "ไม่มีธุรกรรมที่กำลังรอดำเนินการอยู่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_token_transfer/index.html.eex:19
@@ -1437,7 +1465,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/block_transaction_view.ex:11
 msgid "This block has not been processed yet."
-msgstr ""
+msgstr "บล็อกนี้ยังไม่ได้เริ่มการดำเนินการ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:10
@@ -1506,7 +1534,7 @@ msgstr "ความเร็วในการทำธุรกรรม"
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tile.html.eex:31
 msgid "Transactions sent"
-msgstr ""
+msgstr "ธุรกรรมที่ถูกส่งไปแล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:40
@@ -1613,7 +1641,7 @@ msgstr "ทำการตรวจสอบสัญญา"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:86
 msgid "Version"
-msgstr "Version: 0.1"
+msgstr "เวอร์ชัน 0.1"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:179
@@ -1640,7 +1668,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:52
 msgid "View More Transfers"
-msgstr ""
+msgstr "ดูรายการโอนเพิ่มเติม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_metatags.html.eex:9
@@ -1665,7 +1693,7 @@ msgstr "Bit"
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:163
 msgid "Wallet addresses"
-msgstr "ที่อยู่กระเป๋าสตางค์"
+msgstr "Wallet address ทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/views/wei_helpers.ex:76
@@ -1710,7 +1738,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/invalid.html.eex:8
 msgid "is not a valid transaction hash"
-msgstr ""
+msgstr "ไม่ใช่หมายเลขธุรกรรมที่ถูกต้อง"
 
 #, elixir-format
 #:
@@ -1746,7 +1774,7 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:141
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:149
 msgid "Close"
-msgstr ""
+msgstr "ปิด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/metadata/index.html.eex:20
@@ -1997,7 +2025,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:10
 msgid "page"
-msgstr ""
+msgstr "หน้า"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_custom_view_df_title.html.eex:9
@@ -2620,7 +2648,7 @@ msgstr ""
 #: lib/block_scout_web/templates/stakes/_stakes_modal_delegators_list.html.eex:15
 #: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Validator"
-msgstr "ผู้ยืนยัน"
+msgstr "ผู้ตรวจสอบ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:154
@@ -2760,10 +2788,10 @@ msgid "transfer"
 msgstr "ถ่ายโอน"
 
 msgid "Update"
-msgstr "อัพเดท"
+msgstr "อัปเดท"
 
 msgid "update"
-msgstr "อัพเดท"
+msgstr "อัปเดท"
 
 msgid "Approve"
 msgstr "อนุมัติ"
@@ -2841,5 +2869,69 @@ msgstr "ค่าธรรมเนียมทั้งหมดที่ใช
 msgid "The maximum gas allowed in this block."
 msgstr "ค่าธรรมเนียมสูงสุดที่ใช้ได้บนบล็อกนี้"
 
+msgid "Related links"
+msgstr "หน่วยงานที่เกี่ยวข้อง"
 
 
+
+msgid "Validator: GetLinks (Thailand) Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท เก็ทลิงส์ (ไทยแลนด์) จํากัด"
+
+msgid "Validator: Ananda Development Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท อนันดา ดีเวลลอปเม้นท์ จํากัด (มหาชน)"
+
+msgid "Validator: Saha Pathanapibul Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท สหพัฒนพิบูล จํากัด (มหาชน)"
+
+msgid "Validator: Huawei Technologies (Thailand) Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท หัวเว่ย เทคโนโลยี (ประเทศไทย) จำกัด"
+
+msgid "Validator: TPCS Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท เท็กซ์ไทล์เพรสทีจ จำกัด (มหาชน)"
+
+msgid "Validator: SmartContract Blockchain Studio"
+msgstr "ผู้ตรวจสอบ: SmartContract Blockchain Studio"
+
+msgid "Validator: Siamrajathanee Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท สยามราชธานี จำกัด (มหาชน)"
+
+msgid "Validator: SiS Distribution (Thailand) Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท เอสไอเอส ดิสทริบิวชั่น (ประเทศไทย) จำกัด (มหาชน)"
+
+msgid "Validator: 2C2P (Thailand) Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท ทูซีทูพี (ประเทศไทย) จำกัด"
+
+msgid "Validator: PROEN Corp Public Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท โปรเอ็น คอร์ป จำกัด (มหาชน)"
+
+msgid "Validator: SIX Network PTE. Ltd."
+msgstr "ผู้ตรวจสอบ: SIX Network PTE. Ltd"
+
+
+
+msgid "KUB: Company Reserve"
+msgstr "KUB: เงินทุนสำรอง"
+
+msgid "KUB: Community / Exchange Development"
+msgstr "KUB: ชุมชน / การพัฒนาระบบแลกเปลี่ยนเงินตรา"
+
+msgid "KUB: Ecosystem"
+msgstr "KUB: Ecosystem"
+
+msgid "KUB: Ecosystem (Hot Wallet)"
+msgstr "KUB: Ecosystem (กระเป๋าเงินร้อน)"
+
+msgid "KUB: Partner"
+msgstr "KUB: หุ้นส่วน"
+
+msgid "KUB: Bitkub Exchange (Hot Wallet)"
+msgstr "KUB: Bitkub Exchange (กระเป๋าเงินร้อน)"
+
+msgid "KUB: Bitkub Exchange (Cold Wallet)"
+msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
+
+msgid "KUB: Liquidity"
+msgstr "KUB: สภาพคล่อง"
+
+msgid "KUB: Liquidity (Burnt)"
+msgstr "KUB: สภาพคล่อง (Burnt)"

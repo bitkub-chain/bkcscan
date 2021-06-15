@@ -34,7 +34,7 @@
         'Tx/day': '<%= gettext("Tx/day") %>'
       }
 
-      var getText = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
+      var getLocale = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
     </script>
 
     <script>

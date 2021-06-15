@@ -240,7 +240,7 @@
       <h2 class="card-title lg-card-title"><%= gettext "Transactions" %></h2>
       <div data-selector="channel-batching-message" style="display: none;">
         <div data-selector="reload-button" class="alert alert-info">
-          <a href="#" class="alert-link"><span data-selector="channel-batching-count"></span> <%= gettext "More transactions have come in" %></a>
+          <a href="#" class="alert-link"><span data-selector="channel-batching-count"></span></a>
         </div>
       </div>
       <span data-selector="transactions-list" data-transactions-path="<%= @transactions_path %>">

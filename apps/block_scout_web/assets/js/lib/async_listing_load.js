@@ -242,7 +242,7 @@ export const elements = {
 
       $el.show()
       if (state.pagesStack.length === 0) {
-        if(getText === "th") {
+        if(getLocale === "th") {
           return $el.text('หน้า 1')
         }
         else {
@@ -250,7 +250,7 @@ export const elements = {
         }
       }
 
-      if(getText === "th") {
+      if(getLocale === "th") {
         $el.text('หน้า ' + state.pagesStack.length)
       }
       else {

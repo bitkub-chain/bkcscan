@@ -127,12 +127,28 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_validator_metadata_modal.html.eex:16
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:19
 #: lib/block_scout_web/views/address_view.ex:104
+#: lib/block_scout_web/templates/address/index.html.eex:22
 msgid "Address"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/index.html.eex:4
 msgid "Addresses"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:27
+msgid "Name Tag"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:38
+msgid "Percentage"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/index.html.eex:44
+msgid "Txn Count"
 msgstr ""
 
 #, elixir-format
@@ -166,6 +182,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:4
 #: lib/block_scout_web/templates/stakes/_stakes_stats_item_account.html.eex:42
 #: lib/block_scout_web/templates/stakes/_stakes_stats_item_account.html.eex:43
+#: lib/block_scout_web/templates/address/index.html.eex:32
 msgid "Balance"
 msgstr ""
 
@@ -254,8 +271,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:20
-msgid "Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks."
-msgstr "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
+msgid "Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks."
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
@@ -281,8 +298,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:39
-msgid "Chat"
-msgstr "Bitkub Exchange"
+msgid "Bitkub Exchange"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:137
@@ -399,8 +416,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:38
-msgid "Contribute"
-msgstr "Bitkub NEXT"
+msgid "Bitkub NEXT"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
@@ -539,10 +556,14 @@ msgid "Description"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:29
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:166
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:127
 msgid "Details"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/address/overview.html.eex:31
+msgid "Address Details"
 msgstr ""
 
 #, elixir-format
@@ -1157,6 +1178,12 @@ msgid "Page"
 msgstr ""
 
 #, elixir-format
+#:
+#: lib/block_scout_web/templates/common_components/_pagination_container.html.eex:21
+msgid "First"
+msgstr ""
+
+#, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:33
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:40
 msgid "Parameters"
@@ -1360,13 +1387,13 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:37
-msgid "Submit an Issue"
-msgstr "Bitkub Chain"
+msgid "Bitkub Chain"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:40
-msgid "Support"
-msgstr "Bitkub Blockchain Technology"
+msgid "Bitkub Blockchain Technology"
+msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:60
@@ -2839,4 +2866,71 @@ msgid "Total gas used by all transactions in this block (% used)."
 msgstr ""
 
 msgid "The maximum gas allowed in this block."
+msgstr ""
+
+msgid "Related links"
+msgstr ""
+
+
+
+msgid "Validator: GetLinks (Thailand) Company Limited"
+msgstr ""
+
+msgid "Validator: Ananda Development Public Company Limited"
+msgstr ""
+
+msgid "Validator: Saha Pathanapibul Public Company Limited"
+msgstr ""
+
+msgid "Validator: Huawei Technologies (Thailand) Company Limited"
+msgstr ""
+
+msgid "Validator: TPCS Public Company Limited"
+msgstr ""
+
+msgid "Validator: SmartContract Blockchain Studio"
+msgstr ""
+
+msgid "Validator: Siamrajathanee Public Company Limited"
+msgstr ""
+
+msgid "Validator: SiS Distribution (Thailand) Public Company Limited"
+msgstr ""
+
+msgid "Validator: 2C2P (Thailand) Company Limited"
+msgstr ""
+
+msgid "Validator: PROEN Corp Public Company Limited"
+msgstr ""
+
+msgid "Validator: SIX Network PTE. Ltd."
+msgstr ""
+
+
+
+msgid "KUB: Company Reserve"
+msgstr ""
+
+msgid "KUB: Community / Exchange Development"
+msgstr ""
+
+msgid "KUB: Ecosystem"
+msgstr ""
+
+msgid "KUB: Ecosystem (Hot Wallet)"
+msgstr ""
+
+msgid "KUB: Partner"
+msgstr ""
+
+msgid "KUB: Bitkub Exchange (Hot Wallet)"
+msgstr ""
+
+msgid "KUB: Bitkub Exchange (Cold Wallet)"
+msgstr ""
+
+msgid "KUB: Liquidity"
+msgstr ""
+
+msgid "KUB: Liquidity (Burnt)"
 msgstr ""
