@@ -197,6 +197,7 @@
               <%= switch_locale_path :th, "TH" %>
           </div>
         </li>
+        
       </ul>
       <!-- Dark mode changer -->
       <button class="dark-mode-changer" id="dark-mode-changer">
