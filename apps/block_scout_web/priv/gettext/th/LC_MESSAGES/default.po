@@ -644,17 +644,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:266
 msgid "Error: %{reason}"
-msgstr "ข้อผิดพลาด : %{reason}"
+msgstr "ข้อผิดพลาด: %{reason}"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr "ข้อผิดพลาด : กำลังรอการทำธุรกรรม"
+msgstr "ข้อผิดพลาด: กำลังรอการทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
 msgid "Error: Could not determine contract creator."
-msgstr ""
+msgstr "ข้อผิดพลาด: ไม่สามารถระบุผู้สร้างสัญญาได้"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:138
@@ -699,7 +699,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr "ถอดรหัสข้อมูลไม่สำเร็จ / การถอดรหัสข้อมูลล้มเหลว"
+msgstr "การถอดรหัสข้อมูลล้มเหลว / ถอดรหัสข้อมูลไม่สำเร็จ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -1374,7 +1374,7 @@ msgstr "มีบางอย่างผิดปกติ คลิกเพ�
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:247
 msgid "Something went wrong, click to retry."
-msgstr "มีบางอย่างผิดปกติ คลิกเพื่อลองอีกครั้ง"
+msgstr "มีบางอย่างผิดปกติ คลิกเพื่อลองใหม่อีกครั้ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:7
@@ -1995,7 +1995,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_raw_trace/index.html.eex:15
 msgid "Copy Raw Trace"
-msgstr ""
+msgstr "คัดลอก Raw Trace"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:213
