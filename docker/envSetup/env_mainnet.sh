@@ -12,3 +12,5 @@ export DISABLE_EXCHANGE_RATES=true
 export ENABLE_TXS_STATS=true
 export SHOW_PRICE_CHART=true
 export SHOW_TXS_CHART=true
+export COIN="KUB"
+export COINGECKO_COIN_ID="bitkub-coin"
