@@ -107,7 +107,12 @@ const elements = {
     render ($el, state, oldState) {
       if (state.countersFetched && state.transactionCount) {
         if (oldState.transactionCount === state.transactionCount) return
-        $el.empty().append(numeral(state.transactionCount).format() + ' Transactions')
+        if(getLocale === "th") {
+          $el.empty().append(numeral(state.transactionCount).format() + ' การทำธุรกรรม')
+        }
+        else {
+          $el.empty().append(numeral(state.transactionCount).format() + ' Transactions')
+        }
         $el.show()
         $el.parent('.address-detail-item').removeAttr('style')
       } else {
@@ -123,7 +128,12 @@ const elements = {
     render ($el, state, oldState) {
       if (state.countersFetched && state.gasUsageCount) {
         if (oldState.gasUsageCount === state.gasUsageCount) return
-        $el.empty().append(numeral(state.gasUsageCount).format() + ' Gas used')
+        if(getLocale === "th") {
+          $el.empty().append(numeral(state.gasUsageCount).format() + ' ค่าธรรมเนียมที่ใช้จริง')
+        }
+        else {
+          $el.empty().append(numeral(state.gasUsageCount).format() + ' Gas used')
+        }
         $el.show()
         $el.parent('.address-detail-item').removeAttr('style')
       } else {
@@ -148,7 +158,12 @@ const elements = {
     render ($el, state, oldState) {
       if (state.countersFetched && state.validationCount) {
         if (oldState.validationCount === state.validationCount) return
-        $el.empty().append(numeral(state.validationCount).format() + ' Blocks Validated')
+        if(getLocale === "th") {
+          $el.empty().append(numeral(state.validationCount).format() + ' บล็อกที่ตรวจสอบแล้ว')
+        }
+        else {
+          $el.empty().append(numeral(state.validationCount).format() + ' Blocks Validated')
+        }
         $el.show()
       } else {
         $el.hide()

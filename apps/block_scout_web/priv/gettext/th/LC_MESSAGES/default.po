@@ -161,7 +161,7 @@ msgstr "จำนวนธุรกรรม"
 #: lib/block_scout_web/views/address_token_transfer_view.ex:10
 #: lib/block_scout_web/views/address_transaction_view.ex:10
 msgid "All"
-msgstr ""
+msgstr "ทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:15
@@ -189,7 +189,7 @@ msgstr "ยอดรวม"
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:16
 msgid "Balances"
-msgstr ""
+msgstr "ยอดรวม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:5
@@ -735,7 +735,7 @@ msgstr "บล็อก Forked"
 #: lib/block_scout_web/views/address_token_transfer_view.ex:9
 #: lib/block_scout_web/views/address_transaction_view.ex:9
 msgid "From"
-msgstr ""
+msgstr "ส่ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:18
@@ -889,7 +889,7 @@ msgstr ""
 #: lib/block_scout_web/views/address_token_transfer_view.ex:8
 #: lib/block_scout_web/views/address_transaction_view.ex:8
 msgid "To"
-msgstr ""
+msgstr "รับ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:23
@@ -1663,7 +1663,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:53
 msgid "View Less Transfers"
-msgstr ""
+msgstr "ซ่อนรายการโอน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:52
@@ -1851,7 +1851,7 @@ msgstr "คัดลอก Txn Input"
 #: lib/block_scout_web/templates/address_validation/index.html.eex:13
 #: lib/block_scout_web/views/address_view.ex:354
 msgid "Blocks Validated"
-msgstr ""
+msgstr "บล็อกที่ตรวจสอบแล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:58
@@ -1911,7 +1911,10 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/index.html.eex:4
 #: lib/block_scout_web/views/address_view.ex:343
 msgid "Tokens"
-msgstr "โทเค็น"
+msgstr "โทเคน"
+
+msgid "tokens"
+msgstr "โทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
@@ -2910,19 +2913,19 @@ msgstr "ผู้ตรวจสอบ: SIX Network PTE. Ltd"
 
 
 msgid "KUB: Company Reserve"
-msgstr "KUB: เงินทุนสำรอง"
+msgstr "KUB: งบประมาณสํารองของบริษัท ฯ"
 
 msgid "KUB: Community / Exchange Development"
-msgstr "KUB: ชุมชน / การพัฒนาระบบแลกเปลี่ยนเงินตรา"
+msgstr "KUB: งบประมาณสําหรับพัฒนาเครือข่ายและศูนย์ซื้อขาย"
 
 msgid "KUB: Ecosystem"
-msgstr "KUB: Ecosystem"
+msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ"
 
 msgid "KUB: Ecosystem (Hot Wallet)"
-msgstr "KUB: Ecosystem (กระเป๋าเงินร้อน)"
+msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ (กระเป๋าเงินร้อน)"
 
 msgid "KUB: Partner"
-msgstr "KUB: หุ้นส่วน"
+msgstr "KUB: งบประมาณสําหรับพาร์ตเนอร์ทางธุรกิจ"
 
 msgid "KUB: Bitkub Exchange (Hot Wallet)"
 msgstr "KUB: Bitkub Exchange (กระเป๋าเงินร้อน)"
@@ -2931,7 +2934,16 @@ msgid "KUB: Bitkub Exchange (Cold Wallet)"
 msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
 
 msgid "KUB: Liquidity"
-msgstr "KUB: สภาพคล่อง"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง"
 
 msgid "KUB: Liquidity (Burnt)"
-msgstr "KUB: สภาพคล่อง (Burnt)"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (เผาเหรียญ)"
+
+msgid "Burnt"
+msgstr "เผาเหรียญ"
+
+
+
+msgid "Filter: "
+msgstr "ตัวกรอง: "
+
