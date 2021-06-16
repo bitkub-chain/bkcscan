@@ -286,7 +286,12 @@ const elements = {
       const $channelBatching = $('[data-selector="channel-batching-message"]')
       if (!state.transactionsBatch.length) return $channelBatching.hide()
       $channelBatching.show()
-      $el[0].innerHTML = numeral(state.transactionsBatch.length).format()
+      if(getLocale === "th") {
+        $el[0].innerHTML = "มี " + numeral(state.transactionsBatch.length).format() + " รายการใหม่"
+      }
+      else{
+        $el[0].innerHTML = numeral(state.transactionsBatch.length).format() + " transactions have come in"
+      }
     }
   }
 }

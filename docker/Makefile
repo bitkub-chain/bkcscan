@@ -12,6 +12,7 @@ ifeq ($(SYSTEM), Linux)
 endif
 
 DB_URL =  postgresql://postgres:@$(HOST):5432/explorer?ssl=false
+
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
 															 -e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)

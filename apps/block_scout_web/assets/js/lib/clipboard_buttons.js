@@ -8,7 +8,7 @@ clipboard.on('success', ({ trigger }) => {
   copyButton.tooltip('dispose')
 
   copyButton.tooltip({
-    title: (getText === "th" ? 'คัดลอก!' : 'Copied!'),
+    title: (getLocale === "th" ? 'คัดลอกแล้ว!' : 'Copied!'),
     trigger: 'click',
     placement: 'top'
   }).tooltip('show')

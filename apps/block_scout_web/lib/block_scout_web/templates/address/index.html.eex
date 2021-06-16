@@ -19,29 +19,29 @@
 								</th>
 								<th class="stakes-table-th">
 									<div class="stakes-table-th-content">
-										Address
+										<%= gettext "Addresses" %>
 									</div>
 								</th>
 								<th class="stakes-table-th">
 									<div class="stakes-table-th-content">
-										Name Tag
+										<%= gettext "Name Tag" %>
 									</div>
 								</th>
 								<th class="stakes-table-th">
 									<div class="stakes-table-th-content">
-										Balance
+										<%= gettext "Balance" %>
 									</div>
 								</th>
 								<%= if balance_percentage_enabled?(@total_supply) do %>
 								<th class="stakes-table-th">
 									<div class="stakes-table-th-content">
-										Percentage
+										<%= gettext "Percentage" %>
 									</div>
 								</th>
 								<% end %>
 								<th class="stakes-table-th">
 									<div class="stakes-table-th-content">
-										Txn Count
+										<%= gettext "Txn Count" %>
 									</div>
 								</th>
 							</tr>
