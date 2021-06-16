@@ -148,7 +148,7 @@
               <small class="border-dark p-1 bg-success text-white rounded">KUB: Liquidity (Burnt)</small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x0000000000000000000000000000000000000000")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Burnt</small>
+              <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;">Burnt</small>
             <% end %>
           </h3>
           <br/>
