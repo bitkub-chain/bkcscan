@@ -2,8 +2,8 @@
 #: lib/block_scout_web/views/address_token_balance_view.ex:8
 msgid "%{count} token"
 msgid_plural "%{count} tokens"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} โทเคน"
+msgstr[1] "%{count} โทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:27
@@ -161,7 +161,7 @@ msgstr "จำนวนธุรกรรม"
 #: lib/block_scout_web/views/address_token_transfer_view.ex:10
 #: lib/block_scout_web/views/address_transaction_view.ex:10
 msgid "All"
-msgstr ""
+msgstr "ทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:15
@@ -189,7 +189,7 @@ msgstr "ยอดรวม"
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:16
 msgid "Balances"
-msgstr ""
+msgstr "ยอดรวม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:5
@@ -644,17 +644,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:266
 msgid "Error: %{reason}"
-msgstr "ข้อผิดพลาด : %{reason}"
+msgstr "ข้อผิดพลาด: %{reason}"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr "ข้อผิดพลาด : กำลังรอการทำธุรกรรม"
+msgstr "ข้อผิดพลาด: กำลังรอการทำธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
 msgid "Error: Could not determine contract creator."
-msgstr ""
+msgstr "ข้อผิดพลาด: ไม่สามารถระบุผู้สร้างสัญญาได้"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:138
@@ -699,7 +699,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr "ถอดรหัสข้อมูลไม่สำเร็จ / การถอดรหัสข้อมูลล้มเหลว"
+msgstr "การถอดรหัสข้อมูลล้มเหลว / ถอดรหัสข้อมูลไม่สำเร็จ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -735,7 +735,7 @@ msgstr "บล็อก Forked"
 #: lib/block_scout_web/views/address_token_transfer_view.ex:9
 #: lib/block_scout_web/views/address_transaction_view.ex:9
 msgid "From"
-msgstr ""
+msgstr "ส่ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:18
@@ -889,7 +889,7 @@ msgstr ""
 #: lib/block_scout_web/views/address_token_transfer_view.ex:8
 #: lib/block_scout_web/views/address_transaction_view.ex:8
 msgid "To"
-msgstr ""
+msgstr "รับ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:23
@@ -1374,7 +1374,7 @@ msgstr "มีบางอย่างผิดปกติ คลิกเพ�
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:247
 msgid "Something went wrong, click to retry."
-msgstr "มีบางอย่างผิดปกติ คลิกเพื่อลองอีกครั้ง"
+msgstr "มีบางอย่างผิดปกติ คลิกเพื่อลองใหม่อีกครั้ง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:7
@@ -1663,7 +1663,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:53
 msgid "View Less Transfers"
-msgstr ""
+msgstr "ซ่อนรายการโอน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:52
@@ -1851,7 +1851,7 @@ msgstr "คัดลอก Txn Input"
 #: lib/block_scout_web/templates/address_validation/index.html.eex:13
 #: lib/block_scout_web/views/address_view.ex:354
 msgid "Blocks Validated"
-msgstr ""
+msgstr "บล็อกที่ตรวจสอบแล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:58
@@ -1911,7 +1911,10 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/index.html.eex:4
 #: lib/block_scout_web/views/address_view.ex:343
 msgid "Tokens"
-msgstr "โทเค็น"
+msgstr "โทเคน"
+
+msgid "tokens"
+msgstr "โทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
@@ -1995,7 +1998,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_raw_trace/index.html.eex:15
 msgid "Copy Raw Trace"
-msgstr ""
+msgstr "คัดลอก Raw Trace"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:213
@@ -2910,19 +2913,19 @@ msgstr "ผู้ตรวจสอบ: SIX Network PTE. Ltd"
 
 
 msgid "KUB: Company Reserve"
-msgstr "KUB: เงินทุนสำรอง"
+msgstr "KUB: งบประมาณสํารองของบริษัท ฯ"
 
 msgid "KUB: Community / Exchange Development"
-msgstr "KUB: ชุมชน / การพัฒนาระบบแลกเปลี่ยนเงินตรา"
+msgstr "KUB: งบประมาณสําหรับพัฒนาเครือข่ายและศูนย์ซื้อขาย"
 
 msgid "KUB: Ecosystem"
-msgstr "KUB: Ecosystem"
+msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ"
 
 msgid "KUB: Ecosystem (Hot Wallet)"
-msgstr "KUB: Ecosystem (กระเป๋าเงินร้อน)"
+msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ (กระเป๋าเงินร้อน)"
 
 msgid "KUB: Partner"
-msgstr "KUB: หุ้นส่วน"
+msgstr "KUB: งบประมาณสําหรับพาร์ตเนอร์ทางธุรกิจ"
 
 msgid "KUB: Bitkub Exchange (Hot Wallet)"
 msgstr "KUB: Bitkub Exchange (กระเป๋าเงินร้อน)"
@@ -2931,7 +2934,16 @@ msgid "KUB: Bitkub Exchange (Cold Wallet)"
 msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
 
 msgid "KUB: Liquidity"
-msgstr "KUB: สภาพคล่อง"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง"
 
 msgid "KUB: Liquidity (Burnt)"
-msgstr "KUB: สภาพคล่อง (Burnt)"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (เผาเหรียญ)"
+
+msgid "Burnt"
+msgstr "เผาเหรียญ"
+
+
+
+msgid "Filter: "
+msgstr "ตัวกรอง: "
+

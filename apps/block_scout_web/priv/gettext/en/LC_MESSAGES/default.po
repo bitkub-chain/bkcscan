@@ -1912,6 +1912,9 @@ msgstr ""
 msgid "Tokens"
 msgstr ""
 
+msgid "tokens"
+msgstr ""
+
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:15
@@ -2933,4 +2936,12 @@ msgid "KUB: Liquidity"
 msgstr ""
 
 msgid "KUB: Liquidity (Burnt)"
+msgstr ""
+
+msgid "Burnt"
+msgstr ""
+
+
+
+msgid "Filter: "
 msgstr ""
