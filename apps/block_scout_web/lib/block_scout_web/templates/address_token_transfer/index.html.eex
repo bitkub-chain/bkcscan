@@ -19,7 +19,7 @@
             <div class="dropdown u-push-sm">
               <button data-test="filter_dropdown" class="btn-dropdown-line dropdown-toggle" type="button"
                 id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Filter: <%= format_current_filter(@filter) %>
+                <%= gettext("Filter: ")%><%= format_current_filter(@filter) %>
               </button>
               <div class="dropdown-menu dropdown-menu-right filter" aria-labelledby="dropdownMenu2">
                 <%= link(

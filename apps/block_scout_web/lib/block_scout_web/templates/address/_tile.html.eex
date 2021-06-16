@@ -78,7 +78,7 @@
         <p class="mb-0"><%= gettext "KUB: Liquidity (Burnt)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x0000000000000000000000000000000000000000")) do %>
-        <p class="mb-0">Burnt</p> 
+        <p class="mb-0"><%= gettext "Burnt" %></p>
       <% end %>
   </td>
   <td class="stakes-td">
