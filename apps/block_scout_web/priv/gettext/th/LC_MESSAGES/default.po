@@ -2,8 +2,8 @@
 #: lib/block_scout_web/views/address_token_balance_view.ex:8
 msgid "%{count} token"
 msgid_plural "%{count} tokens"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} โทเคน"
+msgstr[1] "%{count} โทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:27

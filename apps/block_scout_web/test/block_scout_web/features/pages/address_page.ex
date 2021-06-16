@@ -20,7 +20,7 @@ defmodule BlockScoutWeb.AddressPage do
   end
 
   def token_balance_counter(text) do
-    css("[data-tokens-count]", text: "#{text} " <> gettext("tokens"))
+    css("[data-tokens-count]", text: ngettext("%{count} token", "%{count} tokens", "#{text}"))
   end
 
   def token_type(count: count) do
