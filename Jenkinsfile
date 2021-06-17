@@ -23,7 +23,7 @@ node {
             sshCommand remote: remote, command: 'echo ">> Making temporary file"'
 	    sshCommand remote: remote, command: 'cd jenkins/bkc-explorer; source env_testnet.sh; cp docker/Dockerfile ./; cp docker/stop.sh ./'
 	    sshCommand remote: remote, command: 'echo ">> Removing old (and stopped) containers.."'
-	    sshCommand remote: remote, command: 'docker stop bkc-explorer; docker rm bkc-explorer; docker ps -a | grep Exited | awk '{print $1}' | xargs docker container rm; sleep 1;
+	    sshCommand remote: remote, command: "docker ps -a | grep Exited | awk '{print $1}' | xargs docker container rm; sleep 1;"
 	}
         stage('Build Docker image'){
             sshCommand remote: remote, command: 'echo ">> Cleaning Docker image"'
