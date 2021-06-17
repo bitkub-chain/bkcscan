@@ -9,3 +9,5 @@ export NETWORK="Testnet"
 export SUBNETWORK="Bitkub Chain"
 export BLOCK_TRANSFORMER=clique
 export DISABLE_EXCHANGE_RATES=true
+export COIN=kub
+export COINGECKO_COIN_ID=bitkub-coin
