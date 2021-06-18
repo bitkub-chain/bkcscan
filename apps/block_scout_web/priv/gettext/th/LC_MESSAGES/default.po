@@ -13,11 +13,6 @@ msgstr[0] "%{count} การทำธุรกรรม"
 msgstr[1] "%{count} การทำธุรกรรม"
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:220
-msgid " Token Transfer"
-msgstr "การโอนเหรียญ"
-
-#, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:14
 msgid " is recommended."
 msgstr ""
@@ -63,7 +58,7 @@ msgstr "%{subnetwork} Explorer"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
 msgid "(Awaiting internal transactions for status)"
-msgstr "(กำลังรอการทำธุรกรรม)"
+msgstr "(รอสถานะในการทำธุรกรรมระหว่างสัญญาอัจฉริยะ)"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:59
@@ -527,20 +522,20 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:108
 #: lib/block_scout_web/templates/block/overview.html.eex:165
 msgid "Gas Limit"
-msgstr "ค่าธรรมเนียมสูงสุด"
+msgstr "แก๊สสูงสุด"
 
 msgid "%{count} Gas Limit"
-msgstr "ค่าธรรมเนียมสูงสุด %{count}"
+msgstr "แก๊สสูงสุด %{count}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:62
 #: lib/block_scout_web/templates/block/overview.html.eex:101
 #: lib/block_scout_web/templates/block/overview.html.eex:157
 msgid "Gas Used"
-msgstr "ค่าธรรมเนียมที่ใช้จริง"
+msgstr "แก๊สที่ถูกใช้ไปแล้ว"
 
 msgid "%{count} Gas Used"
-msgstr "%{count} ค่าธรรมเนียมที่ใช้จริง"
+msgstr "%{count} แก๊สที่ถูกใช้ไปแล้ว"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:23
@@ -649,7 +644,7 @@ msgstr "ข้อผิดพลาด: %{reason}"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr "ข้อผิดพลาด: กำลังรอการทำธุรกรรม"
+msgstr "ข้อผิดพลาด: รอการทำธุรกรรมระหว่างสัญญาอัจฉริยะด้วยเหตุผลบางประการ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
@@ -699,7 +694,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr "การถอดรหัสข้อมูลล้มเหลว / ถอดรหัสข้อมูลไม่สำเร็จ"
+msgstr "การถอดรหัสข้อมูลล้มเหลว"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -907,19 +902,19 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/overview/_tabs.html.eex:9
 #: lib/block_scout_web/views/tokens/overview_view.ex:41
 msgid "Token Holders"
-msgstr ""
+msgstr "ผู้ถือครองโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/inventory/_token.html.eex:11
 msgid "Token ID"
-msgstr ""
+msgstr "หมายเลขโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:12
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:10
 #: lib/block_scout_web/views/transaction_view.ex:344
 msgid "Token Transfer"
-msgstr "การโอนเหรียญ"
+msgstr "การโอนโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:13
@@ -1312,7 +1307,7 @@ msgstr ""
 #:
 #: lib/block_scout_web/templates/address_token_balance/_token_balances.html.eex:36
 msgid "Search tokens"
-msgstr ""
+msgstr "ค้นหาโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:27
@@ -1498,7 +1493,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:110
 msgid "Total Supply"
-msgstr ""
+msgstr "จำนวนโทเคนทั้งหมด"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:155
@@ -1658,12 +1653,12 @@ msgstr "ดูธุรกรรมทั้งหมด"
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:20
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:90
 msgid "View Contract"
-msgstr ""
+msgstr "ดูรายละเอียดสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:53
 msgid "View Less Transfers"
-msgstr "ซ่อนรายการโอน"
+msgstr "ดูรายการโอนน้อยลง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:52
@@ -1785,7 +1780,7 @@ msgstr ""
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:31
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:35
 msgid "Copy Token ID"
-msgstr ""
+msgstr "คัดลอกหมายเลขโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:76
@@ -1838,7 +1833,7 @@ msgstr "ธุรกรรมทั้งหมด"
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:74
 msgid "Transfers"
-msgstr ""
+msgstr "การโอน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:158
@@ -1900,7 +1895,7 @@ msgstr ""
 #: lib/block_scout_web/views/address_view.ex:349
 #: lib/block_scout_web/views/tokens/overview_view.ex:42
 msgid "Read Contract"
-msgstr ""
+msgstr "อ่านรายละเอียดสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:21
@@ -1916,6 +1911,12 @@ msgstr "โทเคน"
 msgid "tokens"
 msgstr "โทเคน"
 
+msgid "Token"
+msgstr "โทเคน"
+
+msgid "token"
+msgstr "โทเคน"
+
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:15
@@ -1928,28 +1929,18 @@ msgid "Transactions"
 msgstr "การทำธุรกรรม"
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:242
-msgid " Token Burning"
-msgstr "การเผาเหรียญ"
-
-#, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:8
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:6
 #: lib/block_scout_web/views/transaction_view.ex:343
 msgid "Token Burning"
-msgstr "การเผาเหรียญ"
-
-#, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:231
-msgid " Token Minting"
-msgstr "การขุดเหรียญ"
+msgstr "การเผาโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:10
 #: lib/block_scout_web/templates/transaction_token_transfer/_token_transfer.html.eex:8
 #: lib/block_scout_web/views/transaction_view.ex:342
 msgid "Token Minting"
-msgstr "การขุดเหรียญ"
+msgstr "การขุดโทเคน"
 
 #, elixir-format
 #: lib/block_scout_web/views/block_view.ex:62
@@ -2008,7 +1999,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex
 msgid "Search transaction hash, block number, token symbol or name"
-msgstr "ค้นหาหมายเลขธุรกรรม หมายเลขบล็อก สัญลักษณ์โทเค็น หรือชื่อ"
+msgstr "ค้นหาหมายเลขธุรกรรม หมายเลขบล็อก สัญลักษณ์โทเคน หรือชื่อ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:7
@@ -2763,7 +2754,7 @@ msgstr[0] "วินาที"
 msgstr[1] "วินาที"
 
 msgid "Total gas used"
-msgstr "ขนาดข้อมูลของ Smart Contract ทั้งหมด"
+msgstr "ขนาดข้อมูลของแก๊สที่ถูกใช้ไปแล้วทั้งหมด"
 
 msgid "in %{count} second"
 msgid_plural "in %{count} seconds"
@@ -2852,7 +2843,7 @@ msgid "The SHA256 hash of the block."
 msgstr "บล็อกนี้ใช้ SHA256 ในการ Hash ข้อมูล"
 
 msgid "Block difficulty for miner, used to calibrate block generation time. (Note: constant in POA based networks)"
-msgstr "ค่าความยากสำหรับการตรวจสอบธุรกรรม(นักขุดเหรียญ) ใช้ในการปรับเทียบเวลาในการสร้างบล็อก"
+msgstr "ค่าความยากสำหรับการตรวจสอบธุรกรรม (นักขุดโทเคน) ใช้ในการปรับเทียบเวลาในการสร้างบล็อก"
 
 msgid "Integer of the total difficulty of the chain until this block."
 msgstr "จำนวนของระดับความยากทั้งหมดของห่วงโซ่ตลอดจนบล็อกนี้"
@@ -2864,13 +2855,13 @@ msgid "The SHA256 hash of the parent block."
 msgstr "บล็อกก่อนหน้านี้ใช้ SHA256 ในการ Hash ข้อมูล"
 
 msgid "Total gas used by all transactions in this block (limit)."
-msgstr "ค่าธรรมเนียมทั้้งหมดที่ใช้จริงบนบล็อกนี้ (ปริมาณที่จำกัด)"
+msgstr "แก๊สทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (ปริมาณที่จำกัด)"
 
 msgid "Total gas used by all transactions in this block (% used)."
-msgstr "ค่าธรรมเนียมทั้งหมดที่ใช้จริงบนบล็อกนี้ (% ที่ใช้ไป)"
+msgstr "แก๊สทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (% ที่ถูกใช้ไป)"
 
 msgid "The maximum gas allowed in this block."
-msgstr "ค่าธรรมเนียมสูงสุดที่ใช้ได้บนบล็อกนี้"
+msgstr "ปริมาณแก๊สสูงสุดที่ใช้ได้บนบล็อกนี้"
 
 msgid "Related links"
 msgstr "หน่วยงานที่เกี่ยวข้อง"
@@ -2937,13 +2928,27 @@ msgid "KUB: Liquidity"
 msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง"
 
 msgid "KUB: Liquidity (Burnt)"
-msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (เผาเหรียญ)"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (เผาโทเคน)"
 
 msgid "Burnt"
-msgstr "เผาเหรียญ"
+msgstr "เผาโทเคน"
 
 
 
 msgid "Filter: "
 msgstr "ตัวกรอง: "
 
+msgid "Out of gas"
+msgstr "มีแก๊สไม่เพียงพอ"
+
+msgid "Token name or symbol"
+msgstr "ชื่อโทเคนหรือสัญลักษณ์"
+
+msgid "Holders Count"
+msgstr "จำนวนผู้ถือครอง"
+
+msgid "Official"
+msgstr "ทางการ"
+
+msgid "Deprecated"
+msgstr "เลิกใช้งาน"

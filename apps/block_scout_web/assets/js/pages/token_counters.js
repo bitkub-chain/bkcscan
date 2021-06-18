@@ -50,7 +50,12 @@ const elements = {
   '[token-transfer-count]': {
     render ($el, state) {
       if (state.transferCount) {
-        $el.text(state.transferCount + ' Transfers')
+        if(getLocale === "th") {
+          $el.text(state.transferCount + ' การโอน')
+        }
+        else {
+          $el.text(state.transferCount + ' Transfers')
+        }
         return $el.show()
       } else {
         return $el.hide()
