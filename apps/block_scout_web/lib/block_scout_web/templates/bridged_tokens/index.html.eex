@@ -5,7 +5,7 @@
 		<% tag = Chain.chain_id_display_name(@chain_id) %>
 		<h1 class="card-title"><div class="title-with-label"><%= gettext "Bridged Tokens from " %><%= @chain %></div><div class="bs-label ml-2 destination-<%= tag %>"><%= String.upcase(tag) %></div></h1>
 		<label class="tokens-list-search-input-container">
-			<input data-search-field="" class="form-control tokens-list-search-input" type="text" name="filter" placeholder="Token name or symbol" id="search-text-input" />
+			<input data-search-field="" class="form-control tokens-list-search-input" type="text" name="filter" placeholder="<%= gettext "Token name or symbol" %>" id="search-text-input" />
 	  	</label>
 	  </div>
 	  <div>
@@ -24,19 +24,19 @@
 			<div class="stakes-table-th-content">&nbsp;</div>
 	      </th>
 	      <th class="stakes-table-th">
-			<div class="stakes-table-th-content">Token</div>
+			<div class="stakes-table-th-content"><%= gettext "Token" %></div>
 	      </th>
 	      <th class="stakes-table-th">
-			<div class="stakes-table-th-content">Address</div>
+			<div class="stakes-table-th-content"><%= gettext "Address" %></div>
 	      </th>
 	      <th class="stakes-table-th">
 			<div class="stakes-table-th-content">
-			Total Supply
+				<%= gettext "Total Supply" %>
 			</div>
 	      </th>
 	      <th class="stakes-table-th">
 			<div class="stakes-table-th-content">
-			Holders Count
+				<%= gettext "Holders Count" %>
 			</div>
 	      </th>
 	    </tr>

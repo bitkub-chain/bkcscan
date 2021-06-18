@@ -153,10 +153,10 @@
           </h3>
           <br/>
           <%= if(check) do %>
-            <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;">Official</small>
+            <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;"><%= gettext "Official" %></small>
           <% end %>
           <%= if(check_deprecated) do %>
-            <small class="border-dark p-1 text-white rounded" style="width: fit-content; background-color: #F3442E;">Deprecated</small>
+            <small class="border-dark p-1 text-white rounded" style="width: fit-content; background-color: #F3442E;"><%= gettext "Deprecated" %></small>
           <% end %>
 
           <br/>

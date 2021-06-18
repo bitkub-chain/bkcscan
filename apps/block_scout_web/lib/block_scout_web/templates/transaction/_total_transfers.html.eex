@@ -1,6 +1,6 @@
 <%= case token_transfer_amount(@transfer) do %>
     <% {:ok, :erc721_instance} -> %>
-        <%= "TokenID ["%><%= link(short_token_id(@transfer.token_id, 30), to: token_instance_path(BlockScoutWeb.Endpoint, :show, @transfer.token.contract_address_hash, to_string(@transfer.token_id)), "data-test": "token_link") %><%= "]" %>
+        <%= gettext "Token ID" %><%= ": ["%><%= link(short_token_id(@transfer.token_id, 30), to: token_instance_path(BlockScoutWeb.Endpoint, :show, @transfer.token.contract_address_hash, to_string(@transfer.token_id)), "data-test": "token_link") %><%= "]" %>
     <% {:ok, value} -> %>
         <%= value %>
 <% end %>

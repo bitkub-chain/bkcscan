@@ -32,10 +32,10 @@
                   <% check = Enum.member?(officials, address) %>
                   <% check_deprecated = Enum.member?(deprecated, address) %>
                   <%= if(check) do %>
-                    <small class="border-dark p-1 bg-success text-white rounded">Official</small>
+                    <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Official" %></small>
                   <% end %>
                   <%= if(check_deprecated) do %>
-                    <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;">Deprecated</small>
+                    <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;"><%= gettext "Deprecated" %></small>
                   <% end %>
                 </div>
 
