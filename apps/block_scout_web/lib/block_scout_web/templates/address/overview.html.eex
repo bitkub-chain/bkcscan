@@ -183,7 +183,10 @@
               </span>
               <%= if @address.fetched_coin_balance_block_number do %>
                 <span class="address-detail-item">
-                  <%= gettext("Last Balance Update: Block #") %><span data-selector="fetched-coin-balance-block-number"><%= @address.fetched_coin_balance_block_number %></span>
+                  <%= gettext("Last Balance Update: Block #") %>
+                  <span data-selector="fetched-coin-balance-block-number">
+                    <%= @address.fetched_coin_balance_block_number %>
+                  </span>
                 </span>
               <% end %>
 

@@ -100,7 +100,7 @@
   <td class="stakes-td">
     <span class="mr-4">
       <span data-test="transaction_count">
-        <%= @tx_count %>
+        <%= format_integer_to_currency(@tx_count) %>
       </span> <%= gettext "Transactions sent" %>
     </span>
   </td>
