@@ -235,7 +235,7 @@ msgstr "กำลังรอการนำเข้า..."
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/overview.html.eex:82
 msgid "Block Number"
-msgstr "จำนวนบล็อก"
+msgstr "หมายเลขบล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:34

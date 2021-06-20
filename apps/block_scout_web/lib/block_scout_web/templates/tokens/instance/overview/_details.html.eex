@@ -71,7 +71,7 @@
                 </span>
               <% end %>
               <span class="mr-4"> <%= @token.type %> </span>
-              <span class="mr-4"><%= @total_token_transfers %> <%= gettext "Transfers" %></span>
+              <span class="mr-4"><%= format_integer_to_currency(@total_token_transfers) %> <%= gettext "Transfers" %></span>
               <%= if decimals?(@token) do %>
                 <span class="mr-4"><%= @token.decimals %> <%= gettext "Decimals" %></span>
               <% end %>
