@@ -7,7 +7,6 @@
     if (localStorage.getItem("current-color-mode") === "dark") {
       document.getElementById("top-navbar").style.backgroundColor = "#282945";
     }
-    console.log(getText);
   </script>
   <div class="container-fluid navbar-container">
     <%= link to: webapp_url(@conn), class: "navbar-brand", "data-test": "header_logo" do %>
@@ -188,15 +187,7 @@
               <a class="dropdown-item" href="https://testnet.bkcscan.com">Bitkub Chain Testnet</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <a href="#" role="button" id="navbarLanguageDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="text-uppercase mb-0"><%= Gettext.get_locale(BlockScoutWeb.Gettext) %> </p>
-          </a>
-          <div class="dropdown-menu" aria-labeledby="navbarLanguageDropdown">
-              <%= switch_locale_path :en, "EN" %>
-              <%= switch_locale_path :th, "TH" %>
-          </div>
-        </li>
+        
         
       </ul>
       <!-- Dark mode changer -->
