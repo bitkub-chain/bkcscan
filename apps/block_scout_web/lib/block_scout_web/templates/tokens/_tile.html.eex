@@ -49,11 +49,16 @@ officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2
     </td>
   <% end %>
   <td class="stakes-td">
-    <%= if decimals?(@token) do %>
-      <span data-test="token_supply"><%= format_according_to_decimals(@token.total_supply, @token.decimals) %></span>
+    <%= if (address == "0x9C04EFD1E9aD51A605eeDcb576159242FF930368") do %>
+      300,000,000
     <% else %>
-      <span data-test="token_supply"><%= format_integer_to_currency(@token.total_supply) %></span>
-    <% end %> <%= @token.symbol %>
+      <%= if decimals?(@token) do %>
+        <span data-test="token_supply"><%= format_according_to_decimals(@token.total_supply, @token.decimals) %></span>
+      <% else %>
+        <span data-test="token_supply"><%= format_integer_to_currency(@token.total_supply) %></span>
+      <% end %> 
+    <% end %> 
+    <%= @token.symbol %>
   </td>
   <td class="stakes-td">
     <span class="mr-4">
