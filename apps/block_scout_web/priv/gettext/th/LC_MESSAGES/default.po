@@ -978,7 +978,7 @@ msgstr "หมายเลขธุรกรรมไม่ถูกต้อง
 #: lib/block_scout_web/templates/tokens/overview/_tabs.html.eex:17
 #: lib/block_scout_web/views/tokens/overview_view.ex:43
 msgid "Inventory"
-msgstr ""
+msgstr "รายการทรัพย์สิน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/not_found.html.eex:16
@@ -1159,7 +1159,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/inventory/_token.html.eex:18
 msgid "Owner Address"
-msgstr ""
+msgstr "Address ของผู้ถือครอง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:19

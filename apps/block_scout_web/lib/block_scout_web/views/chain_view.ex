@@ -60,4 +60,13 @@ defmodule BlockScoutWeb.ChainView do
   defp format_currency_value(value, _symbol) do
     "#{number_to_currency(value, precision: 0)}"
   end
+
+  def time_unit_translator(fullString) do
+    cond do
+      (String.ends_with? fullString, "seconds") -> String.replace(fullString, "seconds", "วินาที")
+      (String.ends_with? fullString, "second") -> String.replace(fullString, "second", "วินาที")
+      true -> fullString
+    end
+  end
+
 end
