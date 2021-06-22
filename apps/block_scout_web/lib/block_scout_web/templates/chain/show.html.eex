@@ -127,7 +127,7 @@
                 </span>
                 <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
                   <%= if Gettext.get_locale(BlockScoutWeb.Gettext) === "th" do %>
-                    <%= time_unit_translator Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                    <%= translate_time_unit Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
                   <% else %>
                     <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
                   <% end %>

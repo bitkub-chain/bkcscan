@@ -213,7 +213,48 @@ const elements = {
   '[data-selector="average-block-time"]': {
     render ($el, state, oldState) {
       if (oldState.averageBlockTime === state.averageBlockTime) return
-      $el.empty().append(state.averageBlockTime)
+
+      if(getLocale === "th") {
+        let averageBlockTimeStr = state.averageBlockTime
+        let translateTimeUnitStr = state.averageBlockTime
+        if(averageBlockTimeStr.endsWith("milliseconds"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("milliseconds", "มิลลิวินาที")
+        else if(averageBlockTimeStr.endsWith("millisecond"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("millisecond", "มิลลิวินาที")
+        else if(averageBlockTimeStr.endsWith("seconds"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("seconds", "วินาที")
+        else if(averageBlockTimeStr.endsWith("second"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("second", "วินาที")
+        else if(averageBlockTimeStr.endsWith("minutes"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("minutes", "นาที")
+        else if(averageBlockTimeStr.endsWith("minute"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("minute", "นาที")
+        else if(averageBlockTimeStr.endsWith("hours"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("hours", "ชั่วโมง")
+        else if(averageBlockTimeStr.endsWith("hour"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("hour", "ชั่วโมง")
+        else if(averageBlockTimeStr.endsWith("days"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("days", "วัน")
+        else if(averageBlockTimeStr.endsWith("day"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("day", "วัน")
+        else if(averageBlockTimeStr.endsWith("weeks"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("weeks", "สัปดาห์")
+        else if(averageBlockTimeStr.endsWith("week"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("week", "สัปดาห์")
+        else if(averageBlockTimeStr.endsWith("months"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("months", "เดือน")
+        else if(averageBlockTimeStr.endsWith("month"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("month", "เดือน")
+        else if(averageBlockTimeStr.endsWith("years"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("years", "ปี")
+        else if(averageBlockTimeStr.endsWith("year"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("year", "ปี")
+          
+        $el.empty().append(translateTimeUnitStr)
+      }
+      else {
+        $el.empty().append(state.averageBlockTime)
+      }
     }
   },
   '[data-selector="market-cap"]': {
