@@ -31,7 +31,9 @@ defmodule BlockScoutWeb.TransactionChannel do
   end
 
   def handle_out("pending_transaction", %{transaction: transaction}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered_transaction =
       View.render_to_string(
@@ -51,7 +53,9 @@ defmodule BlockScoutWeb.TransactionChannel do
   end
 
   def handle_out("transaction", %{transaction: transaction}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered_transaction =
       View.render_to_string(
