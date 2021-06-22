@@ -28,7 +28,23 @@ function updateAge (el, timestamp) {
     const formatDate = `MMMM-DD-YYYY hh:mm:ss A ${sign}${offset} UTC`
     fromNow = `${fromNow} (${timestamp.format(formatDate)})`
   }
-  if (fromNow !== el.innerHTML) el.innerHTML = fromNow
+  if (fromNow !== el.innerHTML) {
+    
+    if(getLocale === "th") {
+      let timeUnitTrns = fromNow
+      if(fromNow.endsWith("minutes ago")){
+        timeUnitTrns = fromNow.replace("minutes ago", "นาทีที่แล้ว")
+      }
+      else if(fromNow.endsWith("seconds ago")){
+        timeUnitTrns = fromNow.replace("seconds ago", "วินาทีที่แล้ว")
+      }
+      el.innerHTML = timeUnitTrns
+    }
+    else {
+      el.innerHTML = fromNow
+    }
+    
+  }
 }
 updateAllAges()
 
