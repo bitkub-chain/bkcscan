@@ -9,6 +9,7 @@
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
         <span class="mr-2">
+        <%= Gettext.get_locale(BlockScoutWeb.Gettext) %>
         <%= if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do %>
           การทำธุรกรรม
         <% else %>
