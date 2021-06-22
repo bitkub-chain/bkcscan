@@ -18,7 +18,9 @@ defmodule BlockScoutWeb.RewardChannel do
   end
 
   def handle_out("new_reward", %{emission_funds: emission_funds, validator: validator}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered_reward =
       View.render_to_string(

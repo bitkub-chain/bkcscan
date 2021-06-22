@@ -348,10 +348,19 @@ defmodule BlockScoutWeb.TransactionView do
         gettext("Contract Creation")
 
       involves_contract?(transaction) ->
-        gettext("Contract Call")
+        if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do 
+          "การเรียกใช้สัญญา" 
+        else 
+          gettext("Contract Call")
+        end
 
       true ->
-        gettext("Transaction")
+        if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do 
+          "การทำธุรกรรม" 
+        else 
+          gettext("Transaction")
+        end
+
     end
   end
 
