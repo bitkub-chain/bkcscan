@@ -7,7 +7,6 @@
     if (localStorage.getItem("current-color-mode") === "dark") {
       document.getElementById("top-navbar").style.backgroundColor = "#282945";
     }
-    console.log(getText);
   </script>
   <div class="container-fluid navbar-container">
     <%= link to: webapp_url(@conn), class: "navbar-brand", "data-test": "header_logo" do %>
@@ -197,7 +196,6 @@
               <%= switch_locale_path :th, "TH" %>
           </div>
         </li>
-        
       </ul>
       <!-- Dark mode changer -->
       <button class="dark-mode-changer" id="dark-mode-changer">

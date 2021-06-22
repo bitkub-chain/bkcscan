@@ -11,6 +11,11 @@ defmodule BlockScoutWeb.WebRouter do
     plug(:protect_from_forgery)
     plug(BlockScoutWeb.CSPHeader)
     plug(BlockScoutWeb.ChecksumAddress)
+    # plug(Cldr.Plug.SetLocale,
+    # apps: [:cldr, :gettext],
+    # from: [:path, :query],
+    # gettext: BlockScoutWeb.Gettext,
+    # cldr: BlockScoutWeb.Cldr)
     plug(BlockScoutWeb.Plugs.Locale, "th")
 
   end

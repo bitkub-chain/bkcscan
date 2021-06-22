@@ -132,11 +132,17 @@
             <h2 class="card-title balance-card-title"><%= gettext "Total Supply" %></h2>
             <div class="text-right">
               <h3 class="text-uppercase">
-                <%= if decimals?(@token) do %>
-                  <%= format_according_to_decimals(@token.total_supply, @token.decimals) %>
+                <% address = to_string(@token.contract_address) %>
+                <%= if (address == "0x9C04EFD1E9aD51A605eeDcb576159242FF930368") do %>
+                  300,000,000
                 <% else %>
-                  <%= format_integer_to_currency(@token.total_supply) %>
-                <% end %> <%= @token.symbol %>
+                  <% if decimals?(@token) do %>
+                    <%= format_according_to_decimals(@token.total_supply, @token.decimals) %>
+                  <% else %>
+                    <%= format_integer_to_currency(@token.total_supply) %>
+                  <% end %> 
+                <% end %> 
+                <%= @token.symbol %>
               </h3>
               <%= if @token.usd_value do %>
                 <div class="text-uppercase">
