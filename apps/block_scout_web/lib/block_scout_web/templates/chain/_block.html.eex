@@ -11,7 +11,7 @@
         <span class="mr-2">
         <%= if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do %>
           การทำธุรกรรม
-        <%= else %>
+        <% else %>
           <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         <% end %>
         </span>
@@ -21,7 +21,7 @@
         <!-- <%= gettext "Validator" %> -->
         <%= if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do %>
           ผู้ตรวจสอบ
-        <%= else %>
+        <% else %>
           <%= gettext "Validator" %>
         <% end %>
         <%= render BlockScoutWeb.AddressView,
