@@ -124,7 +124,11 @@
               <dl class="row">
                 <dt class="col-sm-3 text-muted"> <%= gettext "Transaction Speed" %> </dt>
                 <dd class="col-sm-9">
-                  <%= interval_string %>
+                  <%= if Gettext.get_locale(BlockScoutWeb.Gettext) === "th" do %>
+                    <%= translate_time_unit interval_string %>
+                  <% else %>
+                    <%= interval_string %>
+                  <% end %>
                 </dd>
               </dl>
           <% end %>

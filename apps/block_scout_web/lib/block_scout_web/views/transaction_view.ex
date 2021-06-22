@@ -438,4 +438,27 @@ defmodule BlockScoutWeb.TransactionView do
       _ -> type
     end
   end
+
+  def translate_time_unit(fullString) do
+    cond do
+      (String.ends_with? fullString, "milliseconds") -> String.replace(fullString, "milliseconds", "มิลลิวินาที")
+      (String.ends_with? fullString, "millisecond") -> String.replace(fullString, "millisecond", "มิลลิวินาที")
+      (String.ends_with? fullString, "seconds") -> String.replace(fullString, "seconds", "วินาที")
+      (String.ends_with? fullString, "second") -> String.replace(fullString, "second", "วินาที")
+      (String.ends_with? fullString, "minutes") -> String.replace(fullString, "minutes", "นาที")
+      (String.ends_with? fullString, "minute") -> String.replace(fullString, "minute", "นาที")
+      (String.ends_with? fullString, "hours") -> String.replace(fullString, "hours", "ชั่วโมง")
+      (String.ends_with? fullString, "hour") -> String.replace(fullString, "hour", "ชั่วโมง")
+      (String.ends_with? fullString, "days") -> String.replace(fullString, "days", "วัน")
+      (String.ends_with? fullString, "day") -> String.replace(fullString, "day", "วัน")
+      (String.ends_with? fullString, "weeks") -> String.replace(fullString, "weeks", "สัปดาห์")
+      (String.ends_with? fullString, "week") -> String.replace(fullString, "week", "สัปดาห์")
+      (String.ends_with? fullString, "months") -> String.replace(fullString, "months", "เดือน")
+      (String.ends_with? fullString, "month") -> String.replace(fullString, "month", "เดือน")
+      (String.ends_with? fullString, "years") -> String.replace(fullString, "years", "ปี")
+      (String.ends_with? fullString, "year") -> String.replace(fullString, "year", "ปี")
+      true -> fullString
+    end
+  end
+
 end
