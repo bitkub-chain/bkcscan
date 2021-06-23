@@ -29,8 +29,14 @@
           <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         </span>
         <%= if @block.size do %>
-           <!-- size -->
-          <span class="mr-2"> <%= Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!() %> </span>
+          <!-- size -->
+          <span class="mr-2">
+            <%= if Gettext.get_locale(BlockScoutWeb.Gettext) === "th" do %>
+              <%= translate_unit (Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!()) %>
+            <% else %>
+              <%= Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!() %>
+            <% end %>
+          </span>
         <% end %>
         <!-- age -->
         <span data-from-now="<%= @block.timestamp %>"></span>

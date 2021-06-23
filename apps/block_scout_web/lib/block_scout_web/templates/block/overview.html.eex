@@ -21,7 +21,13 @@
 
             <%= if @block.size do %>
             <!-- Block Size -->
-              <span class="mr-4 block-detail-el"> <%= Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!() %> </span>
+              <span class="mr-4 block-detail-el">
+                <%= if Gettext.get_locale(BlockScoutWeb.Gettext) === "th" do %>
+                  <%= translate_unit (Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!()) %>
+                <% else %>
+                  <%= Cldr.Unit.new(:byte, @block.size) |> cldr_unit_to_string!() %>
+                <% end %>
+              </span>
             <% end %>
 
             <!-- Block Age -->
