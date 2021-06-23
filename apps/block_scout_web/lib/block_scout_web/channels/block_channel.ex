@@ -20,6 +20,7 @@ defmodule BlockScoutWeb.BlockChannel do
   def handle_out("new_block", %{block: block, average_block_time: average_block_time}, socket) do
     # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
     Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
     rendered_block =
       View.render_to_string(
         BlockView,
@@ -34,6 +35,7 @@ defmodule BlockScoutWeb.BlockChannel do
         "_block.html",
         block: block
       )
+
 
     push(socket, "new_block", %{
       average_block_time: Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat),

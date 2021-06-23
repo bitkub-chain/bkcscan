@@ -8,27 +8,13 @@
         ) %>
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
-        <span class="mr-2">
-       <script>
-       let currentLocale = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
-       if(currentLocale === "th"){
-          Enum.count(@block.transactions) + "การทำธุรกรรม"
-       }else{
-          <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
-       }
-        </script>
+        <span class="mr-2" class="">
+        <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         </span>
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
       </div>
       <div class="text-truncate">
-      <script>
-       let currentLocale = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
-        if(currentLocale === "th"){
-            "ผู้ตรวจสอบ"
-        }else{
-            "Validator"
-        }
-      </script>
+        <%= gettext "Validator" %> 
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,
