@@ -79,4 +79,12 @@ defmodule BlockScoutWeb.BlockView do
     |> Chain.block_combined_rewards()
     |> format_wei_value(:ether)
   end
+
+  def translate_unit(fullString) do
+    cond do
+      (String.ends_with? fullString, "bytes") -> String.replace(fullString, "bytes", "ไบต์")
+      (String.ends_with? fullString, "byte") -> String.replace(fullString, "byte", "ไบต์")
+      true -> fullString
+    end
+  end
 end
