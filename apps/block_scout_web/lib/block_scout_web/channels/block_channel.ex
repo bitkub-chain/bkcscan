@@ -34,7 +34,7 @@ defmodule BlockScoutWeb.BlockChannel do
         ChainView,
         "_block.html",
         block: block,
-        current_lang: Gettext.get_locale(BlockScoutWeb.Gettext)
+        current_lang: "th"
       )
 
 
