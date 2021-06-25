@@ -17,7 +17,7 @@ defmodule BlockScoutWeb.BlockChannel do
     {:ok, %{}, socket}
   end
 
-  def handle_out("new_block", %{block: block, average_block_time: average_block_time}, socket) do
+  def handle_out("new_block", %{block: block, average_block_time: average_block_time, current_locale: current_locale}, socket) do
     # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
     Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
 
@@ -34,7 +34,7 @@ defmodule BlockScoutWeb.BlockChannel do
         ChainView,
         "_block.html",
         block: block,
-        current_lang: "th"
+        current_lang: current_locale
       )
 
 

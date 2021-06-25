@@ -221,12 +221,14 @@ defmodule BlockScoutWeb.Notifier do
 
     Endpoint.broadcast("blocks:new_block", "new_block", %{
       block: preloaded_block,
-      average_block_time: average_block_time
+      average_block_time: average_block_time,
+      current_locale: Gettext.get_locale(BlockScoutWeb.Gettext)
     })
 
     Endpoint.broadcast("blocks:#{to_string(block.miner_hash)}", "new_block", %{
       block: preloaded_block,
-      average_block_time: average_block_time
+      average_block_time: average_block_time,
+      current_locale: Gettext.get_locale(BlockScoutWeb.Gettext)
     })
   end
 
