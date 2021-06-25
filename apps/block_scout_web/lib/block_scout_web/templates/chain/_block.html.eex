@@ -9,6 +9,7 @@
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
         <span class="mr-2" class="">
+        <%= @current_lang %>
         <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         </span>
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
