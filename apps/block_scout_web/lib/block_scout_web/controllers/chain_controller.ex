@@ -130,7 +130,7 @@ defmodule BlockScoutWeb.ChainController do
                 ChainView,
                 "_block.html",
                 block: block,
-                current_lang: conn.cookies["locale"]
+                current_lang: "th"
               ),
             block_number: block.number,
           }
