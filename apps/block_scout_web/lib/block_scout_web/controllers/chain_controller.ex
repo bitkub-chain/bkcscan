@@ -129,9 +129,10 @@ defmodule BlockScoutWeb.ChainController do
               View.render_to_string(
                 ChainView,
                 "_block.html",
-                block: block
+                block: block,
+                current_lang: Gettext.get_locale(BlockScoutWeb.Gettext)
               ),
-            block_number: block.number
+            block_number: block.number,
           }
         end)
 
