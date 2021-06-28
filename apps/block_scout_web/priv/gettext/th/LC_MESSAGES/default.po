@@ -58,7 +58,7 @@ msgstr "%{subnetwork} Explorer"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:262
 msgid "(Awaiting internal transactions for status)"
-msgstr "(รอสถานะในการทำธุรกรรมระหว่างสัญญาอัจฉริยะ)"
+msgstr "(กำลังรอการทำธุรกรรม)"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:59
@@ -272,19 +272,19 @@ msgstr "Bitkub Chain explorer เป็นเครื่องมือสำ�
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:21
 msgid "Call"
-msgstr ""
+msgstr "เรียกใช้"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:22
 msgid "Call Code"
-msgstr ""
+msgstr "รหัสเรียกใช้"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:415
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:47
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:54
 msgid "Cancel"
-msgstr ""
+msgstr "ยกเลิก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:11
@@ -305,7 +305,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:71
 msgid "Compiler"
-msgstr ""
+msgstr "คอมไพเลอร์"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:32
@@ -326,7 +326,7 @@ msgstr "การเชื่อมต่อขาดหาย คลิกเ�
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:15
 msgid "Connection Lost, click to load newer internal transactions"
-msgstr ""
+msgstr "การเชื่อมต่อขาดหาย คลิกเพื่อโหลดรายการธุรกรรมภายในใหม่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:11
@@ -354,7 +354,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:27
 #: lib/block_scout_web/views/address_view.ex:102
 msgid "Contract Address"
-msgstr ""
+msgstr "Address ของสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_pending_tile.html.eex:16
@@ -367,7 +367,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract/index.html.eex:104
 #: lib/block_scout_web/templates/address_contract/index.html.eex:112
 msgid "Contract Byte Code"
-msgstr ""
+msgstr "สัญญา Byte Code"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:351
@@ -392,7 +392,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:38
 msgid "Contract Name"
-msgstr ""
+msgstr "ชื่อสัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:24
@@ -466,17 +466,17 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:25
 msgid "Create"
-msgstr ""
+msgstr "สร้าง"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:26
 msgid "Create2"
-msgstr ""
+msgstr "สร้าง2"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:121
 msgid "Created by"
-msgstr ""
+msgstr "ถูกสร้างโดย"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:146
@@ -535,12 +535,12 @@ msgid "Gas Used"
 msgstr "แก๊สที่ถูกใช้ไปแล้ว"
 
 msgid "%{count} Gas Used"
-msgstr "%{count} แก๊สที่ถูกใช้ไปแล้ว"
+msgstr "%{count} แก๊สที่ใช้จริง"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:23
 msgid "Delegate Call"
-msgstr ""
+msgstr "เรียกใช้แทน"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:53
@@ -634,7 +634,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address/_balance_card.html.eex:35
 msgid "Error trying to fetch balances."
-msgstr ""
+msgstr "การเรียกดูยอดรวมผิดพลาด"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:266
@@ -644,7 +644,7 @@ msgstr "ข้อผิดพลาด: %{reason}"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:264
 msgid "Error: (Awaiting internal transactions for reason)"
-msgstr "ข้อผิดพลาด: รอการทำธุรกรรมระหว่างสัญญาอัจฉริยะด้วยเหตุผลบางประการ"
+msgstr "ข้อผิดพลาด: (กำลังรอการทำธุรกรรม)"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:134
@@ -694,7 +694,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:32
 msgid "Failed to decode input data."
-msgstr "การถอดรหัสข้อมูลล้มเหลว"
+msgstr "การถอดรหัสข้อมูลล้มเหลว / ถอดรหัสข้อมูลไม่สำเร็จ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:34
@@ -730,7 +730,7 @@ msgstr "บล็อก Forked"
 #: lib/block_scout_web/views/address_token_transfer_view.ex:9
 #: lib/block_scout_web/views/address_transaction_view.ex:9
 msgid "From"
-msgstr "ส่ง"
+msgstr "ส่งออก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:18
@@ -789,7 +789,7 @@ msgstr ""
 #: lib/block_scout_web/templates/internal_transaction/_tile.html.eex:38
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:72
 msgid "IN"
-msgstr ""
+msgstr "รับเข้า"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_emission_reward_tile.html.eex:8
@@ -827,7 +827,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:56
 msgid "There are no internal transactions for this address."
-msgstr ""
+msgstr "ไม่มีรายการธุรกรรม"
 
 #, elixir-format
 #:
@@ -838,7 +838,7 @@ msgstr "ไม่มีธุรกรรมที่กำลังดำเน
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_log/index.html.eex:20
 msgid "There are no logs for this transaction."
-msgstr ""
+msgstr "ไม่พบล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_token_transfer/index.html.eex:51
@@ -858,7 +858,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:53
 msgid "There are no transactions for this address."
-msgstr ""
+msgstr "ไม่มีรายการธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block_transaction/index.html.eex:28
@@ -884,7 +884,7 @@ msgstr ""
 #: lib/block_scout_web/views/address_token_transfer_view.ex:8
 #: lib/block_scout_web/views/address_transaction_view.ex:8
 msgid "To"
-msgstr "รับ"
+msgstr "รับเข้า"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:23
@@ -961,7 +961,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:3
 msgid "Input"
-msgstr ""
+msgstr "ข้อมูลรับเข้า"
 
 #, elixir-format
 #: lib/block_scout_web/templates/internal_transaction/_tile.html.eex:6
@@ -1045,12 +1045,12 @@ msgstr "จำกัด"
 #: lib/block_scout_web/templates/address_write_proxy/index.html.eex:14
 #: lib/block_scout_web/templates/tokens/read_contract/index.html.eex:20
 msgid "Loading..."
-msgstr ""
+msgstr "กำลังโหลด..."
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:409
 msgid "Loading...."
-msgstr ""
+msgstr "กำลังโหลด..."
 
 #, elixir-format
 #: lib/block_scout_web/templates/log/_data_decoded_view.html.eex:2
@@ -1065,7 +1065,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:22
 msgid "Mainnet"
-msgstr ""
+msgstr "เมนเน็ต / Mainnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:63
@@ -1124,7 +1124,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:18
 msgid "New Smart Contract Verification"
-msgstr ""
+msgstr "การตรวจสอบสัญญาใหม่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:55
@@ -1132,13 +1132,13 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:141
 #: lib/block_scout_web/templates/stakes/_rows.html.eex:24
 msgid "No"
-msgstr ""
+msgstr "ไม่ใช่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/internal_transaction/_tile.html.eex:36
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:68
 msgid "OUT"
-msgstr ""
+msgstr "ส่งออก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:28
@@ -1260,7 +1260,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:412
 msgid "Reset"
-msgstr ""
+msgstr "ล้างข้อมูล"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:173
@@ -1296,7 +1296,7 @@ msgstr "ค้นหา"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:209
 msgid "Search by address, token symbol name, transaction hash, or block number"
-msgstr ""
+msgstr "ค้นหาด้วย address สัญลักษณ์โทเคน หมายเลขธุรกรรม หรือหมายเลขบล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:18
@@ -1312,7 +1312,7 @@ msgstr "ค้นหาโทเคน"
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:27
 msgid "Self-Destruct"
-msgstr ""
+msgstr "ทำลายตัวเอง"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:163
@@ -1399,7 +1399,7 @@ msgstr "Biktub Chain Testnet"
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:23
 msgid "Testnet"
-msgstr "เทสเน็ต/Testnet"
+msgstr "เทสเน็ต / Testnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_validation/index.html.eex:18
@@ -1414,7 +1414,7 @@ msgstr "ไม่พบบล็อก"
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/index.html.eex:26
 msgid "There are no logs for this address."
-msgstr ""
+msgstr "ไม่พบล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:25
@@ -1434,7 +1434,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:41
 msgid "There is no coin history for this address."
-msgstr ""
+msgstr "ไม่มีประวัติการใช้เหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_decompiled_contract/index.html.eex:27
@@ -1477,7 +1477,7 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_decoded_input.html.eex:8
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:6
 msgid "To see accurate decoded input data, the contract must be verified."
-msgstr ""
+msgstr "สัญญาจำเป็นต้องผ่านการตรวจสอบก่อน จึงจะสามารถดูข้อมูลที่ถูกถอดรหัสแล้วที่ถูกต้องได้"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/index.html.eex:12
@@ -1619,12 +1619,12 @@ msgstr "%{value} Value"
 #: lib/block_scout_web/templates/address_contract/index.html.eex:125
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:8
 msgid "Verify & Publish"
-msgstr ""
+msgstr "ตรวจสอบและเผยแพร่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:411
 msgid "Verify & publish"
-msgstr ""
+msgstr "ตรวจสอบและเผยแพร่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_logs/_logs.html.eex:9
@@ -1701,7 +1701,7 @@ msgstr "Bit"
 #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:146
 #: lib/block_scout_web/templates/stakes/_rows.html.eex:24
 msgid "Yes"
-msgstr ""
+msgstr "ใช่"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:126
@@ -1805,8 +1805,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:24
-msgid "Loading chart"
-msgstr ""
+msgid "Loading charts"
+msgstr "กำลังโหลดแผนภูมิ"
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction_log/_logs.html.eex:113
@@ -1862,7 +1862,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_tabs.html.eex:34
 #: lib/block_scout_web/views/address_view.ex:353
 msgid "Coin Balance History"
-msgstr ""
+msgstr "ประวัติการใช้เหรียญ"
 
 #, elixir-format
 #: lib/block_scout_web/views/address_view.ex:348
@@ -1887,7 +1887,7 @@ msgstr "ธุรกรรมภายใน"
 #: lib/block_scout_web/views/address_view.ex:355
 #: lib/block_scout_web/views/transaction_view.ex:407
 msgid "Logs"
-msgstr ""
+msgstr "ล็อก"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:81
@@ -2031,7 +2031,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_contract/index.html.eex:106
 #: lib/block_scout_web/templates/address_contract/index.html.eex:116
 msgid "Copy Byte Code"
-msgstr ""
+msgstr "คัดลอก Byte Code"
 
 #: lib/block_scout_web/templates/stakes/_stakes_top.html.eex:6
 msgid "%{blocks} block"
@@ -2754,7 +2754,7 @@ msgstr[0] "วินาที"
 msgstr[1] "วินาที"
 
 msgid "Total gas used"
-msgstr "ขนาดข้อมูลของแก๊สที่ถูกใช้ไปแล้วทั้งหมด"
+msgstr "ขนาดข้อมูลของแก๊สที่ใช้จริงทั้งหมด"
 
 msgid "in %{count} second"
 msgid_plural "in %{count} seconds"
@@ -2820,13 +2820,13 @@ msgid "View all Transactions"
 msgstr "ดูธุรกรรมทั้งหมด"
 
 msgid "Mainnets"
-msgstr "เมนเน็ต/Mainnet"
+msgstr "เมนเน็ต / Mainnet"
 
 msgid "Bitkub chain Mainnet"
 msgstr ""
 
 msgid "Testnets"
-msgstr "เทสเน็ต/Testnet"
+msgstr "เทสเน็ต / Testnet"
 
 msgid "Bitkub chain Testnet"
 msgstr ""
@@ -2952,3 +2952,12 @@ msgstr "ทางการ"
 
 msgid "Deprecated"
 msgstr "เลิกใช้งาน"
+
+msgid "latest"
+msgstr "ตัวใหม่สุด"
+
+msgid "default"
+msgstr "ค่าเริ่มต้น"
+
+msgid "Add Library"
+msgstr "เพิ่ม Library"
