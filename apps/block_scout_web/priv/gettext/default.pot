@@ -1804,7 +1804,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/index.html.eex:24
-msgid "Loading chart"
+msgid "Loading charts"
 msgstr ""
 
 #, elixir-format
@@ -2950,4 +2950,10 @@ msgid "Official"
 msgstr ""
 
 msgid "Deprecated"
+msgstr ""
+
+msgid "latest"
+msgstr ""
+
+msgid "Add Library"
 msgstr ""

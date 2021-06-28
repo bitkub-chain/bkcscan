@@ -8,14 +8,13 @@
         ) %>
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
-        <span class="mr-2" class="">
-        <%= @current_lang %>
-        <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
+        <span class="mr-2" class="" data-text-transaction="">
+          <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         </span>
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
       </div>
       <div class="text-truncate">
-        <%= gettext "Validator" %> 
+        <span data-text-validator=""><%= gettext "Validator" %></span>
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,

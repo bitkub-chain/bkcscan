@@ -53,6 +53,6 @@ defmodule BlockScoutWeb.ContractVerifyPage do
   end
 
   def verify_and_publish(session) do
-    click(session, button("Verify & publish"))
+    click(session, button("Verify & Publish"))
   end
 end
