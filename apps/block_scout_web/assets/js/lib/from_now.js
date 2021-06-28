@@ -11,6 +11,7 @@ moment.relativeTimeThreshold('ss', 1)
 export function updateAllAges ($container = $(document)) {
   $container.find('[data-from-now]').each((i, el) => tryUpdateAge(el))
   $container.find('[data-text-transaction]').each((i, el) => tryUpdateText(el))
+  $container.find('[data-text-validator]').each((i, el) => tryUpdateText(el))
   return $container
 }
 function tryUpdateAge (el) {
@@ -98,10 +99,15 @@ function tryUpdateText (el) {
     let innerText = el.innerHTML
     let translateStr = el.innerHTML
 
+    // Transaction
     if(innerText.includes("Transactions"))
       translateStr = innerText.replace("Transactions", "การทำธุรกรรม")
     else if(innerText.includes("Transaction"))
       translateStr = innerText.replace("Transaction", "การทำธุรกรรม")
+
+    // Validator
+    if(innerText.includes("Validator"))
+      translateStr = innerText.replace("Validator", "ผู้ตรวจสอบ")
 
     el.innerHTML = translateStr
   }
