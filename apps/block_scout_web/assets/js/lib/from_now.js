@@ -10,8 +10,7 @@ moment.relativeTimeThreshold('ss', 1)
 
 export function updateAllAges ($container = $(document)) {
   $container.find('[data-from-now]').each((i, el) => tryUpdateAge(el))
-  $container.find('[data-text-transaction]').each((i, el) => tryUpdateText(el))
-  $container.find('[data-text-validator]').each((i, el) => tryUpdateText(el))
+  $container.find('[data-text-translate]').each((i, el) => tryUpdateText(el))
   return $container
 }
 function tryUpdateAge (el) {
@@ -90,7 +89,6 @@ function updateAge (el, timestamp) {
     else {
       el.innerHTML = fromNow
     }
-
   }
 }
 
@@ -99,15 +97,43 @@ function tryUpdateText (el) {
     let innerText = el.innerHTML
     let translateStr = el.innerHTML
 
-    // Transaction
+    // Transaction/Transaction Display Type
     if(innerText.includes("Transactions"))
       translateStr = innerText.replace("Transactions", "การทำธุรกรรม")
     else if(innerText.includes("Transaction"))
       translateStr = innerText.replace("Transaction", "การทำธุรกรรม")
 
     // Validator
-    if(innerText.includes("Validator"))
+    else if(innerText.includes("Validator"))
       translateStr = innerText.replace("Validator", "ผู้ตรวจสอบ")
+
+    // Transaction Display Type
+    else if(innerText.includes("Contract Creation"))
+      translateStr = innerText.replace("Contract Creation", "การสร้างสัญญา")
+    else if(innerText.includes("Contract Call"))
+      translateStr = innerText.replace("Contract Call", "การเรียกใช้สัญญา")
+
+    // Formatted Status
+    else if(innerText.includes("Pending"))
+      translateStr = innerText.replace("Pending", "รอดำเนินการ")
+    else if(innerText.includes("Success"))
+      translateStr = innerText.replace("Success", "สำเร็จ")
+    else if(innerText.includes("Error: (Awaiting internal transactions for reason)"))
+      translateStr = innerText.replace("Error: (Awaiting internal transactions for reason)", "ข้อผิดพลาด: (กำลังรอการทำธุรกรรม)")
+    else if(innerText.includes("(Awaiting internal transactions for status)"))
+      translateStr = innerText.replace("(Awaiting internal transactions for status)", "(กำลังรอการทำธุรกรรม)")
+    else if(innerText.includes("Error"))
+      translateStr = innerText.replace("Error", "ข้อผิดพลาด")
+    
+    // Block Number
+    else if(innerText.includes("Block #"))
+      translateStr = innerText.replace("Block #", "บล็อก #")
+
+    // Transaction Type
+    else if(innerText.includes("OUT"))
+      translateStr = innerText.replace("OUT", "ส่งออก")
+    else if(innerText.includes("IN"))
+      translateStr = innerText.replace("IN", "รับเข้า")
 
     el.innerHTML = translateStr
   }

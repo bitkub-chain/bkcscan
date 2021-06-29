@@ -8,13 +8,13 @@
         ) %>
     <div class="tile-bottom-contents">
       <div class="tile-transactions">
-        <span class="mr-2" class="" data-text-transaction="">
+        <span class="mr-2" class="" data-text-translate="">
           <%= ngettext "%{count} Transaction", "%{count} Transactions", Enum.count(@block.transactions) %>
         </span>
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
       </div>
       <div class="text-truncate">
-        <span data-text-validator=""><%= gettext "Validator" %> </span>
+        <span data-text-translate=""><%= gettext "Validator" %> </span>
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,
@@ -23,7 +23,8 @@
       </div>
       <%= if BlockScoutWeb.BlockView.show_reward?(@block.rewards) do %>
         <div class="text-truncate">
-          <%= gettext "Reward" %> <%= BlockScoutWeb.BlockView.combined_rewards_value(@block) %>
+          <span data-text-translate=""><%= gettext "Reward" %> </span>
+          <span><%= BlockScoutWeb.BlockView.combined_rewards_value(@block) %></span>
         </div>
       <% end %>
     </div>
