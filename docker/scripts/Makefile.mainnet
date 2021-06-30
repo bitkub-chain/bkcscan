@@ -5,8 +5,8 @@ BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
-COIN = "KUB"
-COINGECKO_COIN_ID = "bitkub-coin"
+#COIN = "KUB"
+#COINGECKO_COIN_ID = "bitkub-coin"
 
 ifeq ($(SYSTEM), Linux)
 	HOST=localhost
