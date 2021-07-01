@@ -11,6 +11,7 @@ moment.relativeTimeThreshold('ss', 1)
 export function updateAllAges ($container = $(document)) {
   $container.find('[data-from-now]').each((i, el) => tryUpdateAge(el))
   $container.find('[data-text-translate]').each((i, el) => tryUpdateText(el))
+  // $container.find('[data-text-test]').each((i, el) => test(el))
   return $container
 }
 function tryUpdateAge (el) {
@@ -97,8 +98,20 @@ function tryUpdateText (el) {
     let innerText = el.innerHTML
     let translateStr = el.innerHTML
 
+    // Formatted Status
+    if(innerText.includes("Pending"))
+      translateStr = innerText.replace("Pending", "รอดำเนินการ")
+    else if(innerText.includes("Success"))
+      translateStr = innerText.replace("Success", "สำเร็จ")
+    else if(innerText.includes("Error: (Awaiting internal transactions for reason)"))
+      translateStr = innerText.replace("Error: (Awaiting internal transactions for reason)", "ข้อผิดพลาด: (กำลังรอการทำธุรกรรม)")
+    else if(innerText.includes("(Awaiting internal transactions for status)"))
+      translateStr = innerText.replace("(Awaiting internal transactions for status)", "(กำลังรอการทำธุรกรรม)")
+    else if(innerText.includes("Error"))
+      translateStr = innerText.replace("Error", "ข้อผิดพลาด")
+
     // Transaction/Transaction Display Type
-    if(innerText.includes("Transactions"))
+    else if(innerText.includes("Transactions"))
       translateStr = innerText.replace("Transactions", "การทำธุรกรรม")
     else if(innerText.includes("Transaction"))
       translateStr = innerText.replace("Transaction", "การทำธุรกรรม")
@@ -113,32 +126,64 @@ function tryUpdateText (el) {
     else if(innerText.includes("Contract Call"))
       translateStr = innerText.replace("Contract Call", "การเรียกใช้สัญญา")
 
-    // Formatted Status
-    else if(innerText.includes("Pending"))
-      translateStr = innerText.replace("Pending", "รอดำเนินการ")
-    else if(innerText.includes("Success"))
-      translateStr = innerText.replace("Success", "สำเร็จ")
-    else if(innerText.includes("Error: (Awaiting internal transactions for reason)"))
-      translateStr = innerText.replace("Error: (Awaiting internal transactions for reason)", "ข้อผิดพลาด: (กำลังรอการทำธุรกรรม)")
-    else if(innerText.includes("(Awaiting internal transactions for status)"))
-      translateStr = innerText.replace("(Awaiting internal transactions for status)", "(กำลังรอการทำธุรกรรม)")
-    else if(innerText.includes("Error"))
-      translateStr = innerText.replace("Error", "ข้อผิดพลาด")
-    
     // Block Number
-    else if(innerText.includes("Block #"))
-      translateStr = innerText.replace("Block #", "บล็อก #")
+    else if(innerText.includes("Block "))
+      translateStr = innerText.replace("Block ", "บล็อก ")
+
+    // Bytes
+    else if(innerText.includes("bytes"))
+      translateStr = innerText.replace("bytes", "ไบต์")
+
+    // Gas
+    else if(innerText.includes(" Gas Limit"))
+    {
+      let arrStr = innerText.split(' ')
+      if(arrStr.length == 3)
+      {
+        translateStr = "แก๊สสูงสุด " + arrStr[0];
+      }
+    }
+    else if(innerText.includes(" Gas Used"))
+      translateStr = innerText.replace(" Gas Used", " แก๊สที่ใช้จริง")
+
+    // Balance
+    else if(innerText.includes("Error trying to fetch balances."))
+      translateStr = innerText.replace("Error trying to fetch balances.", "การเรียกดูยอดรวมผิดพลาด")
+    else if(innerText.includes("Balance"))
+      translateStr = innerText.replace("Balance", "ยอดรวม")
+    else if(innerText.includes("Fetching tokens..."))
+      translateStr = innerText.replace("Fetching tokens...", "กำลังเรียกดูโทเคน...")
 
     // Transaction Type
     else if(innerText.includes("OUT"))
       translateStr = innerText.replace("OUT", "ส่งออก")
     else if(innerText.includes("IN"))
       translateStr = innerText.replace("IN", "รับเข้า")
-
+    
     el.innerHTML = translateStr
   }
 }
 
+// function test (el) {
+//   if(getLocale === "th") {
+//     let innerText = el.innerHTML
+//     let translateStr = el.innerHTML
+
+//     console.log(innerText)
+//     if(innerText.includes(" Gas Limit"))
+//     {
+//       let arrStr = innerText.split(' ')
+//       if(arrStr.length == 3)
+//       {
+//         translateStr = "แก๊สสูงสุด " + arrStr[0] + " นะจ๊ะ";
+//         console.log(translateStr)
+//       }
+//     }
+
+//     el.innerHTML = translateStr
+//   }
+// }
+
 updateAllAges()
 
-setInterval(updateAllAges, 1000)
+setInterval(updateAllAges, 500)
