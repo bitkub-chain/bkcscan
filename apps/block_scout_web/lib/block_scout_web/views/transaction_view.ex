@@ -344,22 +344,9 @@ defmodule BlockScoutWeb.TransactionView do
           @token_transfer_type -> gettext(@token_transfer_title)
         end
 
-      contract_creation?(transaction) ->
-        gettext("Contract Creation")
-
-      involves_contract?(transaction) ->
-        if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do 
-          "การเรียกใช้สัญญา" 
-        else 
-          gettext("Contract Call")
-        end
-
-      true ->
-        if Gettext.get_locale(BlockScoutWeb.Gettext) == "th" do 
-          "การทำธุรกรรม" 
-        else 
-          gettext("Transaction")
-        end
+      contract_creation?(transaction) -> gettext("Contract Creation")
+      involves_contract?(transaction) -> gettext("Contract Call")
+      true -> gettext("Transaction")
 
     end
   end
