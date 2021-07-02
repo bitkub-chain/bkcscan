@@ -11,7 +11,7 @@ moment.relativeTimeThreshold('ss', 1)
 export function updateAllAges ($container = $(document)) {
   $container.find('[data-from-now]').each((i, el) => tryUpdateAge(el))
   $container.find('[data-text-translate]').each((i, el) => tryUpdateText(el))
-  // $container.find('[data-text-test]').each((i, el) => test(el))
+  $container.find('[data-text-gas-limit]').each((i, el) => tryUpdateTextGasLimit(el))
   return $container
 }
 function tryUpdateAge (el) {
@@ -126,23 +126,25 @@ function tryUpdateText (el) {
     else if(innerText.includes("Contract Call"))
       translateStr = innerText.replace("Contract Call", "การเรียกใช้สัญญา")
 
+    // Token Transfer
+    else if(innerText.includes("Token Burning"))
+      translateStr = innerText.replace("Token Burning", "การเผาโทเคน")
+    else if(innerText.includes("Token Minting"))
+      translateStr = innerText.replace("Token Minting", "การขุดโทเคน")
+    else if(innerText.includes("Token Transfer"))
+      translateStr = innerText.replace("Token Transfer", "การโอนโทเคน")
+
     // Block Number
-    else if(innerText.includes("Block "))
-      translateStr = innerText.replace("Block ", "บล็อก ")
+    else if(innerText.includes("Block"))
+      translateStr = innerText.replace("Block", "บล็อก")
 
     // Bytes
     else if(innerText.includes("bytes"))
       translateStr = innerText.replace("bytes", "ไบต์")
 
     // Gas
-    else if(innerText.includes(" Gas Limit"))
-    {
-      let arrStr = innerText.split(' ')
-      if(arrStr.length == 3)
-      {
-        translateStr = "แก๊สสูงสุด " + arrStr[0];
-      }
-    }
+    else if(innerText.includes("Gas Limit"))
+      translateStr = innerText.replace("Gas Limit", "แก๊สสูงสุด")
     else if(innerText.includes(" Gas Used"))
       translateStr = innerText.replace(" Gas Used", " แก๊สที่ใช้จริง")
 
@@ -164,25 +166,20 @@ function tryUpdateText (el) {
   }
 }
 
-// function test (el) {
-//   if(getLocale === "th") {
-//     let innerText = el.innerHTML
-//     let translateStr = el.innerHTML
+function tryUpdateTextGasLimit (el) {
+  // console.log(el.innerHTML)
+  let getInnerHTMLArr = el.innerHTML.split(' ')
 
-//     console.log(innerText)
-//     if(innerText.includes(" Gas Limit"))
-//     {
-//       let arrStr = innerText.split(' ')
-//       if(arrStr.length == 3)
-//       {
-//         translateStr = "แก๊สสูงสุด " + arrStr[0] + " นะจ๊ะ";
-//         console.log(translateStr)
-//       }
-//     }
-
-//     el.innerHTML = translateStr
-//   }
-// }
+  if(getLocale === "th" && !getInnerHTMLArr[0].includes("แก๊สสูงสุด")) {
+    el.innerHTML = "แก๊สสูงสุด " + getInnerHTMLArr[0];
+    // console.log("1 (" + getLocale + ") >>> " + getInnerHTMLArr[0])
+    // console.log("2 (" + getLocale + ") >>> " + el.innerHTML)
+  }
+  // else{
+  //   console.log("3 (" + getLocale + ") >>> " + el.innerHTML)
+  //   console.log("4 (" + getLocale + ") >>> " + getInnerHTMLArr)
+  // }
+}
 
 updateAllAges()
 
