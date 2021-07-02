@@ -56,14 +56,15 @@ officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2
         <span data-test="token_supply"><%= format_according_to_decimals(@token.total_supply, @token.decimals) %></span>
       <% else %>
         <span data-test="token_supply"><%= format_integer_to_currency(@token.total_supply) %></span>
-      <% end %> 
-    <% end %> 
+      <% end %>
+    <% end %>
     <%= @token.symbol %>
   </td>
   <td class="stakes-td">
     <span class="mr-4">
       <span data-test="transaction_count">
         <%= format_integer_to_currency(@token.holder_count) %>
+      </span>
     </span>
   </td>
 </tr>
