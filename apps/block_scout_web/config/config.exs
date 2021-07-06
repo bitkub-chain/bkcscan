@@ -79,14 +79,16 @@ price_chart_config =
   if System.get_env("SHOW_PRICE_CHART", "true") != "false" do
     %{market: [:price, :market_cap]}
   else
-    %{}
+    %{market: [:price, :market_cap]}
+    # %{}
   end
 
 tx_chart_config =
   if System.get_env("SHOW_TXS_CHART", "false") == "true" do
     %{transactions: [:transactions_per_day]}
   else
-    %{}
+    %{transactions: [:transactions_per_day]}
+    # %{}
   end
 
 config :block_scout_web,
