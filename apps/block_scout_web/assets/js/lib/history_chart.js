@@ -207,9 +207,11 @@ class MarketHistoryChart {
       this.numTransactions.hidden = true
       axes.numTransactions.display = false
     } else if (!priceActivated && !marketCapActivated) {
-      axes.numTransactions.position = 'left'
-      this.numTransactions.backgroundColor = sassVariables.dashboardLineColorPrice
-      this.numTransactions.borderColor = sassVariables.dashboardLineColorPrice
+      this.numTransactions.hidden = true
+      axes.numTransactions.display = false
+      // axes.numTransactions.position = 'left'
+      // this.numTransactions.backgroundColor = sassVariables.dashboardLineColorPrice
+      // this.numTransactions.borderColor = sassVariables.dashboardLineColorPrice
     }
 
     this.availableSupply = availableSupply
@@ -257,6 +259,9 @@ export function createMarketHistoryChart (el) {
           case 'market': {
             const availableSupply = JSON.parse(data.supply_data)
             const marketHistoryData = humps.camelizeKeys(JSON.parse(data.history_data))
+
+            console.log({availableSupply})
+            console.log({marketHistoryData})
 
             $(el).show()
             chart.updateMarketHistory(availableSupply, marketHistoryData)
