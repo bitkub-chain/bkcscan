@@ -118,10 +118,10 @@ config :explorer, Explorer.Counters.Bridge,
   update_interval_in_seconds: bridge_market_cap_update_interval || 30 * 60
 
 # config :explorer, Explorer.ExchangeRates, enabled: System.get_env("DISABLE_EXCHANGE_RATES") != "true", store: :ets
-config :explorer, Explorer.ExchangeRates, enabled: "false", store: :ets
+config :explorer, Explorer.ExchangeRates, enabled: true, store: :ets
 
 # config :explorer, Explorer.KnownTokens, enabled: System.get_env("DISABLE_KNOWN_TOKENS") != "true", store: :ets
-config :explorer, Explorer.KnownTokens, enabled: "false", store: :ets
+config :explorer, Explorer.KnownTokens, enabled: true, store: :ets
 
 config :explorer, Explorer.Integrations.EctoLogger, query_time_ms_threshold: :timer.seconds(2)
 
@@ -140,7 +140,7 @@ txs_stats_days_to_compile_at_init =
 
 config :explorer, Explorer.Chain.Transaction.History.Historian,
   # enabled: System.get_env("ENABLE_TXS_STATS", "false") != "false",
-  enabled: "false",
+  enabled: false,
   init_lag: txs_stats_init_lag,
   days_to_compile_at_init: txs_stats_days_to_compile_at_init
 
