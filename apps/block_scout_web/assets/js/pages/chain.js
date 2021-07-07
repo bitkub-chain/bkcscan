@@ -34,133 +34,6 @@ export const initialState = {
   blockCount: null
 }
 
-export const reducer = withMissingBlocks(baseReducer)
-
-function baseReducer (state = initialState, action) {
-  switch (action.type) {
-    case 'ELEMENTS_LOAD': {
-      return Object.assign({}, state, omit(action, 'type'))
-    }
-    case 'RECEIVED_NEW_ADDRESS_COUNT': {
-      return Object.assign({}, state, {
-        addressCount: action.msg.count
-      })
-    }
-    case 'RECEIVED_NEW_BLOCK': {
-      if (!state.blocks.length || state.blocks[0].blockNumber < action.msg.blockNumber) {
-        let pastBlocks
-        if (state.blocks.length < BLOCKS_PER_PAGE) {
-          pastBlocks = state.blocks
-        } else {
-          pastBlocks = state.blocks.slice(0, -1)
-        }
-        return Object.assign({}, state, {
-          averageBlockTime: action.msg.averageBlockTime,
-          blocks: [
-            action.msg,
-            ...pastBlocks
-          ],
-          blockCount: action.msg.blockNumber + 1
-        })
-      } else {
-        return Object.assign({}, state, {
-          blocks: state.blocks.map((block) => block.blockNumber === action.msg.blockNumber ? action.msg : block),
-          blockCount: action.msg.blockNumber + 1
-        })
-      }
-    }
-    case 'START_BLOCKS_FETCH': {
-      return Object.assign({}, state, { blocksError: false, blocksLoading: true })
-    }
-    case 'BLOCKS_FINISH_REQUEST': {
-      return Object.assign({}, state, { blocksLoading: false })
-    }
-    case 'BLOCKS_FETCHED': {
-      return Object.assign({}, state, { blocks: [...action.msg.blocks], blocksLoading: false })
-    }
-    case 'BLOCKS_REQUEST_ERROR': {
-      return Object.assign({}, state, { blocksError: true, blocksLoading: false })
-    }
-    case 'RECEIVED_NEW_EXCHANGE_RATE': {
-      return Object.assign({}, state, {
-        availableSupply: action.msg.exchangeRate.availableSupply,
-        marketHistoryData: action.msg.marketHistoryData,
-        usdMarketCap: action.msg.exchangeRate.marketCapUsd
-      })
-    }
-    case 'RECEIVED_NEW_TRANSACTION_BATCH': {
-      if (state.channelDisconnected) return state
-
-      const transactionCount = state.transactionCount + action.msgs.length
-
-      if (state.transactionsLoading || state.transactionsError) {
-        return Object.assign({}, state, { transactionCount })
-      }
-
-      const transactionsLength = state.transactions.length + action.msgs.length
-      if (transactionsLength < BATCH_THRESHOLD) {
-        return Object.assign({}, state, {
-          transactions: [
-            ...action.msgs.reverse(),
-            ...state.transactions
-          ],
-          transactionCount
-        })
-      } else if (!state.transactionsBatch.length && action.msgs.length < BATCH_THRESHOLD) {
-        return Object.assign({}, state, {
-          transactions: [
-            ...action.msgs.reverse(),
-            ...state.transactions.slice(0, -1 * action.msgs.length)
-          ],
-          transactionCount
-        })
-      } else {
-        return Object.assign({}, state, {
-          transactionsBatch: [
-            ...action.msgs.reverse(),
-            ...state.transactionsBatch
-          ],
-          transactionCount
-        })
-      }
-    }
-    case 'RECEIVED_UPDATED_TRANSACTION_STATS': {
-      return Object.assign({}, state, {
-        transactionStats: action.msg.stats
-      })
-    }
-    case 'START_TRANSACTIONS_FETCH':
-      return Object.assign({}, state, { transactionsError: false, transactionsLoading: true })
-    case 'TRANSACTIONS_FETCHED':
-      return Object.assign({}, state, { transactions: [...action.msg.transactions] })
-    case 'TRANSACTIONS_FETCH_ERROR':
-      return Object.assign({}, state, { transactionsError: true })
-    case 'FINISH_TRANSACTIONS_FETCH':
-      return Object.assign({}, state, { transactionsLoading: false })
-    default:
-      return state
-  }
-}
-
-function withMissingBlocks (reducer) {
-  return (...args) => {
-    const result = reducer(...args)
-
-    if (!result.blocks || result.blocks.length < 2) return result
-
-    const maxBlock = first(result.blocks).blockNumber
-    const minBlock = maxBlock - (result.blocks.length - 1)
-
-    return Object.assign({}, result, {
-      blocks: rangeRight(minBlock, maxBlock + 1)
-        .map((blockNumber) => find(result.blocks, ['blockNumber', blockNumber]) || {
-          blockNumber,
-          chainBlockHtml: placeHolderBlock(blockNumber)
-        })
-    })
-  }
-}
-
 let chart
 const elements = {
   '[data-chart="historyChart"]': {
@@ -334,6 +207,133 @@ const elements = {
         $el[0].innerHTML = numeral(state.transactionsBatch.length).format() + " transactions have come in"
       }
     }
+  }
+}
+
+export const reducer = withMissingBlocks(baseReducer)
+
+function baseReducer (state = initialState, action) {
+  switch (action.type) {
+    case 'ELEMENTS_LOAD': {
+      return Object.assign({}, state, omit(action, 'type'))
+    }
+    case 'RECEIVED_NEW_ADDRESS_COUNT': {
+      return Object.assign({}, state, {
+        addressCount: action.msg.count
+      })
+    }
+    case 'RECEIVED_NEW_BLOCK': {
+      if (!state.blocks.length || state.blocks[0].blockNumber < action.msg.blockNumber) {
+        let pastBlocks
+        if (state.blocks.length < BLOCKS_PER_PAGE) {
+          pastBlocks = state.blocks
+        } else {
+          pastBlocks = state.blocks.slice(0, -1)
+        }
+        return Object.assign({}, state, {
+          averageBlockTime: action.msg.averageBlockTime,
+          blocks: [
+            action.msg,
+            ...pastBlocks
+          ],
+          blockCount: action.msg.blockNumber + 1
+        })
+      } else {
+        return Object.assign({}, state, {
+          blocks: state.blocks.map((block) => block.blockNumber === action.msg.blockNumber ? action.msg : block),
+          blockCount: action.msg.blockNumber + 1
+        })
+      }
+    }
+    case 'START_BLOCKS_FETCH': {
+      return Object.assign({}, state, { blocksError: false, blocksLoading: true })
+    }
+    case 'BLOCKS_FINISH_REQUEST': {
+      return Object.assign({}, state, { blocksLoading: false })
+    }
+    case 'BLOCKS_FETCHED': {
+      return Object.assign({}, state, { blocks: [...action.msg.blocks], blocksLoading: false })
+    }
+    case 'BLOCKS_REQUEST_ERROR': {
+      return Object.assign({}, state, { blocksError: true, blocksLoading: false })
+    }
+    case 'RECEIVED_NEW_EXCHANGE_RATE': {
+      return Object.assign({}, state, {
+        availableSupply: action.msg.exchangeRate.availableSupply,
+        marketHistoryData: action.msg.marketHistoryData,
+        usdMarketCap: action.msg.exchangeRate.marketCapUsd
+      })
+    }
+    case 'RECEIVED_NEW_TRANSACTION_BATCH': {
+      if (state.channelDisconnected) return state
+
+      const transactionCount = state.transactionCount + action.msgs.length
+
+      if (state.transactionsLoading || state.transactionsError) {
+        return Object.assign({}, state, { transactionCount })
+      }
+
+      const transactionsLength = state.transactions.length + action.msgs.length
+      if (transactionsLength < BATCH_THRESHOLD) {
+        return Object.assign({}, state, {
+          transactions: [
+            ...action.msgs.reverse(),
+            ...state.transactions
+          ],
+          transactionCount
+        })
+      } else if (!state.transactionsBatch.length && action.msgs.length < BATCH_THRESHOLD) {
+        return Object.assign({}, state, {
+          transactions: [
+            ...action.msgs.reverse(),
+            ...state.transactions.slice(0, -1 * action.msgs.length)
+          ],
+          transactionCount
+        })
+      } else {
+        return Object.assign({}, state, {
+          transactionsBatch: [
+            ...action.msgs.reverse(),
+            ...state.transactionsBatch
+          ],
+          transactionCount
+        })
+      }
+    }
+    case 'RECEIVED_UPDATED_TRANSACTION_STATS': {
+      return Object.assign({}, state, {
+        transactionStats: action.msg.stats
+      })
+    }
+    case 'START_TRANSACTIONS_FETCH':
+      return Object.assign({}, state, { transactionsError: false, transactionsLoading: true })
+    case 'TRANSACTIONS_FETCHED':
+      return Object.assign({}, state, { transactions: [...action.msg.transactions] })
+    case 'TRANSACTIONS_FETCH_ERROR':
+      return Object.assign({}, state, { transactionsError: true })
+    case 'FINISH_TRANSACTIONS_FETCH':
+      return Object.assign({}, state, { transactionsLoading: false })
+    default:
+      return state
+  }
+}
+
+function withMissingBlocks (reducer) {
+  return (...args) => {
+    const result = reducer(...args)
+
+    if (!result.blocks || result.blocks.length < 2) return result
+
+    const maxBlock = first(result.blocks).blockNumber
+    const minBlock = maxBlock - (result.blocks.length - 1)
+
+    return Object.assign({}, result, {
+      blocks: rangeRight(minBlock, maxBlock + 1)
+        .map((blockNumber) => find(result.blocks, ['blockNumber', blockNumber]) || {
+          blockNumber,
+          chainBlockHtml: placeHolderBlock(blockNumber)
+        })
+    })
   }
 }
 
