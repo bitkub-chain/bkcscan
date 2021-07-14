@@ -1,7 +1,7 @@
 SYSTEM = $(shell uname -s)
 #HOST = host.docker.internal
 HOST = 10.0.0.216
-DOCKER_IMAGE = bitkubchain-explorer
+DOCKER_IMAGE = bkc-explorer
 BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
