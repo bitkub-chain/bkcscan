@@ -69,6 +69,9 @@
         <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Hot Wallet)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x107f4dc628ee75ebcb50953f8a72ebddd280869c")) do %>
+        <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Cold Wallet) - Deprecated" %></p>
+      <% end %>
+      <%= if(String.downcase(to_string(@address)) == String.downcase("0xc1864356C72Baf98df2357B51A1c5a4c8C9eea05")) do %>
         <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Cold Wallet)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xc6422b55db8b3288a1f8316bc07375948e08082f")) do %>
