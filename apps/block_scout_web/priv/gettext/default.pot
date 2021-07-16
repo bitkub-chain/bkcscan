@@ -2908,6 +2908,9 @@ msgstr ""
 msgid "KUB: Community / Exchange Development"
 msgstr ""
 
+msgid "KUB: Bitkub Exchange (Cold Wallet)"
+msgstr ""
+
 msgid "KUB: Ecosystem"
 msgstr ""
 
@@ -2920,7 +2923,7 @@ msgstr ""
 msgid "KUB: Bitkub Exchange (Hot Wallet)"
 msgstr ""
 
-msgid "KUB: Bitkub Exchange (Cold Wallet)"
+msgid "KUB: Bitkub Exchange (Cold Wallet) - Deprecated"
 msgstr ""
 
 msgid "KUB: Liquidity"

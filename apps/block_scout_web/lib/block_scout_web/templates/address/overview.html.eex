@@ -126,6 +126,9 @@
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xFE28FfD8c528066bE3aE4B0D95db0478EfBA7413")) do %>
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Community / Exchange Development" %></small>
             <% end %>
+            <%= if(String.downcase(to_string(@address)) == String.downcase("0xc1864356C72Baf98df2357B51A1c5a4c8C9eea05")) do %>
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Cold Wallet)" %></small>
+            <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x755FD36eC8F6E2eb69bCeC441bacA89855747d50")) do %>
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Ecosystem" %></small>
             <% end %>
@@ -139,7 +142,7 @@
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Hot Wallet)" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x107f4dc628ee75ebcb50953f8a72ebddd280869c")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Cold Wallet)" %></small>
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Cold Wallet) - Deprecated" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xc6422b55db8b3288a1f8316bc07375948e08082f")) do %>
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Liquidity" %></small>

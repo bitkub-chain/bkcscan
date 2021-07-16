@@ -2909,6 +2909,9 @@ msgstr "KUB: งบประมาณสํารองของบริษั�
 msgid "KUB: Community / Exchange Development"
 msgstr "KUB: งบประมาณสําหรับพัฒนาเครือข่ายและศูนย์ซื้อขาย"
 
+msgid "KUB: Bitkub Exchange (Cold Wallet)"
+msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
+
 msgid "KUB: Ecosystem"
 msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ"
 
@@ -2921,8 +2924,8 @@ msgstr "KUB: งบประมาณสําหรับพาร์ตเน�
 msgid "KUB: Bitkub Exchange (Hot Wallet)"
 msgstr "KUB: Bitkub Exchange (กระเป๋าเงินร้อน)"
 
-msgid "KUB: Bitkub Exchange (Cold Wallet)"
-msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
+msgid "KUB: Bitkub Exchange (Cold Wallet) - Deprecated"
+msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น) - เลิกใช้งาน"
 
 msgid "KUB: Liquidity"
 msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง"
