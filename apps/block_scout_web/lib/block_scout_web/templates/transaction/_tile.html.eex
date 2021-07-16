@@ -3,7 +3,7 @@
   <div class="row tile-body" data-selector="token-transfers-toggle" data-test="chain_transaction">
     <!-- Color Block -->
     <div class="tile-transaction-type-block col-md-2 d-flex flex-row flex-md-column">
-      <span class="tile-label" data-test="transaction_type">
+      <span class="tile-label" data-test="transaction_type" data-text-translate="">
         <%= transaction_display_type(@transaction) %>
       </span>
       <span class="tile-status-label ml-2 ml-md-0" data-test="transaction_status">
@@ -13,6 +13,8 @@
             <span class="loading-spinner-block-2"></span>
           </div>
         <% end %>
+      </span>
+      <span data-text-translate="">
         <%= formatted_status(status) %>
       </span>
     </div>
@@ -29,7 +31,7 @@
           <%= value(@transaction, include_label: false) %> <%= gettext "Ether" %>
         </span>
         <span class="ml-0 ml-md-1 text-nowrap">
-          <%= formatted_fee(@transaction, denomination: :ether, include_label: false) %> <%= gettext "TX Fee" %>
+          <%= formatted_fee(@transaction, denomination: :ether, include_label: false) %> <%= gettext "TX Fee unit" %>
         </span>
       </span>
 
@@ -57,18 +59,18 @@
     </div>
     <!-- Block info -->
     <div class="col-md-3 col-lg-2 d-flex flex-row flex-md-column flex-nowrap justify-content-center text-md-right mt-3 mt-md-0 tile-bottom">
-      <span class="mr-2 mr-md-0 order-1">
+      <span class="mr-2 mr-md-0 order-1" data-text-translate="">
         <%= @transaction |> block_number() |> BlockScoutWeb.RenderHelpers.render_partial() %>
       </span>
       <span class="mr-2 mr-md-0 order-2" in-tile data-from-now="<%= block_timestamp(@transaction) %>"></span>
       <%= if from_or_to_address?(@transaction, assigns[:current_address]) do %>
         <span class="mr-2 mr-md-0 order-0 order-md-3">
           <%= if @transaction.from_address_hash == assigns[:current_address].hash do %>
-            <span data-test="transaction_type" class="badge badge-danger tile-badge">
+            <span data-test="transaction_type" class="badge badge-danger tile-badge" data-text-translate="">
               <%= gettext "OUT" %>
             </span>
           <% else %>
-            <span data-test="transaction_type" class="badge badge-success tile-badge">
+            <span data-test="transaction_type" class="badge badge-success tile-badge" data-text-translate="">
               <%= gettext "IN" %>
             </span>
           <% end %>

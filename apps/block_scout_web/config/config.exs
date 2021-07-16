@@ -25,7 +25,8 @@ config :block_scout_web, BlockScoutWeb.Chain,
   has_emission_funds: false,
   staking_enabled: not is_nil(System.get_env("POS_STAKING_CONTRACT")),
   # how often (in blocks) the list of pools should autorefresh in UI (zero turns off autorefreshing)
-  staking_pool_list_refresh_interval: 5
+  staking_pool_list_refresh_interval: 5,
+  enable_google_analytics: if(System.get_env("ENABLE_GOOGLE_ANALYTICS", "true") == "false", do: false, else: true)
 
 config :block_scout_web,
   link_to_other_explorers: System.get_env("LINK_TO_OTHER_EXPLORERS") == "true",
@@ -65,7 +66,7 @@ config :block_scout_web, BlockScoutWeb.Tracer,
   trace_key: :blockscout
 
 # Configures gettext
-config :block_scout_web, BlockScoutWeb.Gettext, locales: ~w(en), default_locale: "en"
+config :block_scout_web, locales: ~w(en th), default_locale: "en"
 
 config :block_scout_web, BlockScoutWeb.SocialMedia,
   twitter: "BitkubChain",
@@ -78,7 +79,7 @@ price_chart_config =
   if System.get_env("SHOW_PRICE_CHART", "true") != "false" do
     %{market: [:price, :market_cap]}
   else
-    %{}
+    %{market: [:price, :market_cap]}
   end
 
 tx_chart_config =

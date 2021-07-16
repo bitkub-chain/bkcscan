@@ -7,7 +7,7 @@ defmodule BlockScoutWeb.AddressPage do
 
   def apply_filter(session, direction) do
     session
-    |> click(css("[data-test='filter_dropdown']", text: "Filter: All"))
+    |> click(css("[data-test='filter_dropdown']", text: (gettext("Filter: ") <> gettext("All")))
     |> click(css("[data-test='filter_option']", text: direction))
   end
 
@@ -20,7 +20,7 @@ defmodule BlockScoutWeb.AddressPage do
   end
 
   def token_balance_counter(text) do
-    css("[data-tokens-count]", text: "#{text} tokens")
+    css("[data-tokens-count]", text: ngettext("%{count} token", "%{count} tokens", "#{text}"))
   end
 
   def token_type(count: count) do

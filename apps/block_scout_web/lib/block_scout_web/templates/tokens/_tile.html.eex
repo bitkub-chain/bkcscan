@@ -1,57 +1,70 @@
-<%                                                                                                                                                                                        
-officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368","0x12a5A2f27bc1eA474518f41A829B60b945585c97"];
+<%
+officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368", "0x80318CAB3791E49650C8760a61196fFD2D23F6a1", "0x8b614b636FfDdfFaa261224d88C3Fc919a9634AE", "0xc6677E014D7e2F45fB44E8036C014B916C0492a1", "0x0330b553823703E673787747D1930a12D7a14c94", "0xE06B321eF826eaB4D242b1e40d4a51b8dCDF61B2","0x67eBD850304c70d983B2d1b93ea79c7CD6c3F6b5"];
 %>
+<% deprecated = ["0x12a5A2f27bc1eA474518f41A829B60b945585c97"] %>
+
 <tr>
- <td class="stakes-td">                                                                                                                                                                                    
-      <!-- incremented number by order in the list -->                                                                                                                                                      
-      <span class="color-lighten">                                                                                                                                                                          
-        <%= @index %>                                                                                                                                                                                       
-      </span>                                                                                                                                                                                               
-  </td>                                                                                                                                                                                                     
-  <td class="stakes-td">                                                                                                                                                                                    
-    <% token = token_display_name(@token) %>                                                                                                                                                                
-    <%= link(token,                                                                                                                                                                                         
-      to: token_path(BlockScoutWeb.Endpoint, :show, @token.contract_address_hash),                                                                                                                          
-      "data-test": "token_link",                                                                                                                                                                            
-      class: "text-truncate") %>  
+ <td class="stakes-td">
+      <!-- incremented number by order in the list -->
+      <span class="color-lighten">
+        <%= @index %>
+      </span>
+  </td>
+  <td class="stakes-td">
+    <% token = token_display_name(@token) %>
+    <%= link(token,
+      to: token_path(BlockScoutWeb.Endpoint, :show, @token.contract_address_hash),
+      "data-test": "token_link",
+      class: "text-truncate") %>
 
     <% address = to_string(@token.contract_address) %>
     <% check = Enum.member?(officials, address) %>
-    <%= if(check) do %>
-      <small class="border-dark p-1 bg-success text-white rounded">Official</small> 
-    <% end %>   
+    <% check_deprecated = Enum.member?(deprecated, address) %>
 
-  </td>                                                                                                                                                                                                     
-  <td class="stakes-td">                                                                                                                                                                                    
-    <%= render BlockScoutWeb.AddressView,                                                                                                                                                                   
-      "_link.html",                                                                                                                                                                                         
-      address: @token.contract_address,                                                                                                                                                                     
-      contract: true,                                                                                                                                                                                       
-      use_custom_tooltip: false                                                                                                                                                               
-    %>                                                                                                                                                                                                      
-  </td>                                                                                                                                                                                                     
-  <%= if Chain.bridged_tokens_enabled?() do %>                                                                                                                                                              
-    <td class="stakes-td">                                                                                                                                                                                  
-      <%= case @token.bridged do %>                                                                                                                                                                         
-      <% nil -> %>                                                                                                                                                                                          
-        <i style="color: #f7b32b; font-size: 20px;" class="far fa-question-circle"></i>                                                                                                                     
-      <% true -> %>                                                                                                                                                                                         
-        <i style="color: #20b760; font-size: 20px;" class="far fa-check-circle"></i>                                                                                                                        
-      <% false -> %>                                                                                                                                                                                        
-      <% end %>                                                                                                                                                                                             
-    </td>                                                                                                                                                                                                   
-  <% end %>                                                                                                                                                                                                 
-  <td class="stakes-td">                                                                                                                                                                                    
-    <%= if decimals?(@token) do %>                                                                                                                                                                          
-      <span data-test="token_supply"><%= format_according_to_decimals(@token.total_supply, @token.decimals) %></span>                                                                                       
-    <% else %>                                                                                                                                                                                              
-      <span data-test="token_supply"><%= format_integer_to_currency(@token.total_supply) %></span>                                                                                                          
-    <% end %> <%= @token.symbol %>                                                                                                                                                                          
-  </td>                                                                                                                                                                                                     
-  <td class="stakes-td">                                                                                                                                                                                    
-    <span class="mr-4">                                                                                                                                                                                     
-      <span data-test="transaction_count">                                                                                                                                                                  
-        <%= @token.holder_count %>                                                                                                                                                                          
-    </span>                                                                                                                                                                                                 
-  </td>                                                                                                                                                                                                     
+    <%= if(check) do %>
+      <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Official" %></small>
+    <% end %>
+    <%= if(check_deprecated) do %>
+      <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;"><%= gettext "Deprecated" %></small>
+    <% end %>
+
+  </td>
+  <td class="stakes-td">
+    <%= render BlockScoutWeb.AddressView,
+      "_link.html",
+      address: @token.contract_address,
+      contract: true,
+      use_custom_tooltip: false
+    %>
+  </td>
+  <%= if Chain.bridged_tokens_enabled?() do %>
+    <td class="stakes-td">
+      <%= case @token.bridged do %>
+      <% nil -> %>
+        <i style="color: #f7b32b; font-size: 20px;" class="far fa-question-circle"></i>
+      <% true -> %>
+        <i style="color: #20b760; font-size: 20px;" class="far fa-check-circle"></i>
+      <% false -> %>
+      <% end %>
+    </td>
+  <% end %>
+  <td class="stakes-td">
+    <%= if (address == "0x9C04EFD1E9aD51A605eeDcb576159242FF930368") do %>
+      300,000,000
+    <% else %>
+      <%= if decimals?(@token) do %>
+        <span data-test="token_supply"><%= format_according_to_decimals(@token.total_supply, @token.decimals) %></span>
+      <% else %>
+        <span data-test="token_supply"><%= format_integer_to_currency(@token.total_supply) %></span>
+      <% end %>
+    <% end %>
+    <%= @token.symbol %>
+  </td>
+  <td class="stakes-td">
+    <span class="mr-4">
+      <span data-test="transaction_count">
+        <%= format_integer_to_currency(@token.holder_count) %>
+      </span>
+    </span>
+  </td>
 </tr>

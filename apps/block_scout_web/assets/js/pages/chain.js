@@ -34,6 +34,182 @@ export const initialState = {
   blockCount: null
 }
 
+let chart
+const elements = {
+  '[data-chart="historyChart"]': {
+    load () {
+      chart = window.dashboardChart
+    },
+    render ($el, state, oldState) {
+      if (!chart || (oldState.availableSupply === state.availableSupply && oldState.marketHistoryData === state.marketHistoryData) || !state.availableSupply) return
+
+      chart.updateMarketHistory(state.availableSupply, state.marketHistoryData)
+
+      if (!chart || (JSON.stringify(oldState.transactionStats) === JSON.stringify(state.transactionStats))) return
+
+      chart.updateTransactionHistory(state.transactionStats)
+    }
+  },
+  '[data-selector="transaction-count"]': {
+    load ($el) {
+      return { transactionCount: numeral($el.text()).value() }
+    },
+    render ($el, state, oldState) {
+      if (oldState.transactionCount === state.transactionCount) return
+      $el.empty().append(numeral(state.transactionCount).format())
+    }
+  },
+  '[data-selector="total-gas-usage"]': {
+    load ($el) {
+      return { totalGasUsageCount: numeral($el.text()).value() }
+    },
+    render ($el, state, oldState) {
+      if (oldState.totalGasUsageCount === state.totalGasUsageCount) return
+      $el.empty().append(numeral(state.totalGasUsageCount).format())
+    }
+  },
+  '[data-selector="block-count"]': {
+    load ($el) {
+      return { blockCount: numeral($el.text()).value() }
+    },
+    render ($el, state, oldState) {
+      if (oldState.blockCount === state.blockCount) return
+      $el.empty().append(numeral(state.blockCount).format())
+    }
+  },
+  '[data-selector="address-count"]': {
+    render ($el, state, oldState) {
+      if (oldState.addressCount === state.addressCount) return
+      $el.empty().append(state.addressCount)
+    }
+  },
+  '[data-selector="average-block-time"]': {
+    render ($el, state, oldState) {
+      if (oldState.averageBlockTime === state.averageBlockTime) return
+
+      if(getLocale === "th") {
+        let averageBlockTimeStr = state.averageBlockTime
+        let translateTimeUnitStr = state.averageBlockTime
+        if(averageBlockTimeStr.endsWith("milliseconds"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("milliseconds", "มิลลิวินาที")
+        else if(averageBlockTimeStr.endsWith("millisecond"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("millisecond", "มิลลิวินาที")
+        else if(averageBlockTimeStr.endsWith("seconds"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("seconds", "วินาที")
+        else if(averageBlockTimeStr.endsWith("second"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("second", "วินาที")
+        else if(averageBlockTimeStr.endsWith("minutes"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("minutes", "นาที")
+        else if(averageBlockTimeStr.endsWith("minute"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("minute", "นาที")
+        else if(averageBlockTimeStr.endsWith("hours"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("hours", "ชั่วโมง")
+        else if(averageBlockTimeStr.endsWith("hour"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("hour", "ชั่วโมง")
+        else if(averageBlockTimeStr.endsWith("days"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("days", "วัน")
+        else if(averageBlockTimeStr.endsWith("day"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("day", "วัน")
+        else if(averageBlockTimeStr.endsWith("weeks"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("weeks", "สัปดาห์")
+        else if(averageBlockTimeStr.endsWith("week"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("week", "สัปดาห์")
+        else if(averageBlockTimeStr.endsWith("months"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("months", "เดือน")
+        else if(averageBlockTimeStr.endsWith("month"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("month", "เดือน")
+        else if(averageBlockTimeStr.endsWith("years"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("years", "ปี")
+        else if(averageBlockTimeStr.endsWith("year"))
+          translateTimeUnitStr = averageBlockTimeStr.replace("year", "ปี")
+          
+        $el.empty().append(translateTimeUnitStr)
+      }
+      else {
+        $el.empty().append(state.averageBlockTime)
+      }
+    }
+  },
+  '[data-selector="market-cap"]': {
+    render ($el, state, oldState) {
+      if (oldState.usdMarketCap === state.usdMarketCap) return
+      $el.empty().append(formatUsdValue(state.usdMarketCap))
+    }
+  },
+  '[data-selector="tx_per_day"]': {
+    render ($el, state, oldState) {
+      if (!(JSON.stringify(oldState.transactionStats) === JSON.stringify(state.transactionStats))) {
+        $el.empty().append(numeral(state.transactionStats[0].number_of_transactions).format('0,0'))
+      }
+    }
+  },
+  '[data-selector="chain-block-list"]': {
+    load ($el) {
+      return {
+        blocksPath: $el[0].dataset.url
+      }
+    },
+    render ($el, state, oldState) {
+      if (oldState.blocks === state.blocks) return
+
+      const container = $el[0]
+
+      if (state.blocksLoading === false) {
+        const blocks = map(state.blocks, ({ chainBlockHtml }) => $(chainBlockHtml)[0])
+        listMorph(container, blocks, { key: 'dataset.blockNumber', horizontal: true })
+      }
+    }
+  },
+  '[data-selector="chain-block-list"] [data-selector="error-message"]': {
+    render ($el, state, _oldState) {
+      if (state.blocksError) {
+        $el.show()
+      } else {
+        $el.hide()
+      }
+    }
+  },
+  '[data-selector="chain-block-list"] [data-selector="loading-message"]': {
+    render ($el, state, _oldState) {
+      showLoader(state.blocksLoading, $el)
+    }
+  },
+  '[data-selector="transactions-list"] [data-selector="error-message"]': {
+    render ($el, state, _oldState) {
+      $el.toggle(state.transactionsError)
+    }
+  },
+  '[data-selector="transactions-list"] [data-selector="loading-message"]': {
+    render ($el, state, _oldState) {
+      showLoader(state.transactionsLoading, $el)
+    }
+  },
+  '[data-selector="transactions-list"]': {
+    load ($el) {
+      return { transactionsPath: $el[0].dataset.transactionsPath }
+    },
+    render ($el, state, oldState) {
+      if (oldState.transactions === state.transactions) return
+      const container = $el[0]
+      const newElements = map(state.transactions, ({ transactionHtml }) => $(transactionHtml)[0])
+      listMorph(container, newElements, { key: 'dataset.identifierHash' })
+    }
+  },
+  '[data-selector="channel-batching-count"]': {
+    render ($el, state, _oldState) {
+      const $channelBatching = $('[data-selector="channel-batching-message"]')
+      if (!state.transactionsBatch.length) return $channelBatching.hide()
+      $channelBatching.show()
+      if(getLocale === "th") {
+        $el[0].innerHTML = "มี " + numeral(state.transactionsBatch.length).format() + " รายการใหม่"
+      }
+      else{
+        $el[0].innerHTML = numeral(state.transactionsBatch.length).format() + " transactions have come in"
+      }
+    }
+  }
+}
+
 export const reducer = withMissingBlocks(baseReducer)
 
 function baseReducer (state = initialState, action) {
@@ -158,136 +334,6 @@ function withMissingBlocks (reducer) {
           chainBlockHtml: placeHolderBlock(blockNumber)
         })
     })
-  }
-}
-
-let chart
-const elements = {
-  '[data-chart="historyChart"]': {
-    load () {
-      chart = window.dashboardChart
-    },
-    render ($el, state, oldState) {
-      if (!chart || (oldState.availableSupply === state.availableSupply && oldState.marketHistoryData === state.marketHistoryData) || !state.availableSupply) return
-
-      chart.updateMarketHistory(state.availableSupply, state.marketHistoryData)
-
-      if (!chart || (JSON.stringify(oldState.transactionStats) === JSON.stringify(state.transactionStats))) return
-
-      chart.updateTransactionHistory(state.transactionStats)
-    }
-  },
-  '[data-selector="transaction-count"]': {
-    load ($el) {
-      return { transactionCount: numeral($el.text()).value() }
-    },
-    render ($el, state, oldState) {
-      if (oldState.transactionCount === state.transactionCount) return
-      $el.empty().append(numeral(state.transactionCount).format())
-    }
-  },
-  '[data-selector="total-gas-usage"]': {
-    load ($el) {
-      return { totalGasUsageCount: numeral($el.text()).value() }
-    },
-    render ($el, state, oldState) {
-      if (oldState.totalGasUsageCount === state.totalGasUsageCount) return
-      $el.empty().append(numeral(state.totalGasUsageCount).format())
-    }
-  },
-  '[data-selector="block-count"]': {
-    load ($el) {
-      return { blockCount: numeral($el.text()).value() }
-    },
-    render ($el, state, oldState) {
-      if (oldState.blockCount === state.blockCount) return
-      $el.empty().append(numeral(state.blockCount).format())
-    }
-  },
-  '[data-selector="address-count"]': {
-    render ($el, state, oldState) {
-      if (oldState.addressCount === state.addressCount) return
-      $el.empty().append(state.addressCount)
-    }
-  },
-  '[data-selector="average-block-time"]': {
-    render ($el, state, oldState) {
-      if (oldState.averageBlockTime === state.averageBlockTime) return
-      $el.empty().append(state.averageBlockTime)
-    }
-  },
-  '[data-selector="market-cap"]': {
-    render ($el, state, oldState) {
-      if (oldState.usdMarketCap === state.usdMarketCap) return
-      $el.empty().append(formatUsdValue(state.usdMarketCap))
-    }
-  },
-  '[data-selector="tx_per_day"]': {
-    render ($el, state, oldState) {
-      if (!(JSON.stringify(oldState.transactionStats) === JSON.stringify(state.transactionStats))) {
-        $el.empty().append(numeral(state.transactionStats[0].number_of_transactions).format('0,0'))
-      }
-    }
-  },
-  '[data-selector="chain-block-list"]': {
-    load ($el) {
-      return {
-        blocksPath: $el[0].dataset.url
-      }
-    },
-    render ($el, state, oldState) {
-      if (oldState.blocks === state.blocks) return
-
-      const container = $el[0]
-
-      if (state.blocksLoading === false) {
-        const blocks = map(state.blocks, ({ chainBlockHtml }) => $(chainBlockHtml)[0])
-        listMorph(container, blocks, { key: 'dataset.blockNumber', horizontal: true })
-      }
-    }
-  },
-  '[data-selector="chain-block-list"] [data-selector="error-message"]': {
-    render ($el, state, _oldState) {
-      if (state.blocksError) {
-        $el.show()
-      } else {
-        $el.hide()
-      }
-    }
-  },
-  '[data-selector="chain-block-list"] [data-selector="loading-message"]': {
-    render ($el, state, _oldState) {
-      showLoader(state.blocksLoading, $el)
-    }
-  },
-  '[data-selector="transactions-list"] [data-selector="error-message"]': {
-    render ($el, state, _oldState) {
-      $el.toggle(state.transactionsError)
-    }
-  },
-  '[data-selector="transactions-list"] [data-selector="loading-message"]': {
-    render ($el, state, _oldState) {
-      showLoader(state.transactionsLoading, $el)
-    }
-  },
-  '[data-selector="transactions-list"]': {
-    load ($el) {
-      return { transactionsPath: $el[0].dataset.transactionsPath }
-    },
-    render ($el, state, oldState) {
-      if (oldState.transactions === state.transactions) return
-      const container = $el[0]
-      const newElements = map(state.transactions, ({ transactionHtml }) => $(transactionHtml)[0])
-      listMorph(container, newElements, { key: 'dataset.identifierHash' })
-    }
-  },
-  '[data-selector="channel-batching-count"]': {
-    render ($el, state, _oldState) {
-      const $channelBatching = $('[data-selector="channel-batching-message"]')
-      if (!state.transactionsBatch.length) return $channelBatching.hide()
-      $channelBatching.show()
-      $el[0].innerHTML = numeral(state.transactionsBatch.length).format()
-    }
   }
 }
 

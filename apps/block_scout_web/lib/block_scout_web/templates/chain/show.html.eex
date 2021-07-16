@@ -2,14 +2,13 @@
   <div class="container">
     <div class="dashboard-banner">
       <!-- Graph and legend -->
-      <div class="dashboard-banner-network-graph" style="display:none;">
+      <div class="dashboard-banner-network-graph" style="display:none">
         <!-- Graph -->
         <div class="dashboard-banner-chart">
           <button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
             <span><%= gettext("There was a problem loading the chart.") %></span>
           </button>
           <canvas data-chart="historyChart"
-
                   data-history_chart_paths=
                   '{<%= for {{key, value}, x} <- Enum.with_index(@chart_data_paths) do %>
                         "<%= key %>":"<%= value %>"
@@ -125,7 +124,11 @@
                   <%= gettext "Average block time" %>
                 </span>
                 <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
-                  <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                  <%= if Gettext.get_locale(BlockScoutWeb.Gettext) === "th" do %>
+                    <%= translate_time_unit Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                  <% else %>
+                    <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                  <% end %>
                 </span>
               </div>
           <% end %>
@@ -143,7 +146,7 @@
                   data-placement="top"
                   data-html="true"
                   data-template="<div class='tooltip tooltip-inversed-color tooltip-gas-usage' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>"
-                  title="<div class='custom-tooltip-header'>Total gas used</div><div class='custom-tooltip-description'><b><%= BlockScoutWeb.Cldr.Number.to_string!(@total_gas_usage, format: "#,###") %><b></div>"
+                  title="<div class='custom-tooltip-header'><%= gettext "Total gas used" %></div><div class='custom-tooltip-description'><b><%= BlockScoutWeb.Cldr.Number.to_string!(@total_gas_usage, format: "#,###") %><b></div>"
                   class="custom-tooltip-total-transactions">
                   <i style="color: #ffffff;" class="fa fa-info-circle ml-2"></i>
                 </span>
@@ -198,7 +201,7 @@
         <div hidden data-selector="loading-message" class="col-lg-3" >
          <div data-selector="chain-block">
            <div class="tile tile-type-block n-p d-flex flex-column">
-             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a> 
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a>
              <div class="tile-bottom-contents">
                <div class="dark-block-loader"></div>
                <div class="dark-block-loader"></div>
@@ -209,7 +212,7 @@
         <div hidden data-selector="loading-message" class="col-lg-3" >
          <div data-selector="chain-block">
            <div class="tile tile-type-block n-p d-flex flex-column">
-             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a> 
+             <a class="tile-title"><span class="tile-loader tile-label-loader"></span> </a>
              <div class="tile-bottom-contents">
                <div class="dark-block-loader"></div>
                <div class="dark-block-loader"></div>
@@ -227,7 +230,7 @@
             </div>
            </div>
          </div>
-        </div>   
+        </div>
       </div>
     </div>
   </div>
@@ -238,7 +241,7 @@
       <h2 class="card-title lg-card-title"><%= gettext "Transactions" %></h2>
       <div data-selector="channel-batching-message" style="display: none;">
         <div data-selector="reload-button" class="alert alert-info">
-          <a href="#" class="alert-link"><span data-selector="channel-batching-count"></span> <%= gettext "More transactions have come in" %></a>
+          <a href="#" class="alert-link"><span data-selector="channel-batching-count"></span></a>
         </div>
       </div>
       <span data-selector="transactions-list" data-transactions-path="<%= @transactions_path %>">

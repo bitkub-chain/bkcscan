@@ -33,7 +33,33 @@
         'Ether': '<%= gettext("Ether") %>',
         'Tx/day': '<%= gettext("Tx/day") %>'
       }
+
+      var getLocale = "<%= Gettext.get_locale(BlockScoutWeb.Gettext) %>"
     </script>
+
+    <script>
+    console.log('GA enabled? : "<%= enable_google_analytics() %>"');
+    </script>
+    <%= if enable_google_analytics() do %><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK92V48HZJ"></script>
+    <script>
+    console.log("Initialize GA 1");
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NK92V48HZJ');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164129660-5"></script>
+    <script>
+    console.log("Initialize GA 2");
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-164129660-5');
+    </script>
+    <% end %>
+
   </head>
 
   <body>
@@ -180,7 +206,9 @@
         <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
         <%= @inner_content %>
       </main>
-      <%= render BlockScoutWeb.LayoutView, "_footer.html", assigns %>
+      <%= if !assigns[:is_not_found] do %>
+       <%= render BlockScoutWeb.LayoutView, "_footer.html", assigns %>
+      <% end %>
     </div>
     <%= if (
       @view_module != Elixir.BlockScoutWeb.ChainView &&

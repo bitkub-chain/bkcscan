@@ -14,3 +14,5 @@ export SHOW_PRICE_CHART=true
 export SHOW_TXS_CHART=true
 export COIN="KUB"
 export COINGECKO_COIN_ID="bitkub-coin"
+export ENABLE_GOOGLE_ANALYTICS=true
+

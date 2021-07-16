@@ -4,6 +4,8 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
+  <% officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368", "0x80318CAB3791E49650C8760a61196fFD2D23F6a1", "0x8b614b636FfDdfFaa261224d88C3Fc919a9634AE", "0xc6677E014D7e2F45fB44E8036C014B916C0492a1", "0x0330b553823703E673787747D1930a12D7a14c94", "0xE06B321eF826eaB4D242b1e40d4a51b8dCDF61B2","0x67eBD850304c70d983B2d1b93ea79c7CD6c3F6b5"]; %>
+  <% deprecated = ["0x12a5A2f27bc1eA474518f41A829B60b945585c97"] %>
   <div class="row">
     <!-- Address details -->
     <div class="card-section col-md-12 col-lg-8 pr-0-md">
@@ -26,7 +28,7 @@
               <%= nil %>
           <% end %>
           <h1 class="card-title lg-card-title">
-            <div class="title-with-label"><%= address_title(@address) %> <%= gettext "Details" %></div>
+            <div class="title-with-label"><%= gettext "Address Details" %></div>
             <!-- buttons -->
             <span class="overview-title-buttons float-right">
               <span class="overview-title-item" data-clipboard-text="<%= @address %>">
@@ -80,70 +82,88 @@
               <% end %>
             </span>
           </h1>
-          <h3 class="address-detail-hash-title <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
+          <h3 class="address-detail-hash-title mb-0 <%= if BlockScoutWeb.AddressView.contract?(@address) do %>contract-address<% end %>" data-test="address_detail_hash">
             <p><%= @address %></p>
+            <% addressOfficial = to_string(@address) %>
+            <% check = Enum.member?(officials, addressOfficial) %>
+            <% check_deprecated = Enum.member?(deprecated, addressOfficial) %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: GetLinks (Thailand) Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: GetLinks (Thailand) Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: Ananda Development Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Ananda Development Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: Saha Pattana Piboon Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Saha Pathanapibul Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: Huawei Technologies (Thailand) Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Huawei Technologies (Thailand) Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: TPCS Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: TPCS Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: SmartContract Blockchain Studio</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: SmartContract Blockchain Studio" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDb53BDeda03382d9a169a299332F8222A683282A")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: Siamrajathanee Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Siamrajathanee Public Company Limited" %><</small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: SiS Distribution (Thailand) Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: SiS Distribution (Thailand) Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xe16288F1c9247baca7Dea839366C59D2D3466A38")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: 2C2P (Thailand) Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: 2C2P (Thailand) Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x091820483645BB414877B0Ab50594AB6E1f393c0")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: PROEN Corp Public Company Limited</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: PROEN Corp Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">Validator: SIX Network PTE. Ltd.</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: SIX Network PTE. Ltd." %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xD78A91F21B12de8793BB8616961F31BEefa97fE4")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Company Reserve</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Company Reserve" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xFE28FfD8c528066bE3aE4B0D95db0478EfBA7413")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Community / Exchange Development</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Community / Exchange Development" %></small>
+            <% end %>
+            <%= if(String.downcase(to_string(@address)) == String.downcase("0xc1864356C72Baf98df2357B51A1c5a4c8C9eea05")) do %>
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Cold Wallet)" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x755FD36eC8F6E2eb69bCeC441bacA89855747d50")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Ecosystem</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Ecosystem" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xc9760469d7635916D20329e4bac99ffBBFD38DF4")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Ecosystem (Hot Wallet)</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Ecosystem (Hot Wallet)" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x6DfBA1364e9627b863c6188a6545000e675E5898")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Partner</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Partner" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x5019F3d3226FbfA007a786382256feA2ecB3A676")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Bitkub Exchange (Hot Wallet)</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Hot Wallet)" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x107f4dc628ee75ebcb50953f8a72ebddd280869c")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Bitkub Exchange (Cold Wallet) </small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Bitkub Exchange (Cold Wallet) - Deprecated" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xc6422b55db8b3288a1f8316bc07375948e08082f")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Liquidity</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Liquidity" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded">KUB: Liquidity (<i class="fas fa-lock"></i> Locked)</small> 
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "KUB: Liquidity (Burnt)" %></small>
             <% end %>
-            
+            <%= if(String.downcase(to_string(@address)) == String.downcase("0x0000000000000000000000000000000000000000")) do %>
+              <small class="border-dark p-1 text-white rounded" style="background-color: #F3442E;"><%= gettext "Burnt" %></small>
+            <% end %>
           </h3>
+          <br/>
+          <%= if(check) do %>
+            <small class="border-dark p-1 bg-success text-white rounded" style="width: fit-content;"><%= gettext "Official" %></small>
+          <% end %>
+          <%= if(check_deprecated) do %>
+            <small class="border-dark p-1 text-white rounded" style="width: fit-content; background-color: #F3442E;"><%= gettext "Deprecated" %></small>
+          <% end %>
+
+          <br/>
+          <br/>
           <div class="d-flex flex-column flex-lg-row justify-content-start text-muted">
             <%= if address_name = primary_name(@address) do %>
               <strong class="mr-4 mb-2 text-dark" title="<%= address_name %>">
@@ -166,7 +186,10 @@
               </span>
               <%= if @address.fetched_coin_balance_block_number do %>
                 <span class="address-detail-item">
-                  <%= gettext("Last Balance Update: Block #") %><span data-selector="fetched-coin-balance-block-number"><%= @address.fetched_coin_balance_block_number %></span>
+                  <%= gettext("Last Balance Update: Block #") %>
+                  <span data-selector="fetched-coin-balance-block-number">
+                    <%= @address.fetched_coin_balance_block_number %>
+                  </span>
                 </span>
               <% end %>
 

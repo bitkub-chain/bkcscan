@@ -1,10 +1,12 @@
 SYSTEM = $(shell uname -s)
 HOST = host.docker.internal
-DOCKER_IMAGE = bkc-explorer-v4 # Please change to latest image name.
+DOCKER_IMAGE = bkc-explorer # Please change to latest image name.
 BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
+#COIN = "KUB"
+#COINGECKO_COIN_ID = "bitkub-coin"
 
 ifeq ($(SYSTEM), Linux)
 	HOST=localhost
@@ -272,9 +274,15 @@ endif
 ifdef DISABLE_KNOWN_TOKENS
 	BLOCKSCOUT_CONTAINER_PARAMS += -e 'DISABLE_KNOWN_TOKENS=$(DISABLE_KNOWN_TOKENS)'
 endif
+ifdef ENABLE_GOOGLE_ANALYTICS
+        BLOCKSCOUT_CONTAINER_PARAMS += -e 'ENABLE_GOOGLE_ANALYTICS=$(ENABLE_GOOGLE_ANALYTICS)'
+endif
+ifdef ENABLE_TXS_STATS
+        BLOCKSCOUT_CONTAINER_PARAMS += -e 'ENABLE_TXS_STATS=$(ENABLE_TXS_STATS)'
+endif
 
 HAS_BLOCKSCOUT_IMAGE := $(shell docker images | grep -sw ${DOCKER_IMAGE})
-build: 
+build:
 	@echo "==> Checking for blockscout image $(DOCKER_IMAGE)"
 ifdef HAS_BLOCKSCOUT_IMAGE
 	@echo "==> Image exist. Using $(DOCKER_IMAGE)"

@@ -129,9 +129,10 @@ defmodule BlockScoutWeb.ChainController do
               View.render_to_string(
                 ChainView,
                 "_block.html",
-                block: block
+                block: block,
+                current_lang: conn.cookies["locale"]
               ),
-            block_number: block.number
+            block_number: block.number,
           }
         end)
 

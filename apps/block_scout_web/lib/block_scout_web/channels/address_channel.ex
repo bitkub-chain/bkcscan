@@ -88,7 +88,9 @@ defmodule BlockScoutWeb.AddressChannel do
   end
 
   def handle_out("count", %{count: count}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     push(socket, "count", %{count: BlockScoutWeb.Cldr.Number.to_string!(count, format: "#,###")})
 
@@ -96,7 +98,9 @@ defmodule BlockScoutWeb.AddressChannel do
   end
 
   def handle_out("internal_transaction", %{address: address, internal_transaction: internal_transaction}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered_internal_transaction =
       View.render_to_string(
@@ -120,10 +124,11 @@ defmodule BlockScoutWeb.AddressChannel do
   def handle_out("token_transfer", data, socket), do: handle_token_transfer(data, socket, "token_transfer")
 
   def handle_out("coin_balance", %{block_number: block_number}, socket) do
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
+
     coin_balance = Chain.get_coin_balance(socket.assigns.address_hash, block_number)
-
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
-
     rendered_coin_balance =
       View.render_to_string(
         AddressCoinBalanceView,
@@ -140,7 +145,9 @@ defmodule BlockScoutWeb.AddressChannel do
   end
 
   def handle_transaction(%{address: address, transaction: transaction}, socket, event) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered =
       View.render_to_string(
@@ -163,7 +170,9 @@ defmodule BlockScoutWeb.AddressChannel do
   end
 
   def handle_token_transfer(%{address: address, token_transfer: token_transfer}, socket, event) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     transaction =
       Transaction
@@ -191,7 +200,8 @@ defmodule BlockScoutWeb.AddressChannel do
   end
 
   defp render_balance_card(address, exchange_rate, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
 
     try do
       rendered =

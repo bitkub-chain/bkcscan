@@ -14,30 +14,30 @@
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-6">
-        <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
+        <p class="footer-info-text"><%= gettext("Bitkub Chain explorer is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Bitkub Chain Networks.") %></p>
         <div class="footer-social-icons">
           <a href="https://github.com/bitkubchain/bkc" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.facebook.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+          <a href="https://www.facebook.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Facebook") %>'>
             <i class="fab fa-facebook"></i>
           </a>
-          <a href="https://discord.gg/gtwGBHDqWY" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+          <a href="https://discord.gg/gtwGBHDqWY" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Discord") %>'>
             <i class="fab fa-discord"></i>
           </a>
-          <a href="https://twitter.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+          <a href="https://twitter.com/bitkubchain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
             <i class="fab fa-twitter"></i>
           </a>
         </div>
       </div>
 
       <div class="col-xs-12 col-md-6 col-lg-6 footer-list">
-        <h3>Related links</h3>
+        <h3><%= gettext("Related links") %></h3>
         <ul>
-          <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Submit an Issue") %></a></li>
-          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Contribute") %></a></li>
-          <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Chat") %></a></li>
-          <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Support") %></a></li>
+          <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Chain") %></a></li>
+          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub NEXT") %></a></li>
+          <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Exchange") %></a></li>
+          <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Blockchain Technology") %></a></li>
         </ul>
       </div>
     </div>

@@ -57,6 +57,10 @@ defmodule BlockScoutWeb.LayoutView do
     Keyword.get(application_config(), :network) || "POA"
   end
 
+  def enable_google_analytics do
+    Keyword.get(application_config(), :enable_google_analytics)
+  end
+
   defp application_config do
     Application.get_env(:block_scout_web, BlockScoutWeb.Chain)
   end
@@ -219,6 +223,18 @@ defmodule BlockScoutWeb.LayoutView do
     end
   end
 
+  @spec switch_locale_path(any, any) ::
+  {:safe,
+   binary
+   | maybe_improper_list(
+       binary | maybe_improper_list(any, binary | []) | byte,
+       binary | []
+     )}
+
+  def switch_locale_path(locale, language) do
+  "<a class=\"dropdown-item\" href=\"?locale=#{locale}\">#{language} </a>" |> raw
+  end
+
   def api_url do
     :block_scout_web
     |> Application.get_env(:api_url)
@@ -252,4 +268,5 @@ defmodule BlockScoutWeb.LayoutView do
   end
 
   defp validate_url(_), do: :error
+
 end

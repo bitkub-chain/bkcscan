@@ -55,7 +55,8 @@ defmodule BlockScoutWeb.ApiRouter do
         "token" => {RPC.TokenController, []},
         "stats" => {RPC.StatsController, []},
         "contract" => {RPC.ContractController, [:verify]},
-        "transaction" => {RPC.TransactionController, []}
+        "transaction" => {RPC.TransactionController, []},
+        "circulation" => {RPC.Circulation, []}
       })
     end
 
@@ -67,7 +68,8 @@ defmodule BlockScoutWeb.ApiRouter do
       "token" => {RPC.TokenController, []},
       "stats" => {RPC.StatsController, []},
       "contract" => {RPC.ContractController, [:verify]},
-      "transaction" => {RPC.TransactionController, []}
+      "transaction" => {RPC.TransactionController, []},
+      "circulation" => {RPC.Circulation, []}
     })
   end
 end

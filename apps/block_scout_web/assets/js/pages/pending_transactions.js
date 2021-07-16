@@ -81,7 +81,12 @@ const elements = {
       const $channelBatching = $('[data-selector="channel-batching-message"]')
       if (state.pendingTransactionsBatch.length) {
         $channelBatching.show()
-        $el[0].innerHTML = numeral(state.pendingTransactionsBatch.length).format()
+        if(getLocale === "th") {
+          $el[0].innerHTML = "มี " + numeral(state.pendingTransactionsBatch.length).format() + " รายการใหม่"
+        }
+        else{
+          $el[0].innerHTML = numeral(state.pendingTransactionsBatch.length).format() + " transactions have come in"
+        }
       } else {
         $channelBatching.hide()
       }

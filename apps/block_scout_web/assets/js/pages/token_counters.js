@@ -50,7 +50,12 @@ const elements = {
   '[token-transfer-count]': {
     render ($el, state) {
       if (state.transferCount) {
-        $el.text(state.transferCount + ' Transfers')
+        if(getLocale === "th") {
+          $el.text(state.transferCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' การโอน')
+        }
+        else {
+          $el.text(state.transferCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' Transfers')
+        }
         return $el.show()
       } else {
         return $el.hide()
@@ -60,7 +65,7 @@ const elements = {
   '[token-holder-count]': {
     render ($el, state) {
       if (state.tokenHolderCount) {
-        $el.text(state.tokenHolderCount + ' Addresses')
+        $el.text(state.tokenHolderCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' Addresses')
         return $el.show()
       } else {
         return $el.hide()

@@ -11,6 +11,8 @@ defmodule BlockScoutWeb.WebRouter do
     plug(:protect_from_forgery)
     plug(BlockScoutWeb.CSPHeader)
     plug(BlockScoutWeb.ChecksumAddress)
+    # plug(BlockScoutWeb.Plugs.Locale, "th")
+
   end
 
   # Disallows Iframes (write routes)
@@ -82,10 +84,12 @@ defmodule BlockScoutWeb.WebRouter do
     resources("/bridged-tokens", BridgedTokensController, only: [:index, :show])
 
     resources "/address", AddressController, only: [:show] do
+      # 11111 xxxxx
       resources("/transactions", AddressTransactionController, only: [:index], as: :transaction)
 
       resources(
         "/internal-transactions",
+        # 33333 xxxxx
         AddressInternalTransactionController,
         only: [:index],
         as: :internal_transaction
@@ -164,6 +168,7 @@ defmodule BlockScoutWeb.WebRouter do
       resources("/tokens", AddressTokenController, only: [:index], as: :token) do
         resources(
           "/token-transfers",
+          # 22222 xxxxx
           AddressTokenTransferController,
           only: [:index],
           as: :transfers
@@ -179,6 +184,7 @@ defmodule BlockScoutWeb.WebRouter do
 
       resources(
         "/coin-balances",
+        # 4444 xxxxx
         AddressCoinBalanceController,
         only: [:index],
         as: :coin_balance

@@ -108,7 +108,9 @@ textarea.form-control {
 }
 
 [data-transaction-status="Success"],
-[data-internal-transaction-type="Reward"] {
+[data-transaction-status="สำเร็จ"],
+[data-internal-transaction-type="Reward"],
+[data-internal-transaction-type="รางวัล"] {
   color: $success;
 }
 

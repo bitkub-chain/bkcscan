@@ -17,8 +17,9 @@ defmodule BlockScoutWeb.BlockChannel do
     {:ok, %{}, socket}
   end
 
-  def handle_out("new_block", %{block: block, average_block_time: average_block_time}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+  def handle_out("new_block", %{block: block, average_block_time: average_block_time, current_locale: current_locale}, socket) do
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
 
     rendered_block =
       View.render_to_string(
@@ -32,8 +33,10 @@ defmodule BlockScoutWeb.BlockChannel do
       View.render_to_string(
         ChainView,
         "_block.html",
-        block: block
+        block: block,
+        current_lang: current_locale
       )
+
 
     push(socket, "new_block", %{
       average_block_time: Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat),

@@ -23,7 +23,9 @@ defmodule BlockScoutWeb.TokenChannel do
   end
 
   def handle_out("token_transfer", %{token_transfer: token_transfer}, socket) do
-    Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    # Gettext.put_locale(BlockScoutWeb.Gettext, socket.assigns.locale)
+    Gettext.put_locale(BlockScoutWeb.Gettext, Gettext.get_locale(BlockScoutWeb.Gettext) )
+
 
     rendered_token_transfer =
       View.render_to_string(

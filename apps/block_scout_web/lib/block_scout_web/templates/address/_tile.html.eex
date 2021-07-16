@@ -1,13 +1,12 @@
-<%                                                                                                                                                                                        
-validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873","0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34","0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0", "0xe16288F1c9247baca7Dea839366C59D2D3466A38", "0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0", "0xDb53BDeda03382d9a169a299332F8222A683282A", "0x091820483645BB414877B0Ab50594AB6E1f393c0", "0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669", "0xD61bD2a63790784A8B4aE3962608ec13e23489f8", "0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9"];
-
+<%
+    validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873","0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34","0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0", "0xe16288F1c9247baca7Dea839366C59D2D3466A38", "0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0", "0xDb53BDeda03382d9a169a299332F8222A683282A", "0x091820483645BB414877B0Ab50594AB6E1f393c0", "0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669", "0xD61bD2a63790784A8B4aE3962608ec13e23489f8", "0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9"];
 %>
 <tr>
   <td class="stakes-td">
-      <!-- incremented number by order in the list -->
-      <span class="color-lighten">
-        <%= @index %>
-      </span>
+    <!-- incremented number by order in the list -->
+    <span class="color-lighten">
+      <%= @index %>
+    </span>
   </td>
   <td class="stakes-td">
     <%= @address |> BlockScoutWeb.AddressView.address_partial_selector(nil, nil) |> BlockScoutWeb.RenderHelpers.render_partial() %>
@@ -16,67 +15,73 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
     <% address = to_string(@address) %>
     <% check = Enum.member?(validators, address) %>
       <% if(check) do %>
-        <p class="mb-0">Validator</p>
+        <p class="mb-0"><%= gettext "Validator" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xD61bD2a63790784A8B4aE3962608ec13e23489f8")) do %>
-        <p class="mb-0">Validator: GetLinks (Thailand) Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: GetLinks (Thailand) Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x5f230bAAcF4a9dD36a98145063DF7D5Ee4240873")) do %>
-        <p class="mb-0">Validator: Ananda Development Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: Ananda Development Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc")) do %>
-        <p class="mb-0">Validator: Saha Pattana Piboon Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: Saha Pathanapibul Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
-        <p class="mb-0">Validator: Huawei Technologies (Thailand) Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: Huawei Technologies (Thailand) Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0")) do %>
-        <p class="mb-0">Validator: TPCS Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: TPCS Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xFdF84308d31BA74db7b18A385e5ca768ECa30Aa9")) do %>
-        <p class="mb-0">Validator: SmartContract Blockchain Studio </p>
+        <p class="mb-0"><%= gettext "Validator: SmartContract Blockchain Studio" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xDb53BDeda03382d9a169a299332F8222A683282A")) do %>
-        <p class="mb-0">Validator: Siamrajathanee Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: Siamrajathanee Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x0e0E96D141Bd00A3E40B7B14e9B755963c2d8E34")) do %>
-        <p class="mb-0">Validator: SiS Distribution (Thailand) Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: SiS Distribution (Thailand) Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xe16288F1c9247baca7Dea839366C59D2D3466A38")) do %>
-        <p class="mb-0">Validator: 2C2P (Thailand) Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: 2C2P (Thailand) Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x091820483645BB414877B0Ab50594AB6E1f393c0")) do %>
-        <p class="mb-0">Validator: PROEN Corp Public Company Limited</p> 
+        <p class="mb-0"><%= gettext "Validator: PROEN Corp Public Company Limited" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x32b6b4ABc75F7427b661b8520c4E8c2f0dbaf669")) do %>
-        <p class="mb-0">Validator: SIX Network PTE. Ltd.</p> 
+        <p class="mb-0"><%= gettext "Validator: SIX Network PTE. Ltd." %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xD78A91F21B12de8793BB8616961F31BEefa97fE4")) do %>
-        <p class="mb-0">KUB: Company Reserve</p> 
+        <p class="mb-0"><%= gettext "KUB: Company Reserve" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xFE28FfD8c528066bE3aE4B0D95db0478EfBA7413")) do %>
-        <p class="mb-0">KUB: Community / Exchange Development</p> 
+        <p class="mb-0"><%= gettext "KUB: Community / Exchange Development" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x755FD36eC8F6E2eb69bCeC441bacA89855747d50")) do %>
-        <p class="mb-0">KUB: Ecosystem</p> 
+        <p class="mb-0"><%= gettext "KUB: Ecosystem" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xc9760469d7635916D20329e4bac99ffBBFD38DF4")) do %>
-        <p class="mb-0">KUB: Ecosystem (Hot Wallet)</p> 
+        <p class="mb-0"><%= gettext "KUB: Ecosystem (Hot Wallet)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x6DfBA1364e9627b863c6188a6545000e675E5898")) do %>
-        <p class="mb-0">KUB: Partner</p> 
+        <p class="mb-0"><%= gettext "KUB: Partner" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x5019F3d3226FbfA007a786382256feA2ecB3A676")) do %>
-        <p class="mb-0">KUB: Bitkub Exchange (Hot Wallet)</p> 
+        <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Hot Wallet)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x107f4dc628ee75ebcb50953f8a72ebddd280869c")) do %>
-        <p class="mb-0">KUB: Bitkub Exchange (Cold Wallet) </p> 
+        <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Cold Wallet) - Deprecated" %></p>
+      <% end %>
+      <%= if(String.downcase(to_string(@address)) == String.downcase("0xc1864356C72Baf98df2357B51A1c5a4c8C9eea05")) do %>
+        <p class="mb-0"><%= gettext "KUB: Bitkub Exchange (Cold Wallet)" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0xc6422b55db8b3288a1f8316bc07375948e08082f")) do %>
-        <p class="mb-0">KUB: Liquidity</p> 
+        <p class="mb-0"><%= gettext "KUB: Liquidity" %></p>
       <% end %>
       <%= if(String.downcase(to_string(@address)) == String.downcase("0x52cB901D945B7499f1457d36b882a59cDe9664D5")) do %>
-        <p class="mb-0">KUB: Liquidity (<i class="fas fa-lock text-success"></i> Locked)</p> 
+        <p class="mb-0"><%= gettext "KUB: Liquidity (Burnt)" %></p>
+      <% end %>
+      <%= if(String.downcase(to_string(@address)) == String.downcase("0x0000000000000000000000000000000000000000")) do %>
+        <p class="mb-0"><%= gettext "Burnt" %></p>
       <% end %>
   </td>
   <td class="stakes-td">
@@ -90,15 +95,15 @@ validators = ["0x572ca3f133Bde9F3E0D8D399951AbbB458954Fcc","0x5f230bAAcF4a9dD36a
     </span>
   </td>
   <%= if balance_percentage_enabled?(@total_supply) do %>
-    <td class="stakes-td color-lighten">
-      <!-- percentage of coins from total supply -->
-      <%= balance_percentage(@address, @total_supply) %>
-    </td>
+  <td class="stakes-td color-lighten">
+    <!-- percentage of coins from total supply -->
+    <%= balance_percentage(@address, @total_supply) %>
+  </td>
   <% end %>
   <td class="stakes-td">
     <span class="mr-4">
       <span data-test="transaction_count">
-        <%= @tx_count %>
+        <%= format_integer_to_currency(@tx_count) %>
       </span> <%= gettext "Transactions sent" %>
     </span>
   </td>
