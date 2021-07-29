@@ -108,7 +108,7 @@ const elements = {
       if (state.countersFetched && state.transactionCount) {
         if (oldState.transactionCount === state.transactionCount) return
         if(getLocale === "th") {
-          $el.empty().append(numeral(state.transactionCount).format() + ' การทำธุรกรรม')
+          $el.empty().append(numeral(state.transactionCount).format() + ' ธุรกรรม')
         }
         else {
           $el.empty().append(numeral(state.transactionCount).format() + ' Transactions')
