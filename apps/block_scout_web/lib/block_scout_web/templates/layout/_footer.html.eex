@@ -36,6 +36,7 @@
         <ul>
           <li><a href="https://bitkubchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Chain") %></a></li>
           <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub NEXT") %></a></li>
+          <li><a href="https://bitkubnext.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Chain Developers") %></a></li>
           <li><a href="https://bitkub.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Exchange") %></a></li>
           <li><a href="https://bitkubblockchain.com" rel="noreferrer" target="_blank" class="footer-link"><%= gettext("Bitkub Blockchain Technology") %></a></li>
         </ul>
