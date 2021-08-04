@@ -10,6 +10,8 @@ config :explorer,
   ecto_repos: [Explorer.Repo],
   coin: System.get_env("COIN") || "KUB",
   coingecko_coin_id: System.get_env("COINGECKO_COIN_ID") || "bitkub-coin",
+  coin: "KUB",
+  coingecko_coin_id: "bitkub-coin",
   token_functions_reader_max_retries: 3,
   allowed_evm_versions:
     System.get_env("ALLOWED_EVM_VERSIONS") ||

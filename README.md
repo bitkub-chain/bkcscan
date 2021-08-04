@@ -1,5 +1,7 @@
+
+# Bitkub Chain Explorer 
 <h1 align="center">Bitkub Chain Explorer (forked from blockscout)</h1>
-<h3> Test URL: [https://testnet.bkcscan.com](https://testnet.bkcscan.com) </h3>
+<h3> Bitkub Chain Explorer URL: [https://bkcscan.com](https://bkcscan.com) </h3>
 <p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
 <div align="center">
 
@@ -25,12 +27,13 @@ Biktub Chain supports a number of projects. Hosted instances include POA Network
 
 ## Step to run the explorer
 1. git clone https://gitlab.com/bitkub-chain/bkc-explorer.git
-2. switch to lemon-version-1 branch
-3. cd bkc-explorer/docker
-4. run `source set_env_variables.sh`
-5. run a command `make start` (will take many minutes to build & run)
-6. make sure explorer service is up by run `docker ps` it's will show two containers (blockscout & postgres db)
-7. try to access at url: **http://{ip-address}:4000** or **http://{domain name}**
+2. cd bkc-explorer/
+3. run `docker build -f docker/Dockerfile -t bkc-explorer:v2 ../` (will take many minutes to build)
+4. run `source env_mainnet.sh` or `source env_testnet.sh`
+5. cd docker
+6. run a command `make -f Makefile.local start` to start bkc-explorer & postgres container 
+7. make sure explorer service is up by run `docker ps` it's will show two containers (blockscout & postgres db)
+8. try to access at url: **http://{ip-address}:80** or **http://{domain name}**
 
 ## License
 
