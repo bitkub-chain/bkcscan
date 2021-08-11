@@ -1,12 +1,14 @@
-import $ from 'jquery'
+import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
 export function formatUsdValue (value) {
+  // console.log("formatUsdValue : ", value);
   return `${formatCurrencyValue(value)} USD`
 }
 
 function formatTokenUsdValue (value) {
+  // console.log("formatTokenUsdValue : ", value);
   return formatCurrencyValue(value, '@')
 }
 
@@ -60,4 +62,20 @@ export function updateAllCalculatedUsdValues (usdExchangeRate) {
   $('[data-usd-exchange-rate]').each((i, el) => tryUpdateCalculatedUsdValues(el, usdExchangeRate))
   $('[data-usd-unit-price]').each((i, el) => tryUpdateUnitPriceValues(el, usdExchangeRate))
 }
-updateAllCalculatedUsdValues()
+
+updateAllCalculatedUsdValues();
+
+function asyncCall() {
+  console.log('calling');
+
+  fetchAsync();
+}
+
+async function fetchAsync () {
+  let response = await fetch('https://api.bitkub.com/api/market/ticker');
+  let data = await response.json();
+  console.log("fetchAsync : ", data);
+  return data;
+}
+
+asyncCall();
