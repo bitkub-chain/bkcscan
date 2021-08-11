@@ -173,6 +173,8 @@
       </div>
     </div>
   </div>
+
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self'; style-src 'self' 'unsafe-inline'; media-src *">
   <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/chart-loader.js") %>"></script>
   <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/chain.js") %>"></script>
 </div>
