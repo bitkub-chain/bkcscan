@@ -9,8 +9,8 @@ msgstr[1] "%{count} โทเคน"
 #: lib/block_scout_web/templates/block/_tile.html.eex:27
 msgid "%{count} transaction"
 msgid_plural "%{count} transactions"
-msgstr[0] "%{count} การทำธุรกรรม"
-msgstr[1] "%{count} การทำธุรกรรม"
+msgstr[0] "%{count} ธุรกรรม"
+msgstr[1] "%{count} ธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/api_docs/eth_rpc.html.eex:14
@@ -42,8 +42,8 @@ msgstr ""
 #: lib/block_scout_web/templates/chain/_block.html.eex:11
 msgid "%{count} Transaction"
 msgid_plural "%{count} Transactions"
-msgstr[0] "%{count} การทำธุรกรรม"
-msgstr[1] "%{count} การทำธุรกรรม"
+msgstr[0] "%{count} ธุรกรรม"
+msgstr[1] "%{count} ธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/_metatags.html.eex:2
@@ -372,7 +372,7 @@ msgstr "สัญญา Byte Code"
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:351
 msgid "Contract Call"
-msgstr "การเรียกใช้สัญญา"
+msgstr "เรียกใช้สัญญา"
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:348
@@ -412,7 +412,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:38
 msgid "Bitkub NEXT"
-msgstr "บริษัท บิทคับ เน็ก จำกัด"
+msgstr "Bitkub NEXT"
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_footer.html.eex:38
+msgid "Bitkub Chain Developers"
+msgstr "Bitkub Chain Developers"
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
@@ -522,20 +527,20 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:108
 #: lib/block_scout_web/templates/block/overview.html.eex:165
 msgid "Gas Limit"
-msgstr "แก๊สสูงสุด"
+msgstr "gasสูงสุด"
 
 msgid "%{count} Gas Limit"
-msgstr "แก๊สสูงสุด %{count}"
+msgstr "gasสูงสุด %{count}"
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:62
 #: lib/block_scout_web/templates/block/overview.html.eex:101
 #: lib/block_scout_web/templates/block/overview.html.eex:157
 msgid "Gas Used"
-msgstr "แก๊สที่ถูกใช้ไปแล้ว"
+msgstr "gasที่ถูกใช้ไปแล้ว"
 
 msgid "%{count} Gas Used"
-msgstr "%{count} แก๊สที่ใช้จริง"
+msgstr "%{count} gasที่ใช้จริง"
 
 #, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:23
@@ -1065,7 +1070,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_network_selector.html.eex:22
 msgid "Mainnet"
-msgstr "เมนเน็ต / Mainnet"
+msgstr "เครือข่ายหลัก / Mainnet"
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:63
@@ -1384,7 +1389,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:37
 msgid "Bitkub Chain"
-msgstr "บริษัท บิทคับ เชน จำกัด"
+msgstr "Bitkub Chain"
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:40
@@ -1926,7 +1931,7 @@ msgstr "โทเคน"
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:53
 #: lib/block_scout_web/views/address_view.ex:345
 msgid "Transactions"
-msgstr "การทำธุรกรรม"
+msgstr "รายการธุรกรรม"
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/transfer/_token_transfer.html.eex:8
@@ -2754,7 +2759,7 @@ msgstr[0] "วินาที"
 msgstr[1] "วินาที"
 
 msgid "Total gas used"
-msgstr "ขนาดข้อมูลของแก๊สที่ใช้จริงทั้งหมด"
+msgstr "ขนาดข้อมูลของgasที่ใช้จริงทั้งหมด"
 
 msgid "in %{count} second"
 msgid_plural "in %{count} seconds"
@@ -2820,13 +2825,13 @@ msgid "View all Transactions"
 msgstr "ดูธุรกรรมทั้งหมด"
 
 msgid "Mainnets"
-msgstr "เมนเน็ต / Mainnet"
+msgstr "เครือข่ายหลัก / Mainnet"
 
 msgid "Bitkub chain Mainnet"
 msgstr ""
 
 msgid "Testnets"
-msgstr "เทสเน็ต / Testnet"
+msgstr "เครือข่ายทดสอบ / Testnet"
 
 msgid "Bitkub chain Testnet"
 msgstr ""
@@ -2855,16 +2860,16 @@ msgid "The SHA256 hash of the parent block."
 msgstr "บล็อกก่อนหน้านี้ใช้ SHA256 ในการ Hash ข้อมูล"
 
 msgid "Total gas used by all transactions in this block (limit)."
-msgstr "แก๊สทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (ปริมาณที่จำกัด)"
+msgstr "gasทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (ปริมาณที่จำกัด)"
 
 msgid "Total gas used by all transactions in this block (% used)."
-msgstr "แก๊สทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (% ที่ถูกใช้ไป)"
+msgstr "gasทั้งหมดที่ถูกใช้ไปบนบล็อกนี้ (% ที่ถูกใช้ไป)"
 
 msgid "The maximum gas allowed in this block."
-msgstr "ปริมาณแก๊สสูงสุดที่ใช้ได้บนบล็อกนี้"
+msgstr "ปริมาณgasสูงสุดที่ใช้ได้บนบล็อกนี้"
 
 msgid "Related links"
-msgstr "หน่วยงานที่เกี่ยวข้อง"
+msgstr "ลิงก์ที่เกี่ยวข้อง"
 
 
 
@@ -2877,8 +2882,8 @@ msgstr "ผู้ตรวจสอบ: บริษัท อนันดา �
 msgid "Validator: Saha Pathanapibul Public Company Limited"
 msgstr "ผู้ตรวจสอบ: บริษัท สหพัฒนพิบูล จํากัด (มหาชน)"
 
-msgid "Validator: Huawei Technologies (Thailand) Company Limited"
-msgstr "ผู้ตรวจสอบ: บริษัท หัวเว่ย เทคโนโลยี (ประเทศไทย) จำกัด"
+msgid "Validator: Inspec Company Limited"
+msgstr "ผู้ตรวจสอบ: บริษัท อินสเปค จำกัด"
 
 msgid "Validator: TPCS Public Company Limited"
 msgstr "ผู้ตรวจสอบ: บริษัท เท็กซ์ไทล์เพรสทีจ จำกัด (มหาชน)"
@@ -2910,31 +2915,31 @@ msgid "KUB: Community / Exchange Development"
 msgstr "KUB: งบประมาณสําหรับพัฒนาเครือข่ายและศูนย์ซื้อขาย"
 
 msgid "KUB: Bitkub Exchange (Cold Wallet)"
-msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น)"
+msgstr "KUB: Bitkub Exchange (Cold Wallet)"
 
 msgid "KUB: Ecosystem"
 msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ"
 
 msgid "KUB: Ecosystem (Hot Wallet)"
-msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ (กระเป๋าเงินร้อน)"
+msgstr "KUB: งบประมาณสนับสนุนระบบนิเวศ (Hot Wallet)"
 
 msgid "KUB: Partner"
 msgstr "KUB: งบประมาณสําหรับพาร์ตเนอร์ทางธุรกิจ"
 
 msgid "KUB: Bitkub Exchange (Hot Wallet)"
-msgstr "KUB: Bitkub Exchange (กระเป๋าเงินร้อน)"
+msgstr "KUB: Bitkub Exchange (Hot Wallet)"
 
 msgid "KUB: Bitkub Exchange (Cold Wallet) - Deprecated"
-msgstr "KUB: Bitkub Exchange (กระเป๋าเงินเย็น) - เลิกใช้งาน"
+msgstr "KUB: Bitkub Exchange (Cold Wallet) - Deprecated"
 
 msgid "KUB: Liquidity"
 msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง"
 
 msgid "KUB: Liquidity (Burnt)"
-msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (เผาโทเคน)"
+msgstr "KUB: งบประมาณสําหรับสนับสนุนสภาพคล่อง (Burnt)"
 
 msgid "Burnt"
-msgstr "เผาโทเคน"
+msgstr "Burnt"
 
 
 
@@ -2942,7 +2947,7 @@ msgid "Filter: "
 msgstr "ตัวกรอง: "
 
 msgid "Out of gas"
-msgstr "มีแก๊สไม่เพียงพอ"
+msgstr "มีgasไม่เพียงพอ"
 
 msgid "Token name or symbol"
 msgstr "ชื่อโทเคนหรือสัญลักษณ์"
@@ -2951,10 +2956,10 @@ msgid "Holders Count"
 msgstr "จำนวนผู้ถือครอง"
 
 msgid "Official"
-msgstr "ทางการ"
+msgstr "Official"
 
 msgid "Deprecated"
-msgstr "เลิกใช้งาน"
+msgstr "Deprecated"
 
 msgid "latest"
 msgstr "ตัวใหม่สุด"
