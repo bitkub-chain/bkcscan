@@ -97,7 +97,7 @@
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Saha Pathanapibul Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Huawei Technologies (Thailand) Company Limited" %></small>
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Inspec Co., Ltd" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0")) do %>
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: TPCS Public Company Limited" %></small>
