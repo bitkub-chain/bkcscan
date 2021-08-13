@@ -2,9 +2,13 @@ import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
+let usdtValue = 33;
+
 export function formatUsdValue (value) {
   // console.log("formatUsdValue : ", value);
-  return `${formatCurrencyValue(value)} USD`
+  console.log("formatUsdValueToTHB : ", value , "*", usdtValue, " = ", value*usdtValue);
+  // return `${formatCurrencyValue(value)} USD`
+  return `${formatCurrencyValueTHB(value*usdtValue)} THB`
 }
 
 function formatTokenUsdValue (value) {
@@ -20,6 +24,15 @@ function formatCurrencyValue (value, symbol) {
   if (value < 100000) return `${symbol}${numeral(value).format('0,0.00')}`
   if (value > 1000000000000) return `${symbol}${numeral(value).format('0.000e+0')}`
   return `${symbol}${numeral(value).format('0,0')}`
+}
+
+function formatCurrencyValueTHB (value) {
+  if (value === 0) return `0.000000`
+  if (value < 0.000001) return `${window.localized['Less than']} 0.000001`
+  if (value < 1) return `${numeral(value).format('0.000000')}`
+  if (value < 100000) return `${numeral(value).format('0,0.00')}`
+  if (value > 1000000000000) return `${numeral(value).format('0.000e+0')}`
+  return `${numeral(value).format('0,0')}`
 }
 
 function weiToEther (wei) {
@@ -66,9 +79,11 @@ export function updateAllCalculatedUsdValues (usdExchangeRate) {
 updateAllCalculatedUsdValues();
 
 function asyncCall() {
-  console.log('calling');
-
-  fetchAsync();
+  setInterval(function(){
+    // fetchAsync();
+    console.log('calling API...');
+    usdtValue = 30 + Math.floor(Math.random() * 3); // Mock up data 
+  }, 20000); // 20 sec
 }
 
 async function fetchAsync () {
