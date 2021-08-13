@@ -2881,7 +2881,7 @@ msgstr ""
 msgid "Validator: Saha Pathanapibul Public Company Limited"
 msgstr ""
 
-msgid "Validator: Huawei Technologies (Thailand) Company Limited"
+msgid "Validator: Inspec Company Limited"
 msgstr ""
 
 msgid "Validator: TPCS Public Company Limited"
