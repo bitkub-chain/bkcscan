@@ -415,6 +415,11 @@ msgid "Bitkub NEXT"
 msgstr ""
 
 #, elixir-format
+#: lib/block_scout_web/templates/layout/_footer.html.eex:38
+msgid "Bitkub Chain Developers"
+msgstr ""
+
+#, elixir-format
 #: lib/block_scout_web/templates/address_contract/index.html.eex:75
 msgid "Copy ABI"
 msgstr ""
@@ -2876,7 +2881,7 @@ msgstr ""
 msgid "Validator: Saha Pathanapibul Public Company Limited"
 msgstr ""
 
-msgid "Validator: Huawei Technologies (Thailand) Company Limited"
+msgid "Validator: Inspec Company Limited"
 msgstr ""
 
 msgid "Validator: TPCS Public Company Limited"

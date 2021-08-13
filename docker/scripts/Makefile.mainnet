@@ -326,11 +326,11 @@ else
 	@$(MAKE) -f $(THIS_FILE) migrate_only
 endif
 
-start: build postgres 
+start: build postgres
 	@echo "==> Starting blockscout"
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
-					-p 80:80 \
+					-p 80:80 -p 443:443 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
 
 run: start
@@ -339,4 +339,4 @@ run: start
 				migrate \
 				start \
 				postgres \
-				run 
+				run

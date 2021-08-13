@@ -112,9 +112,9 @@ function tryUpdateText (el) {
 
     // Transaction/Transaction Display Type
     else if(innerText.includes("Transactions"))
-      translateStr = innerText.replace("Transactions", "การทำธุรกรรม")
+      translateStr = innerText.replace("Transactions", "ธุรกรรม")
     else if(innerText.includes("Transaction"))
-      translateStr = innerText.replace("Transaction", "การทำธุรกรรม")
+      translateStr = innerText.replace("Transaction", "ธุรกรรม")
 
     // Validator
     else if(innerText.includes("Validator"))
@@ -124,7 +124,7 @@ function tryUpdateText (el) {
     else if(innerText.includes("Contract Creation"))
       translateStr = innerText.replace("Contract Creation", "การสร้างสัญญา")
     else if(innerText.includes("Contract Call"))
-      translateStr = innerText.replace("Contract Call", "การเรียกใช้สัญญา")
+      translateStr = innerText.replace("Contract Call", "เรียกใช้สัญญา")
 
     // Token Transfer
     else if(innerText.includes("Token Burning"))
@@ -144,9 +144,9 @@ function tryUpdateText (el) {
 
     // Gas
     else if(innerText.includes("Gas Limit"))
-      translateStr = innerText.replace("Gas Limit", "แก๊สสูงสุด")
+      translateStr = innerText.replace("Gas Limit", "gasสูงสุด")
     else if(innerText.includes(" Gas Used"))
-      translateStr = innerText.replace(" Gas Used", " แก๊สที่ใช้จริง")
+      translateStr = innerText.replace(" Gas Used", " gasที่ใช้จริง")
 
     // Balance
     else if(innerText.includes("Error trying to fetch balances."))
@@ -170,8 +170,8 @@ function tryUpdateTextGasLimit (el) {
   // console.log(el.innerHTML)
   let getInnerHTMLArr = el.innerHTML.split(' ')
 
-  if(getLocale === "th" && !getInnerHTMLArr[0].includes("แก๊สสูงสุด")) {
-    el.innerHTML = "แก๊สสูงสุด " + getInnerHTMLArr[0];
+  if(getLocale === "th" && !getInnerHTMLArr[0].includes("gasสูงสุด")) {
+    el.innerHTML = "gasสูงสุด " + getInnerHTMLArr[0];
     // console.log("1 (" + getLocale + ") >>> " + getInnerHTMLArr[0])
     // console.log("2 (" + getLocale + ") >>> " + el.innerHTML)
   }
