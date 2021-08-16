@@ -1,18 +1,20 @@
 SYSTEM = $(shell uname -s)
-HOST = host.docker.internal
+#HOST = host.docker.internal
+HOST = 192.168.1.6
 DOCKER_IMAGE = bkc-explorer:v2
 BS_CONTAINER_NAME = bkc-explorer
 PG_CONTAINER_NAME = postgres
 PG_CONTAINER_IMAGE = postgres:12.5
 THIS_FILE = $(lastword $(MAKEFILE_LIST))
+THIS_PATH = $(shell pwd)
 
-ifeq ($(SYSTEM), Linux)
-	HOST=localhost
-endif
+#ifeq ($(SYSTEM), Linux)
+#	HOST=localhost
+#endif
 
 DB_URL = postgresql://postgres:@$(HOST):5432/explorer?ssl=false
 BLOCKSCOUT_CONTAINER_PARAMS = -e 'MIX_ENV=prod' \
-															 -e 'DATABASE_URL=$(DB_URL)'
+					-e 'DATABASE_URL=$(DB_URL)'
 ifeq ($(SYSTEM), Linux)
 	BLOCKSCOUT_CONTAINER_PARAMS += --network=host
 endif
@@ -276,8 +278,9 @@ ifdef DISABLE_KNOWN_TOKENS
 	BLOCKSCOUT_CONTAINER_PARAMS += -e 'DISABLE_KNOWN_TOKENS=$(DISABLE_KNOWN_TOKENS)'
 endif
 
-HAS_BLOCKSCOUT_IMAGE := $(shell docker images | grep -sw ${DOCKER_IMAGE})
-build: 
+HAS_BLOCKSCOUT_IMAGE := $(shell docker images --filter "reference=${DOCKER_IMAGE}")
+
+build:
 	@echo "==> Checking for blockscout image $(DOCKER_IMAGE)"
 ifdef HAS_BLOCKSCOUT_IMAGE
 	@echo "==> Image exist. Using $(DOCKER_IMAGE)"
@@ -298,6 +301,7 @@ migrate: build postgres
 
 PG_EXIST := $(shell docker ps -a --filter name=${PG_CONTAINER_NAME} | grep ${PG_CONTAINER_NAME})
 PG_STARTED := $(shell docker ps --filter name=${PG_CONTAINER_NAME} | grep ${PG_CONTAINER_NAME})
+MAKE_EXIST := $(shell find Makefile*)
 postgres:
 ifdef PG_EXIST
 	@echo "==> Checking PostrgeSQL container"
@@ -307,6 +311,7 @@ ifdef PG_STARTED
 else
 	@echo "==> Starting PostgreSQL container"
 	@docker start $(PG_CONTAINER_NAME)
+	@sleep 3
 	@$(MAKE) -f $(THIS_FILE) migrate_only
 endif
 else
@@ -317,21 +322,36 @@ else
 					-e POSTGRES_HOST_AUTH_METHOD="trust" \
 					-p 5432:5432 \
 					$(PG_CONTAINER_IMAGE)
-	@sleep 1
-	@$(MAKE) -f $(THIS_FILE) migrate_only
+	@sleep 5
+	@$(MAKE) -f $(THIS_FILE) migrate
 endif
 
-start: build postgres 
+start: build postgres
 	@echo "==> Starting blockscout"
+ifdef MAKE_EXIST
 	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
 					$(BLOCKSCOUT_CONTAINER_PARAMS) \
 					-p 80:80 \
 					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
+else
+	@docker run -d --restart always --name $(BS_CONTAINER_NAME) \
+					$(BLOCKSCOUNT_CONTAINER_PARAMS) \
+					-p 80:80 \
+					-v $(THIS_PATH)/test:/tmp/test \
+					$(DOCKER_IMAGE) /bin/sh -c "mix phx.server"
+endif
 
 run: start
+
+test: test
+ifdef MAKE_EXIST
+	@cd ../
+	THIS_PATH=$(shell cd ../ | pwd)
+endif
 
 .PHONY: build \
 				migrate \
 				start \
 				postgres \
-				run 
+				test \
+				run
