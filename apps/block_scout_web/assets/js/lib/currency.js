@@ -1,12 +1,18 @@
-import $ from 'jquery'
+import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
+let usdtValue = 33;
+
 export function formatUsdValue (value) {
-  return `${formatCurrencyValue(value)} USD`
+  // console.log("formatUsdValue : ", value);
+  console.log("formatUsdValueToTHB : ", value , "*", usdtValue, " = ", value*usdtValue);
+  // return `${formatCurrencyValue(value)} USD`
+  return `${formatCurrencyValueTHB(value*usdtValue)} THB`
 }
 
 function formatTokenUsdValue (value) {
+  // console.log("formatTokenUsdValue : ", value);
   return formatCurrencyValue(value, '@')
 }
 
@@ -18,6 +24,15 @@ function formatCurrencyValue (value, symbol) {
   if (value < 100000) return `${symbol}${numeral(value).format('0,0.00')}`
   if (value > 1000000000000) return `${symbol}${numeral(value).format('0.000e+0')}`
   return `${symbol}${numeral(value).format('0,0')}`
+}
+
+function formatCurrencyValueTHB (value) {
+  if (value === 0) return `0.000000`
+  if (value < 0.000001) return `${window.localized['Less than']} 0.000001`
+  if (value < 1) return `${numeral(value).format('0.000000')}`
+  if (value < 100000) return `${numeral(value).format('0,0.00')}`
+  if (value > 1000000000000) return `${numeral(value).format('0.000e+0')}`
+  return `${numeral(value).format('0,0')}`
 }
 
 function weiToEther (wei) {
@@ -60,4 +75,22 @@ export function updateAllCalculatedUsdValues (usdExchangeRate) {
   $('[data-usd-exchange-rate]').each((i, el) => tryUpdateCalculatedUsdValues(el, usdExchangeRate))
   $('[data-usd-unit-price]').each((i, el) => tryUpdateUnitPriceValues(el, usdExchangeRate))
 }
-updateAllCalculatedUsdValues()
+
+updateAllCalculatedUsdValues();
+
+function asyncCall() {
+  setInterval(function(){
+    // fetchAsync();
+    console.log('calling API...');
+    usdtValue = 30 + Math.floor(Math.random() * 3); // Mock up data 
+  }, 20000); // 20 sec
+}
+
+async function fetchAsync () {
+  let response = await fetch('https://api.bitkub.com/api/market/ticker');
+  let data = await response.json();
+  console.log("fetchAsync : ", data);
+  return data;
+}
+
+asyncCall();
