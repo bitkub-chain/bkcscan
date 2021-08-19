@@ -2,17 +2,19 @@ import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
-let usdtValue = 33;
-
 export function formatUsdValue (value) {
-  // console.log("formatUsdValue : ", value);
-  console.log("formatUsdValueToTHB : ", value , "*", usdtValue, " = ", value*usdtValue);
   // return `${formatCurrencyValue(value)} USD`
-  return `${formatCurrencyValueTHB(value*usdtValue)} THB`
+  console.log('calling API...');
+  let usdtLast = callMarketTickerAPI();
+  if(usdtLast){
+    return `${formatCurrencyValueTHB(value*usdtLast)} THB`
+  }
+  else{
+    return `${formatCurrencyValue(value)} USD`
+  }
 }
 
 function formatTokenUsdValue (value) {
-  // console.log("formatTokenUsdValue : ", value);
   return formatCurrencyValue(value, '@')
 }
 
@@ -78,19 +80,15 @@ export function updateAllCalculatedUsdValues (usdExchangeRate) {
 
 updateAllCalculatedUsdValues();
 
-function asyncCall() {
-  setInterval(function(){
-    // fetchAsync();
-    console.log('calling API...');
-    usdtValue = 30 + Math.floor(Math.random() * 3); // Mock up data 
-  }, 20000); // 20 sec
+function callMarketTickerAPI() {
+  let request = new XMLHttpRequest()
+  request.open('GET', 'https://api.bitkub.com/api/market/ticker', true);
+  request.onload = function () {
+    let data = JSON.parse(this.response);
+    if(data){
+      console.log(data.THB_USDT.last);
+      return data.THB_USDT.last;
+    }
+  }
+  request.send();
 }
-
-async function fetchAsync () {
-  let response = await fetch('https://api.bitkub.com/api/market/ticker');
-  let data = await response.json();
-  console.log("fetchAsync : ", data);
-  return data;
-}
-
-asyncCall();
