@@ -2,7 +2,6 @@ def getCurrentBranch () {
         return sh (
           script: 'git branch --contains ${commit}',
 //        script: 'git rev-parse --abbrev-ref HEAD',
-// test push trigger
         returnStdout: true
     ).trim()
 }
