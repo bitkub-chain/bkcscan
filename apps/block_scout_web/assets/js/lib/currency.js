@@ -6,6 +6,7 @@ export function formatUsdValue (value) {
   // return `${formatCurrencyValue(value)} USD`
   console.log('calling API...');
   let usdtLast = callMarketTickerAPI();
+  console.log("usdtLast" ,usdtLast)
   if(usdtLast){
     return `${formatCurrencyValueTHB(value*usdtLast)} THB`
   }
