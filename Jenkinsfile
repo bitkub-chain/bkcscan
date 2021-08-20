@@ -27,7 +27,12 @@ pipeline {
             steps {
                 //echo 'Start Ansible'
                 //sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
-		echo "$params.BUILD_ON"
+		echo "parameter is $params.build_on"
+                if (params.build_on == "main") {
+		  echo "main"
+		} else if (params.build_on == "mirror") {
+                  echo "mirror"
+		}
             }
         }
     }
