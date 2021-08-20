@@ -25,8 +25,9 @@ pipeline {
     stages {
         stage('Ansible') {
             steps {
-                echo 'Start Ansible'
-                sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
+                //echo 'Start Ansible'
+                //sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
+		echo '${BUILD_ON}'
             }
         }
     }
