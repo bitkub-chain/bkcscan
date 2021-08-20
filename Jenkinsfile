@@ -28,11 +28,16 @@ pipeline {
 		script {
                 //echo 'Start Ansible'
                 //sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
+		// PRD-explorer-mirror-bkcscan-com.yaml
+		// PRD-explorer-main-bkcscan-com.yaml
+
 		  echo "parameter is $params.build_on"
                   if (params.build_on == "main") {
 		    echo "main"
+		    sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-main-bkcscan-com.yaml'
 		  } else if (params.build_on == "mirror") {
                     echo "mirror"
+		    sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
 		  }
 		}
               }
