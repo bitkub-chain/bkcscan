@@ -27,7 +27,7 @@ pipeline {
             steps {
                 //echo 'Start Ansible'
                 //sh 'ansible-playbook /etc/ansible/playbooks/PRD-explorer-mirror-bkcscan-com.yaml'
-		echo '${BUILD_ON}'
+		echo '${param.BUILD_ON}'
             }
         }
     }
