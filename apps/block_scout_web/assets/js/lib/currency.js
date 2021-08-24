@@ -2,29 +2,32 @@ import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
-export async function formatUsdValue (value) {
+export function formatUsdValue (value) {
   // return `${formatCurrencyValue(value)} USD`
-  console.log('calling API...');
-  let usdtLast = await callMarketTickerAPI();
-  console.log("usdtLast" ,usdtLast)
-  if(usdtLast){
-    return `${formatCurrencyValueTHB(value*usdtLast, '', true)} THB`
-  }
-  else{
-    return `${formatCurrencyValue(value)} USD`
-  }
+  // console.log('calling API...');
+  // let usdtLast = await callMarketTickerAPI();
+  console.log("usdtPerThb in currency = ",usdtPerThb)
+  let usdtLast = usdtPerThb;
+  // console.log("usdtLast" ,usdtLast)
+  // if(usdtLast){
+    return formatCurrencyValueTHB(value*usdtLast,'',true)
+  // }
+  // else{
+  //   return `${formatCurrencyValue(value)} USD`
+  // }
 }
 
 function formatTokenUsdValue (value) {
-  console.log('calling API...');
-  let usdtLast = await callMarketTickerAPI();
-  console.log("usdtLast" ,usdtLast)
-  if(usdtLast){
-    return formatCurrencyValueTHB(value*usdtLast, '@')
-  }
-  else{
-    return formatCurrencyValue(value, '@')
-  }
+  // console.log('calling API...');
+  // let usdtLast = await callMarketTickerAPI();
+  let usdtLast = usdtPerThb;
+  // console.log("usdtLast" ,usdtLast)
+  // if(usdtLast){
+    return formatCurrencyValueTHB(value*usdtLast, '@',false)
+  // }
+  // else{
+  //   return formatCurrencyValue(value, '@')
+  // }
 }
 
 function formatCurrencyValue (value, symbol, unit) {
@@ -38,11 +41,7 @@ function formatCurrencyValue (value, symbol, unit) {
   return `${symbol}${numeral(value).format('0,0')}${unit}`
 }
 
-function formatCurrencyValueTHB (value, symbol, unit) {
-  console.log('calling API...');
-  let usdtLast = callMarketTickerAPI();
-  if(usdtLast){
-    value = usdtLast*value;
+function formatCurrencyValueTHB (value,symbol,unit) {
     symbol = symbol || '฿'
     unit = (unit ? (' THB') : '');
     if (value === 0) return `0.000000${unit}`
@@ -50,11 +49,7 @@ function formatCurrencyValueTHB (value, symbol, unit) {
     if (value < 1) return `${numeral(value).format('0.000000')}${unit}`
     if (value < 100000) return `${numeral(value).format('0,0.00')}${unit}`
     if (value > 1000000000000) return `${numeral(value).format('0.000e+0')}${unit}`
-    return `${numeral(value).format('0,0')}${unit}`
-  }
-  else{
-    return formatCurrencyValue (value, symbol, unit);
-  }
+    return `${numeral(value).format('0,0')}${unit}`;
 }
 
 function weiToEther (wei) {
