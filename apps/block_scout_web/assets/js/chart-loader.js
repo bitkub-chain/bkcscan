@@ -14,8 +14,6 @@ import { createCoinBalanceHistoryChart } from './lib/coin_balance_history_chart'
     window.coinBalanceHistoryChart = createCoinBalanceHistoryChart(coinBalanceHistoryChartElement)
   }
 
-  console.log("usdtPerThb chart-loader",usdtPerThb)
-
   formatAllUsdValues()
   updateAllCalculatedUsdValues()
 })()
