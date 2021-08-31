@@ -3,31 +3,11 @@ import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
 export function formatUsdValue (value) {
-  // return `${formatCurrencyValue(value)} USD`
-  // console.log('calling API...');
-  // let usdtLast = await callMarketTickerAPI();
-  console.log("usdtPerThb in currency = ",usdtPerThb)
-  let usdtLast = usdtPerThb;
-  // console.log("usdtLast" ,usdtLast)
-  // if(usdtLast){
-    return formatCurrencyValueTHB(value*usdtLast,'',true)
-  // }
-  // else{
-  //   return `${formatCurrencyValue(value)} USD`
-  // }
+  return `${formatCurrencyValue(value)} USD`
 }
 
 function formatTokenUsdValue (value) {
-  // console.log('calling API...');
-  // let usdtLast = await callMarketTickerAPI();
-  let usdtLast = usdtPerThb;
-  // console.log("usdtLast" ,usdtLast)
-  // if(usdtLast){
-    return formatCurrencyValueTHB(value*usdtLast, '@',false)
-  // }
-  // else{
-  //   return formatCurrencyValue(value, '@')
-  // }
+  return formatCurrencyValue(value, '@')
 }
 
 function formatCurrencyValue (value, symbol, unit) {
