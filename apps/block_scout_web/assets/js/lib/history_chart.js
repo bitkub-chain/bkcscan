@@ -45,7 +45,7 @@ const config = {
         },
         ticks: {
           beginAtZero: true,
-          callback: (value, _index, _values) => `$${numeral(value).format('0,0.00')}`,
+          callback: (value, _index, _values) => `฿${numeral(value*usdtPerThb).format('0,0.00')}`,
           maxTicksLimit: 4,
           fontColor: sassVariables.dashboardBannerChartAxisFontColor
         }
@@ -81,10 +81,11 @@ const config = {
       callbacks: {
         label: ({ datasetIndex, yLabel }, { datasets }) => {
           const label = datasets[datasetIndex].label
+          const val = formatUsdValue(yLabel)
           if (datasets[datasetIndex].yAxisID === 'price') {
-            return `${label}: ${formatUsdValue(yLabel)}`
+            return `${label}: ${val}`
           } else if (datasets[datasetIndex].yAxisID === 'marketCap') {
-            return `${label}: ${formatUsdValue(yLabel)}`
+            return `${label}: ${val}`
           } else if (datasets[datasetIndex].yAxisID === 'numTransactions') {
             return `${label}: ${yLabel}`
           } else {

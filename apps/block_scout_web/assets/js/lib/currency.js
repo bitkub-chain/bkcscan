@@ -2,37 +2,34 @@ import $, { data } from 'jquery'
 import numeral from 'numeral'
 import { BigNumber } from 'bignumber.js'
 
-let usdtValue = 33;
-
 export function formatUsdValue (value) {
-  // console.log("formatUsdValue : ", value);
-  console.log("formatUsdValueToTHB : ", value , "*", usdtValue, " = ", value*usdtValue);
-  // return `${formatCurrencyValue(value)} USD`
-  return `${formatCurrencyValueTHB(value*usdtValue)} THB`
+  return `${formatCurrencyValue(value)} USD`
 }
 
 function formatTokenUsdValue (value) {
-  // console.log("formatTokenUsdValue : ", value);
   return formatCurrencyValue(value, '@')
 }
 
-function formatCurrencyValue (value, symbol) {
-  symbol = symbol || '$'
-  if (value === 0) return `${symbol}0.000000`
-  if (value < 0.000001) return `${window.localized['Less than']} ${symbol}0.000001`
-  if (value < 1) return `${symbol}${numeral(value).format('0.000000')}`
-  if (value < 100000) return `${symbol}${numeral(value).format('0,0.00')}`
-  if (value > 1000000000000) return `${symbol}${numeral(value).format('0.000e+0')}`
-  return `${symbol}${numeral(value).format('0,0')}`
+function formatCurrencyValue (value, symbol, unit) {
+  symbol = symbol || '$';
+  unit = (unit ? (' USD') : '');
+  if (value === 0) return `${symbol}0.000000${unit}`
+  if (value < 0.000001) return `${window.localized['Less than']} ${symbol}0.000001${unit}`
+  if (value < 1) return `${symbol}${numeral(value).format('0.000000')}${unit}`
+  if (value < 100000) return `${symbol}${numeral(value).format('0,0.00')}${unit}`
+  if (value > 1000000000000) return `${symbol}${numeral(value).format('0.000e+0')}${unit}`
+  return `${symbol}${numeral(value).format('0,0')}${unit}`
 }
 
-function formatCurrencyValueTHB (value) {
-  if (value === 0) return `0.000000`
-  if (value < 0.000001) return `${window.localized['Less than']} 0.000001`
-  if (value < 1) return `${numeral(value).format('0.000000')}`
-  if (value < 100000) return `${numeral(value).format('0,0.00')}`
-  if (value > 1000000000000) return `${numeral(value).format('0.000e+0')}`
-  return `${numeral(value).format('0,0')}`
+function formatCurrencyValueTHB (value,symbol,unit) {
+    symbol = symbol || '฿'
+    unit = (unit ? (' THB') : '');
+    if (value === 0) return `0.000000${unit}`
+    if (value < 0.000001) return `${window.localized['Less than']} 0.000001${unit}`
+    if (value < 1) return `${numeral(value).format('0.000000')}${unit}`
+    if (value < 100000) return `${numeral(value).format('0,0.00')}${unit}`
+    if (value > 1000000000000) return `${numeral(value).format('0.000e+0')}${unit}`
+    return `${numeral(value).format('0,0')}${unit}`;
 }
 
 function weiToEther (wei) {
@@ -67,7 +64,7 @@ function tryUpdateCalculatedUsdValues (el, usdExchangeRate = el.dataset.usdExcha
 }
 
 function tryUpdateUnitPriceValues (el, usdUnitPrice = el.dataset.usdUnitPrice) {
-  const formattedValue = formatCurrencyValue(usdUnitPrice)
+  const formattedValue = formatCurrencyValueTHB(usdUnitPrice)
   if (formattedValue !== el.innerHTML) el.innerHTML = formattedValue
 }
 
@@ -78,19 +75,17 @@ export function updateAllCalculatedUsdValues (usdExchangeRate) {
 
 updateAllCalculatedUsdValues();
 
-function asyncCall() {
-  setInterval(function(){
-    // fetchAsync();
-    console.log('calling API...');
-    usdtValue = 30 + Math.floor(Math.random() * 3); // Mock up data 
-  }, 20000); // 20 sec
+function callMarketTickerAPI() {
+  return new Promise((resolve, reject) => {
+    let request = new XMLHttpRequest()
+    request.open('GET', 'https://api.bitkub.com/api/market/ticker', true);
+    request.onload = function () {
+      let data = JSON.parse(this.response);
+      if(data){
+        console.log(data.THB_USDT.last);
+        resolve(data.THB_USDT.last);
+      }
+    }
+    request.send();
+  });
 }
-
-async function fetchAsync () {
-  let response = await fetch('https://api.bitkub.com/api/market/ticker');
-  let data = await response.json();
-  console.log("fetchAsync : ", data);
-  return data;
-}
-
-asyncCall();
