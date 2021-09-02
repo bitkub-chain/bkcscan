@@ -13,6 +13,7 @@ import { createCoinBalanceHistoryChart } from './lib/coin_balance_history_chart'
   if (coinBalanceHistoryChartElement) {
     window.coinBalanceHistoryChart = createCoinBalanceHistoryChart(coinBalanceHistoryChartElement)
   }
+
   formatAllUsdValues()
   updateAllCalculatedUsdValues()
 })()

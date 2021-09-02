@@ -4,8 +4,10 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
-  <% officials = ["0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368", "0x80318CAB3791E49650C8760a61196fFD2D23F6a1", "0x8b614b636FfDdfFaa261224d88C3Fc919a9634AE", "0xc6677E014D7e2F45fB44E8036C014B916C0492a1", "0x0330b553823703E673787747D1930a12D7a14c94", "0xE06B321eF826eaB4D242b1e40d4a51b8dCDF61B2","0x67eBD850304c70d983B2d1b93ea79c7CD6c3F6b5"]; %>
-  <% deprecated = ["0x12a5A2f27bc1eA474518f41A829B60b945585c97"] %>
+  <% officials = ["0xf0AaFF6de417897D8DcBC330f63282c6e4c31d96","0x0c593479200166144c24C48F7025b9fd0CE2CE87","0x10736c67BCa17aea4b2ac364Fee9A09050cFF3B7","0x9C04EFD1E9aD51A605eeDcb576159242FF930368", "0x8b614b636FfDdfFaa261224d88C3Fc919a9634AE", "0xc6677E014D7e2F45fB44E8036C014B916C0492a1", "0xE06B321eF826eaB4D242b1e40d4a51b8dCDF61B2","0x67eBD850304c70d983B2d1b93ea79c7CD6c3F6b5", "0x726613C4494C60B7dCdeA5BE2846180C1DAfBE8B",
+  "0x7d984C24d2499D840eB3b7016077164e15E5faA6"]; %>
+  <% deprecated = ["0x12a5A2f27bc1eA474518f41A829B60b945585c97","0x80318CAB3791E49650C8760a61196fFD2D23F6a1",
+  "0x0330b553823703E673787747D1930a12D7a14c94"] %>
   <div class="row">
     <!-- Address details -->
     <div class="card-section col-md-12 col-lg-8 pr-0-md">
@@ -97,7 +99,7 @@
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Saha Pathanapibul Public Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0xDFa580B66A355D5E6c34B0def6Ec037b72e5dAf0")) do %>
-              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Inspec Co., Ltd" %></small>
+              <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: Inspec Company Limited" %></small>
             <% end %>
             <%= if(String.downcase(to_string(@address)) == String.downcase("0x556290e7D4ad8a6B05a44B92FdEAe8c93D87b2a0")) do %>
               <small class="border-dark p-1 bg-success text-white rounded"><%= gettext "Validator: TPCS Public Company Limited" %></small>
